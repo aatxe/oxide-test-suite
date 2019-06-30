@@ -1,0 +1,46 @@
+valid global environment:
+ [(Syntax.RecStructDef
+     ("SS", [(("unknown_file", (4, 10), (4, 11)), "a")], [],
+      [("pointer",
+        (("unknown_file", (5, 13), (5, 14)),
+         (Syntax.Ref ((("unknown_file", (5, 14), (5, 15)), "a"),
+            Syntax.Unique,
+            (("unknown_file", (5, 21), (5, 26)), (Syntax.BaseTy Syntax.U32))
+            ))))
+        ]));
+   (Syntax.FnDef
+      ("b", [(("unknown_file", (8, 5), (8, 6)), "a")], [],
+       [("s",
+         (("unknown_file", (8, 12), (8, 13)),
+          (Syntax.Ref ((("unknown_file", (8, 13), (8, 14)), "a"),
+             Syntax.Unique,
+             (("unknown_file", (8, 20), (8, 22)),
+              (Syntax.Struct ("SS",
+                 [(("unknown_file", (8, 23), (8, 24)), "a")], [])))
+             ))))
+         ],
+       (("unknown_file", (8, 0), (8, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("", (0, 0), (0, 0)),
+        (Syntax.Seq (
+           (("unknown_file", (9, 4), (9, 5)),
+            (Syntax.Assign (
+               (Syntax.Deref
+                  (Syntax.FieldProj ((Syntax.Deref (Syntax.Var "s")),
+                     "pointer"))),
+               (("unknown_file", (9, 4), (9, 5)),
+                (Syntax.BinOp (Syntax.Add,
+                   (("unknown_file", (9, 4), (9, 5)),
+                    (Syntax.Move
+                       (Syntax.Deref
+                          (Syntax.FieldProj ((Syntax.Deref (Syntax.Var "s")),
+                             "pointer"))))),
+                   (("unknown_file", (9, 21), (9, 22)),
+                    (Syntax.Prim (Syntax.Num 1)))
+                   )))
+               ))),
+           (("unknown_file", (9, 22), (9, 23)), (Syntax.Prim Syntax.Unit)))))));
+   (Syntax.FnDef
+      ("main", [], [], [],
+       (("unknown_file", (12, 0), (12, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (12, 10), (12, 12)), (Syntax.Prim Syntax.Unit))))
+   ]
