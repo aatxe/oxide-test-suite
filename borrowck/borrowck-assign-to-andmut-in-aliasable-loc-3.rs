@@ -5,14 +5,6 @@ struct S<'a> {
     pointer: &'a mut isize
 }
 
-fn a(s: &S) {
-    *s.pointer += 1; //~ ERROR cannot assign
-}
-
-fn b(s: &mut S) {
-    *s.pointer += 1;
-}
-
 fn c(s: & &mut S) {
     *s.pointer += 1; //~ ERROR cannot assign
 }
