@@ -1,0 +1,62 @@
+error: (Syntax.SafetyErr (("unknown_file", (10, 4), (10, 5)),
+          (Syntax.Unique, (Syntax.FieldProj ((Syntax.Var "p"), "x"))),
+          (Syntax.Shared, (Syntax.Var "p"))))
+invalid global environment:
+ [(Syntax.RecStructDef
+     ("Point", [], [],
+      [("x", (("unknown_file", (1, 18), (1, 23)), (Syntax.BaseTy Syntax.U32)));
+        ("y",
+         (("unknown_file", (1, 28), (1, 33)), (Syntax.BaseTy Syntax.U32)))
+        ]));
+   (Syntax.FnDef
+      ("a", [], [], [],
+       (("unknown_file", (3, 0), (3, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (4, 4), (4, 7)),
+        (Syntax.Let ("p",
+           (("unknown_file", (4, 15), (4, 20)),
+            (Syntax.Struct ("Point", [], []))),
+           (("unknown_file", (4, 23), (4, 28)),
+            (Syntax.RecStruct ("Point", [], [],
+               [("x",
+                 (("unknown_file", (4, 33), (4, 34)),
+                  (Syntax.Prim (Syntax.Num 3))));
+                 ("y",
+                  (("unknown_file", (4, 39), (4, 40)),
+                   (Syntax.Prim (Syntax.Num 4))))
+                 ]
+               ))),
+           (("unknown_file", (5, 4), (5, 7)),
+            (Syntax.Let ("q",
+               (("unknown_file", (5, 11), (5, 12)),
+                (Syntax.Ref ((("unknown_file", (5, 12), (5, 13)), "q"),
+                   Syntax.Shared,
+                   (("unknown_file", (5, 15), (5, 20)),
+                    (Syntax.Struct ("Point", [], [])))
+                   ))),
+               (("unknown_file", (5, 23), (5, 24)),
+                (Syntax.Borrow ((("unknown_file", (5, 23), (5, 24)), "p1"),
+                   Syntax.Shared, (Syntax.Var "p")))),
+               (("", (1, 0), (1, 0)),
+                (Syntax.Seq (
+                   (("unknown_file", (10, 4), (10, 5)),
+                    (Syntax.Assign (
+                       (Syntax.FieldProj ((Syntax.Var "p"), "x")),
+                       (("unknown_file", (10, 10), (10, 11)),
+                        (Syntax.Prim (Syntax.Num 5)))
+                       ))),
+                   (("", (0, 0), (0, 0)),
+                    (Syntax.Seq (
+                       (("unknown_file", (11, 4), (11, 5)),
+                        (Syntax.Move
+                           (Syntax.FieldProj ((Syntax.Var "q"), "x")))),
+                       (("unknown_file", (11, 7), (11, 8)),
+                        (Syntax.Prim Syntax.Unit))
+                       )))
+                   )))
+               )))
+           )))));
+   (Syntax.FnDef
+      ("main", [], [], [],
+       (("unknown_file", (14, 0), (14, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (14, 10), (15, 1)), (Syntax.Prim Syntax.Unit))))
+   ]
