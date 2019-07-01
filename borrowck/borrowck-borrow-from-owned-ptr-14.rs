@@ -13,9 +13,9 @@ struct Bar {
 fn make_foo() -> Box<Foo> { panic!() }
 
 fn borrow_mut_and_imm() {
-    let mut foo = make_foo();
-    let bar1 = &mut foo.bar1;
-    let _foo1 = &foo.bar2;
+    let mut foo: Box<Foo> = make_foo();
+    let bar1: &'a mut Bar = &mut foo.bar1;
+    let _foo1: &'b Bar = &foo.bar2;
 }
 
 fn main() {}

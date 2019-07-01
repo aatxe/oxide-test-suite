@@ -13,9 +13,9 @@ struct Bar {
 fn make_foo() -> Box<Foo> { panic!() }
 
 fn borrow_same_field_twice_imm_imm() {
-    let mut foo = make_foo();
-    let bar1 = &foo.bar1;
-    let _bar2 = &foo.bar1;
+    let mut foo: Box<Foo> = make_foo();
+    let bar1: &'a Bar = &foo.bar1;
+    let _bar2: &'a Bar = &foo.bar1;
     *bar1;
 }
 

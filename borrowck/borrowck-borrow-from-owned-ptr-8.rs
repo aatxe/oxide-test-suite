@@ -13,10 +13,10 @@ struct Bar {
 fn make_foo() -> Box<Foo> { panic!() }
 
 fn borrow_mut_and_base_imm() {
-    let mut foo = make_foo();
-    let bar1 = &mut foo.bar1.int1;
-    let _foo1 = &foo.bar1; //~ ERROR cannot borrow
-    let _foo2 = &*foo; //~ ERROR cannot borrow
+    let mut foo: Box<Foo> = make_foo();
+    let bar1: &'a mut isize = &mut foo.bar1.int1;
+    let _foo1: &'b Bar = &foo.bar1; //~ ERROR cannot borrow
+    let _foo2: &'c Foo = &*foo; //~ ERROR cannot borrow
     *bar1;
 }
 

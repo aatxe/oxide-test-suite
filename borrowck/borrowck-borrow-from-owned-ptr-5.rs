@@ -13,9 +13,9 @@ struct Bar {
 fn make_foo() -> Box<Foo> { panic!() }
 
 fn borrow_both_fields_mut() {
-    let mut foo = make_foo();
-    let bar1 = &mut foo.bar1;
-    let _bar2 = &mut foo.bar2;
+    let mut foo: Box<Foo> = make_foo();
+    let bar1: &'a mut Bar = &mut foo.bar1;
+    let _bar2: &'b mut Bar = &mut foo.bar2;
     *bar1;
 }
 
