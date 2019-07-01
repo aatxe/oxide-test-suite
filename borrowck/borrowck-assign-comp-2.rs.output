@@ -3,7 +3,7 @@ error: (Syntax.SafetyErr (("unknown_file", (9, 4), (9, 5)),
           (Syntax.Shared, (Syntax.FieldProj ((Syntax.Var "p"), "y")))))
 invalid global environment:
  [(Syntax.RecStructDef
-     ("Point", [], [],
+     (false, "Point", [], [],
       [("x", (("unknown_file", (1, 18), (1, 23)), (Syntax.BaseTy Syntax.U32)));
         ("y",
          (("unknown_file", (1, 28), (1, 33)), (Syntax.BaseTy Syntax.U32)))

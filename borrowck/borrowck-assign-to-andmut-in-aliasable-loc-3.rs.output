@@ -14,7 +14,7 @@ error: (Syntax.PermissionErr (("unknown_file", (9, 4), (9, 5)),
           ))
 invalid global environment:
  [(Syntax.RecStructDef
-     ("SS", [(("unknown_file", (4, 10), (4, 11)), "a")], [],
+     (false, "SS", [(("unknown_file", (4, 10), (4, 11)), "a")], [],
       [("pointer",
         (("unknown_file", (5, 13), (5, 14)),
          (Syntax.Ref ((("unknown_file", (5, 14), (5, 15)), "a"),

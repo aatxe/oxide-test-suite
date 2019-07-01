@@ -3,14 +3,14 @@ error: (Syntax.SafetyErr (("unknown_file", (12, 25), (12, 26)),
           (Syntax.Unique, (Syntax.IndexProj ((Syntax.Var "x"), 0)))))
 invalid global environment:
  [(Syntax.TupStructDef
-     ("Foo", [], [],
+     (false, "Foo", [], [],
       [(("unknown_file", (5, 11), (5, 14)),
         (Syntax.Struct ("Box", [],
            [(("unknown_file", (5, 15), (5, 20)), (Syntax.BaseTy Syntax.U32))]
            )));
         (("unknown_file", (5, 23), (5, 28)), (Syntax.BaseTy Syntax.U32))]));
    (Syntax.TupStructDef
-      ("Bar", [], [],
+      (false, "Bar", [], [],
        [(("unknown_file", (7, 11), (7, 16)), (Syntax.BaseTy Syntax.U32));
          (("unknown_file", (7, 18), (7, 23)), (Syntax.BaseTy Syntax.U32))]));
    (Syntax.FnDef
