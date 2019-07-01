@@ -6,7 +6,8 @@ fn id<T>(x: T) -> T { x }
 struct Foo(isize);
 
 fn foo<'a>() -> &'a isize {
-    let &Foo(ref x) = &id(Foo(3));
+    let tmp: Foo = id::<Foo>(Foo(3));
+    let x: &'x isize = &tmp.0;
     x //~ ERROR cannot return value referencing temporary value
 }
 
