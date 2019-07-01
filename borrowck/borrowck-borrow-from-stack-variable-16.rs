@@ -13,9 +13,9 @@ struct Bar {
 fn make_foo() -> Foo { panic!() }
 
 fn borrow_long_path_both_mut() {
-    let mut foo = make_foo();
-    let bar1 = &mut foo.bar1.int1;
-    let _foo1 = &mut foo.bar2.int2;
+    let mut foo: Foo = make_foo();
+    let bar1: &'a mut isize = &mut foo.bar1.int1;
+    let _foo1: &'b mut isize = &mut foo.bar2.int2;
     *bar1;
 }
 

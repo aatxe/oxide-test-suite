@@ -13,8 +13,8 @@ struct Bar {
 fn make_foo() -> Foo { panic!() }
 
 fn borrow_mut_from_imm() {
-    let foo = make_foo();
-    let bar1 = &mut foo.bar1; //~ ERROR cannot borrow
+    let foo: Foo = make_foo();
+    let bar1: &'a mut Bar = &mut foo.bar1; //~ ERROR cannot borrow
     *bar1;
 }
 

@@ -13,9 +13,9 @@ struct Bar {
 fn make_foo() -> Foo { panic!() }
 
 fn borrow_mut_and_base_mut() {
-    let mut foo = make_foo();
-    let bar1 = &mut foo.bar1.int1;
-    let _foo1 = &mut foo.bar1; //~ ERROR cannot borrow
+    let mut foo: Foo = make_foo();
+    let bar1: &'a mut isize = &mut foo.bar1.int1;
+    let _foo1: &'b mut Bar = &mut foo.bar1; //~ ERROR cannot borrow
     *bar1;
 }
 
