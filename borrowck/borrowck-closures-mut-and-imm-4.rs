@@ -3,17 +3,18 @@
 
 #![feature(box_syntax)]
 
-fn get(x: &isize) -> isize {
+fn get<'a>(x: &'a isize) -> isize {
     *x
 }
 
-fn set(x: &mut isize) {
+fn set<'a>(x: &'a mut isize) {
     *x = 4;
 }
 
 fn d() {
-    let mut x = 3;
-    let c2 = || x * 5;
+    let mut x: isize = 3;
+    let tmp0: &'a isize = &x;
+    let c2: fn() -> isize = || (*tmp0) * 5;
     x = 5;
     //~^ ERROR cannot assign to `x` because it is borrowed
     drop(c2);

@@ -3,11 +3,11 @@
 
 #![feature(box_syntax)]
 
-fn get(x: &isize) -> isize {
+fn get<'a>(x: &'a isize) -> isize {
     *x
 }
 
-fn set(x: &mut isize) {
+fn set<'a>(x: &'a mut isize) {
     *x = 4;
 }
 
@@ -16,9 +16,11 @@ fn h() {
         f: Box<isize>
     }
 
-    let mut x: Box<_> = box Foo { f: box 3 };
-    let c1 = || get(&*x.f);
-    let c2 = || *x.f = 5;
+    let mut x: Box<Foo> = box Foo { f: box 3 };
+    let tmp0: &'a isize = &*x.f;
+    let c1: fn() -> isize = || get::<'a>(tmp0);
+    let tmp1: &'b mut isize = &mut *(*x).f
+    let c2: fn() -> () = || *tmp1 = 5;
     //~^ ERROR cannot borrow `x` as mutable because it is also borrowed as immutable
     drop(c1);
 }
