@@ -3,14 +3,14 @@ error: (Syntax.SafetyErr (("unknown_file", (18, 29), (18, 30)),
           (Syntax.Shared, (Syntax.FieldProj ((Syntax.Var "foo"), "bar1")))))
 invalid global environment:
  [(Syntax.RecStructDef
-     (false, "Foo", [], [],
+     (true, "Foo", [], [],
       [("bar1",
         (("unknown_file", (3, 8), (3, 11)), (Syntax.Struct ("Bar", [], []))));
         ("bar2",
          (("unknown_file", (4, 8), (4, 11)), (Syntax.Struct ("Bar", [], []))))
         ]));
    (Syntax.RecStructDef
-      (false, "Bar", [], [],
+      (true, "Bar", [], [],
        [("int1",
          (("unknown_file", (9, 8), (9, 13)), (Syntax.BaseTy Syntax.U32)));
          ("int2",
