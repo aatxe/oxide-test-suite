@@ -1,6 +1,6 @@
 error: (Syntax.SafetyErr (("unknown_file", (18, 26), (18, 27)),
           (Syntax.Shared, (Syntax.Var "x")),
-          (Syntax.Shared, (Syntax.Var "x"))))
+          (Syntax.Unique, (Syntax.Var "x"))))
 invalid global environment:
  [(Syntax.FnDef
      ("get", [(("unknown_file", (6, 7), (6, 8)), "a")], [],
