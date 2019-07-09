@@ -5,15 +5,14 @@
 
 
 
-fn foo(t0: &mut isize) {
-    let p: &isize = &*t0; // Freezes `*t0`
-    let t1 = t0;        //~ ERROR cannot move out of `t0`
+fn foo<'x>(t0: &'x mut isize) {
+    let p: &'r isize = &*t0; // Freezes `*t0`
+    let t1: &'x mut isize = t0;        //~ ERROR cannot move out of `t0`
     *t1 = 22;
-    p.use_ref();
+    use_ref::<'r, isize>(p);
 }
 
 fn main() {
 }
 
-trait Fake { fn use_mut(&mut self) { } fn use_ref(&self) { }  }
-impl<T> Fake for T { }
+fn use_mut<'a, T>(x: &'a mut T) { } fn use_ref<'a, T>(x: &'a T) { }
