@@ -11,7 +11,7 @@ struct Bar {
 fn borrow_same_field_twice_imm_imm<'a>(foo: &'a mut Foo) {
     let _bar1: &'b1 Bar = &foo.bar1;
     let _bar2: &'b2 Bar = &foo.bar1;
-    use_imm(_bar1);
+    use_imm::<'b1>(_bar1);
 }
 fn main() {}
 
