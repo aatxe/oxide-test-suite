@@ -11,10 +11,10 @@ fn set<'a>(x: &'a mut isize) {
 
 fn a<'a>(x: &'a isize) {
     let tmp0: &'b mut isize = &mut *x;
-    let mut c1 = || set::<'b>(tmp0);
+    let mut c1: fn() -> () = || set::<'b>(tmp0);
     //~^ ERROR cannot borrow
     let tmp1: &'c mut isize = &mut *x;
-    let mut c2 = || set::<'c>(tmp1);
+    let mut c2: fn() -> () = || set::<'c>(tmp1);
     //~^ ERROR cannot borrow
     //~| ERROR two closures require unique access to `x` at the same time
     c2(); c1();
