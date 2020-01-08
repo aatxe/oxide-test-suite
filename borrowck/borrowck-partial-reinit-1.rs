@@ -6,30 +6,16 @@ struct Test2 {
 
 struct Test3(Option<Test>);
 
-impl Drop for Test {
-    fn drop(&mut self) {
-        println!("dropping!");
-    }
-}
-
-impl Drop for Test2 {
-    fn drop(&mut self) {}
-}
-
-impl Drop for Test3 {
-    fn drop(&mut self) {}
-}
-
 fn stuff() {
-    let mut t = Test2 { b: None };
-    let u = Test;
-    drop(t);
+    let mut t: Test2 = Test2 { b: None };
+    let u: Test = Test;
+    drop::<Test2>(t);
     t.b = Some(u);
     //~^ ERROR assign of moved value: `t`
 
-    let mut t = Test3(None);
-    let u = Test;
-    drop(t);
+    let mut t: Test3 = Test3(None);
+    let u: Test = Test;
+    drop::<Test3>(t);
     t.0 = Some(u);
     //~^ ERROR assign of moved value: `t`
 }
