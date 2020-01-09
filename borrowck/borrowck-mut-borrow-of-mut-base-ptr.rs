@@ -7,22 +7,21 @@
 
 fn foo<'a>(mut t0: &'a mut isize,
            mut t1: &'a mut isize) {
-    let p: &isize = &*t0;     // Freezes `*t0`
-    let mut t2 = &mut t0;   //~ ERROR cannot borrow `t0`
+    let p: &'p isize = &*t0;     // Freezes `*t0`
+    let mut t2: &'t mut &'a mut isize = &mut t0;   //~ ERROR cannot borrow `t0`
     **t2 += 1;              // Mutates `*t0`
-    p.use_ref();
+    use_ref::<'p, isize>(p);
 }
 
 fn bar<'a>(mut t0: &'a mut isize,
            mut t1: &'a mut isize) {
-    let p: &mut isize = &mut *t0; // Claims `*t0`
-    let mut t2 = &mut t0;       //~ ERROR cannot borrow `t0`
+    let p: &'p mut isize = &mut *t0; // Claims `*t0`
+    let mut t2: &'t mut &'a mut isize = &mut t0;       //~ ERROR cannot borrow `t0`
     **t2 += 1;                  // Mutates `*t0` but not through `*p`
-    p.use_mut();
+    use_mut::<'p, isize>(p);
 }
 
 fn main() {
 }
 
-trait Fake { fn use_mut(&mut self) { } fn use_ref(&self) { }  }
-impl<T> Fake for T { }
+fn use_mut<'a, T>(x: &'a mut T) { } fn use_ref<'a, T>(x: &'a T) { }
