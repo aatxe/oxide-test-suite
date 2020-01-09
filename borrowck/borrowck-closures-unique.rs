@@ -6,47 +6,47 @@
 
 
 
-fn get(x: &isize) -> isize {
+fn get<'a>(x: &'a isize) -> isize {
     *x
 }
 
-fn set(x: &mut isize) -> isize {
+fn set<'a>(x: &'a mut isize) -> isize {
     *x
 }
 
-fn a(x: &mut isize) {
-    let c1 = || get(x);
-    let c2 = || get(x);
+fn a<'a>(x: &'a mut isize) {
+    let c1: fn() -> isize = || get(x);
+    let c2: fn() -> isize = || get(x);
     c1();
     c2();
 }
 
-fn b(x: &mut isize) {
-    let c1 = || get(x);
-    let c2 = || set(x); //~ ERROR closure requires unique access to `x`
+fn b<'a>(x: &'a mut isize) {
+    let c1: fn() -> isize = || get(x);
+    let c2: fn() -> isize = || set(x); //~ ERROR closure requires unique access to `x`
     c1;
 }
 
-fn c(x: &mut isize) {
-    let c1 = || get(x);
-    let c2 = || { get(x); set(x); }; //~ ERROR closure requires unique access to `x`
+fn c<'a>(x: &'a mut isize) {
+    let c1: fn() -> isize = || get(x);
+    let c2: fn() -> isize = || { get(x); set(x); }; //~ ERROR closure requires unique access to `x`
     c1;
 }
 
-fn d(x: &mut isize) {
-    let c1 = || set(x);
-    let c2 = || set(x); //~ ERROR two closures require unique access to `x` at the same time
+fn d<'a>(x: &'a mut isize) {
+    let c1: fn() -> isize = || set(x);
+    let c2: fn() -> isize = || set(x); //~ ERROR two closures require unique access to `x` at the same time
     c1;
 }
 
 fn e(x: &'static mut isize) {
-    let c1 = |y: &'static mut isize| x = y;
+    let c1: fn(&'static mut isize) -> () = |y: &'static mut isize| x = y;
     //~^ ERROR cannot assign to `x`, as it is not declared as mutable
     c1;
 }
 
 fn f(x: &'static mut isize) {
-    let c1 = || x = panic!(); // OK assignment is unreachable.
+    let c1: fn() -> () = || x = panic!(); // OK assignment is unreachable.
     c1;
 }
 
