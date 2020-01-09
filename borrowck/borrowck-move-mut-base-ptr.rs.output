@@ -1,6 +1,8 @@
-error: (Syntax.SafetyErr (("unknown_file", (10, 28), (10, 30)),
-          (Syntax.Unique, (Syntax.Var "t0")),
-          (Syntax.Shared, (Syntax.Deref (Syntax.Var "t0")))))
+error: (Syntax.SafetyErr (
+          (Syntax.Unique, (("unknown_file", (10, 28), (10, 30)), ("t0", []))),
+          (Syntax.Shared,
+           (("unknown_file", (9, 25), (9, 27)), ("t0", [Syntax.Deref])))
+          ))
 invalid global environment:
  [(Syntax.FnDef
      ("foo", [(("unknown_file", (8, 7), (8, 8)), "x")], [],
@@ -21,7 +23,8 @@ invalid global environment:
               ))),
           (("unknown_file", (9, 23), (9, 24)),
            (Syntax.Borrow ((("unknown_file", (9, 23), (9, 24)), "p1"),
-              Syntax.Shared, (Syntax.Deref (Syntax.Var "t0"))))),
+              Syntax.Shared,
+              (("unknown_file", (9, 25), (9, 27)), ("t0", [Syntax.Deref]))))),
           (("unknown_file", (10, 4), (10, 7)),
            (Syntax.Let ("t1",
               (("unknown_file", (10, 12), (10, 13)),
@@ -31,11 +34,14 @@ invalid global environment:
                    (Syntax.BaseTy Syntax.U32))
                   ))),
               (("unknown_file", (10, 28), (10, 30)),
-               (Syntax.Move (Syntax.Var "t0"))),
+               (Syntax.Move
+                  (("unknown_file", (10, 28), (10, 30)), ("t0", [])))),
               (("", (1, 0), (1, 0)),
                (Syntax.Seq (
                   (("unknown_file", (11, 4), (11, 5)),
-                   (Syntax.Assign ((Syntax.Deref (Syntax.Var "t1")),
+                   (Syntax.Assign (
+                      (("unknown_file", (11, 5), (11, 7)),
+                       ("t1", [Syntax.Deref])),
                       (("unknown_file", (11, 10), (11, 12)),
                        (Syntax.Prim (Syntax.Num 22)))
                       ))),
@@ -49,7 +55,10 @@ invalid global environment:
                           [(("unknown_file", (12, 18), (12, 23)),
                             (Syntax.BaseTy Syntax.U32))],
                           [(("unknown_file", (12, 25), (12, 26)),
-                            (Syntax.Move (Syntax.Var "p")))]
+                            (Syntax.Move
+                               (("unknown_file", (12, 25), (12, 26)),
+                                ("p", []))))
+                            ]
                           ))),
                       (("unknown_file", (12, 27), (12, 28)),
                        (Syntax.Prim Syntax.Unit))

@@ -1,18 +1,14 @@
-error: (Syntax.SafetyErr (("unknown_file", (12, 25), (12, 26)),
-          (Syntax.Unique, (Syntax.IndexProj ((Syntax.Var "x"), 0))),
-          (Syntax.Unique, (Syntax.IndexProj ((Syntax.Var "x"), 0)))))
+error: (Syntax.SafetyErr (
+          (Syntax.Unique,
+           (("unknown_file", (12, 30), (12, 31)), ("x", [(Syntax.Index 0)]))),
+          (Syntax.Unique,
+           (("unknown_file", (11, 30), (11, 31)), ("x", [(Syntax.Index 0)])))
+          ))
 invalid global environment:
  [(Syntax.TupStructDef
-     (false, "Foo", [], [],
-      [(("unknown_file", (5, 11), (5, 14)),
-        (Syntax.Struct ("Box", [],
-           [(("unknown_file", (5, 15), (5, 20)), (Syntax.BaseTy Syntax.U32))]
-           )));
-        (("unknown_file", (5, 23), (5, 28)), (Syntax.BaseTy Syntax.U32))]));
-   (Syntax.TupStructDef
-      (false, "Bar", [], [],
-       [(("unknown_file", (7, 11), (7, 16)), (Syntax.BaseTy Syntax.U32));
-         (("unknown_file", (7, 18), (7, 23)), (Syntax.BaseTy Syntax.U32))]));
+     (false, "Bar", [], [],
+      [(("unknown_file", (7, 11), (7, 16)), (Syntax.BaseTy Syntax.U32));
+        (("unknown_file", (7, 18), (7, 23)), (Syntax.BaseTy Syntax.U32))]));
    (Syntax.FnDef
       ("main", [], [], [],
        (("unknown_file", (9, 0), (9, 2)), (Syntax.BaseTy Syntax.Unit)),
@@ -42,7 +38,10 @@ invalid global environment:
                    ))),
                (("unknown_file", (11, 25), (11, 26)),
                 (Syntax.Borrow ((("unknown_file", (11, 25), (11, 26)), "p2"),
-                   Syntax.Unique, (Syntax.IndexProj ((Syntax.Var "x"), 0))))),
+                   Syntax.Unique,
+                   (("unknown_file", (11, 30), (11, 31)),
+                    ("x", [(Syntax.Index 0)]))
+                   ))),
                (("unknown_file", (12, 4), (12, 7)),
                 (Syntax.Let ("b",
                    (("unknown_file", (12, 11), (12, 12)),
@@ -55,7 +54,9 @@ invalid global environment:
                     (Syntax.Borrow (
                        (("unknown_file", (12, 25), (12, 26)), "p1"),
                        Syntax.Unique,
-                       (Syntax.IndexProj ((Syntax.Var "x"), 0))))),
+                       (("unknown_file", (12, 30), (12, 31)),
+                        ("x", [(Syntax.Index 0)]))
+                       ))),
                    (("", (0, 0), (0, 0)),
                     (Syntax.Seq (
                        (("unknown_file", (13, 4), (13, 11)),
@@ -66,7 +67,10 @@ invalid global environment:
                            [(("unknown_file", (13, 18), (13, 21)),
                              (Syntax.BaseTy Syntax.U32))],
                            [(("unknown_file", (13, 23), (13, 24)),
-                             (Syntax.Move (Syntax.Var "a")))]
+                             (Syntax.Move
+                                (("unknown_file", (13, 23), (13, 24)),
+                                 ("a", []))))
+                             ]
                            ))),
                        (("unknown_file", (13, 25), (13, 26)),
                         (Syntax.Prim Syntax.Unit))

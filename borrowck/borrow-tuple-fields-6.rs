@@ -2,7 +2,7 @@
 
 
 
-struct Foo(Box<isize>, isize);
+// struct Foo(Box<isize>, isize);
 
 struct Bar(isize, isize);
 
