@@ -3,16 +3,16 @@ struct Foo {
 }
 
 pub fn main() {
-    let mut this = &mut Foo {
+    let mut tmp: Foo = Foo {
         x: 1,
     };
-    let mut r = || {
-        let p = &this.x;
+    let mut this: &'a mut Foo = &mut tmp;
+    let mut r: fn() -> () = || {
+        let p: &'p isize = &this.x;
         &mut this.x; //~ ERROR cannot borrow
-        p.use_ref();
+        use_ref::<'p, isize>(p);
     };
     r()
 }
 
-trait Fake { fn use_mut(&mut self) { } fn use_ref(&self) { }  }
-impl<T> Fake for T { }
+fn use_mut<'a, T>(x: &'a mut T) { } fn use_ref<'a, T>(x: &'a T) { }
