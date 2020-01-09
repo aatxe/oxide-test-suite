@@ -3,15 +3,18 @@
 // below to be accepted.
 
 fn foo<'a>(x: &'a mut u32) -> u32 {
-    let mut x = 22;
-    let y = &x;
+    let mut x: u32 = 22;
+    let y: &'b u32 = &x;
     if false {
-        return x;
+        x
+    } else {
+        x += 1; //~ ERROR
+        // println!("{}", y);
+        use_it(y);
+        0
     }
-
-    x += 1; //~ ERROR
-    println!("{}", y);
-    return 0;
 }
 
 fn main() { }
+
+fn use_it<T>(x: T) {}
