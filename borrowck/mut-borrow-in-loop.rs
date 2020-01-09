@@ -4,24 +4,22 @@ struct FuncWrapper<'a, T : 'a> {
     func : fn(&'a mut T) -> ()
 }
 
-impl<'a, T : 'a> FuncWrapper<'a, T> {
-    fn in_loop(self, arg : &'a mut T) {
-        loop {
-            (self.func)(arg) //~ ERROR cannot borrow
-        }
+fn in_loop<'a, T>(wrapper: FuncWrapper<'a, T>, arg : &'a mut T) {
+    loop {
+        (wrapper.func)(arg) //~ ERROR cannot borrow
     }
+}
 
-    fn in_while(self, arg : &'a mut T) {
-        while true {
-            (self.func)(arg) //~ ERROR cannot borrow
-        }
+fn in_while<'a, T>(wrapper: FuncWrapper<'a, T>, arg : &'a mut T) {
+    while true {
+        (wrapper.func)(arg) //~ ERROR cannot borrow
     }
+}
 
-    fn in_for(self, arg : &'a mut T) {
-        let v : Vec<()> = vec![];
-        for _ in v.iter() {
-            (self.func)(arg) //~ ERROR cannot borrow
-        }
+fn in_for(wrapper: FuncWrapper<'a, T>, arg : &'a mut T) {
+    let v : Vec<()> = vec![];
+    for _ in v.iter() {
+        (wrapper.func)(arg) //~ ERROR cannot borrow
     }
 }
 
