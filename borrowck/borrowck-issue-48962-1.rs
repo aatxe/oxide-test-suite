@@ -14,13 +14,6 @@ fn a() {
     src.next = None; //~ ERROR use of moved value: `src` [E0382]
 }
 
-fn b() {
-    let mut src: &'b mut (u32, u32) = &mut (22, 44);
-    drop::<&'b mut (u32, u32)>(src);
-    src.0 = 66; //~ ERROR use of moved value: `src` [E0382]
-}
-
 fn main() {
     a();
-    b();
 }
