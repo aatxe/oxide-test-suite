@@ -1,5 +1,5 @@
 fn foo(x: Box<isize>) -> isize {
-    let y = &*x;
+    let y: &'y isize = &*x;
     free(x); //~ ERROR cannot move out of `x` because it is borrowed
     *y
 }
