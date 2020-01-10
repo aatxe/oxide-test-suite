@@ -1,13 +1,20 @@
-error: (Syntax.PermissionErr (("unknown_file", (9, 4), (9, 5)),
-          (Syntax.Unique, (Syntax.Deref (Syntax.Var "s"))),
-          (("unknown_file", (8, 12), (8, 13)),
-           (Syntax.Ref ((("unknown_file", (8, 13), (8, 14)), "a"),
-              Syntax.Shared,
-              (("unknown_file", (8, 16), (8, 18)),
-               (Syntax.Struct ("SS",
-                  [(("unknown_file", (8, 19), (8, 20)), "a")], [])))
-              )))
-          ))
+error: (Syntax.PermissionErr (
+          (("unknown_file", (8, 16), (8, 18)),
+           (Syntax.Struct ("SS", [(("unknown_file", (8, 19), (8, 20)), "a")],
+              [],
+              (Some (("<inferred>", (-1, -1), (-1, -1)),
+                     (Syntax.Rec
+                        [("pointer",
+                          (("unknown_file", (5, 13), (5, 14)),
+                           (Syntax.Ref (
+                              (("unknown_file", (5, 14), (5, 15)), "a"),
+                              Syntax.Unique,
+                              (("unknown_file", (5, 21), (5, 26)),
+                               (Syntax.BaseTy Syntax.U32))
+                              ))))
+                          ])))
+              ))),
+          [(Syntax.Field "pointer"); Syntax.Deref], Syntax.Unique))
 invalid global environment:
  [(Syntax.RecStructDef
      (false, "SS", [(("unknown_file", (4, 10), (4, 11)), "a")], [],
@@ -26,7 +33,7 @@ invalid global environment:
              Syntax.Shared,
              (("unknown_file", (8, 16), (8, 18)),
               (Syntax.Struct ("SS",
-                 [(("unknown_file", (8, 19), (8, 20)), "a")], [])))
+                 [(("unknown_file", (8, 19), (8, 20)), "a")], [], None)))
              ))))
          ],
        (("unknown_file", (8, 0), (8, 2)), (Syntax.BaseTy Syntax.Unit)),
@@ -34,16 +41,16 @@ invalid global environment:
         (Syntax.Seq (
            (("unknown_file", (9, 4), (9, 5)),
             (Syntax.Assign (
-               (Syntax.Deref
-                  (Syntax.FieldProj ((Syntax.Deref (Syntax.Var "s")),
-                     "pointer"))),
+               (("unknown_file", (9, 7), (9, 8)),
+                ("s", [Syntax.Deref; (Syntax.Field "pointer"); Syntax.Deref])),
                (("unknown_file", (9, 4), (9, 5)),
                 (Syntax.BinOp (Syntax.Add,
                    (("unknown_file", (9, 4), (9, 5)),
                     (Syntax.Move
-                       (Syntax.Deref
-                          (Syntax.FieldProj ((Syntax.Deref (Syntax.Var "s")),
-                             "pointer"))))),
+                       (("unknown_file", (9, 7), (9, 8)),
+                        ("s",
+                         [Syntax.Deref; (Syntax.Field "pointer");
+                           Syntax.Deref])))),
                    (("unknown_file", (9, 21), (9, 22)),
                     (Syntax.Prim (Syntax.Num 1)))
                    )))

@@ -2,9 +2,11 @@ valid global environment:
  [(Syntax.RecStructDef
      (true, "Foo", [], [],
       [("bar1",
-        (("unknown_file", (3, 8), (3, 11)), (Syntax.Struct ("Bar", [], []))));
+        (("unknown_file", (3, 8), (3, 11)),
+         (Syntax.Struct ("Bar", [], [], None))));
         ("bar2",
-         (("unknown_file", (4, 8), (4, 11)), (Syntax.Struct ("Bar", [], []))))
+         (("unknown_file", (4, 8), (4, 11)),
+          (Syntax.Struct ("Bar", [], [], None))))
         ]));
    (Syntax.RecStructDef
       (true, "Bar", [], [],
@@ -15,7 +17,8 @@ valid global environment:
          ]));
    (Syntax.FnDef
       ("make_foo", [], [], [],
-       (("unknown_file", (13, 17), (13, 20)), (Syntax.Struct ("Foo", [], []))),
+       (("unknown_file", (13, 17), (13, 20)),
+        (Syntax.Struct ("Foo", [], [], None))),
        (("unknown_file", (13, 23), (13, 28)),
         (Syntax.Abort "abort: no message provided"))));
    (Syntax.FnDef
@@ -24,7 +27,7 @@ valid global environment:
        (("unknown_file", (16, 4), (16, 7)),
         (Syntax.Let ("foo",
            (("unknown_file", (16, 17), (16, 20)),
-            (Syntax.Struct ("Foo", [], []))),
+            (Syntax.Struct ("Foo", [], [], None))),
            (("unknown_file", (16, 23), (16, 31)),
             (Syntax.App (
                (("unknown_file", (16, 23), (16, 31)), (Syntax.Fn "make_foo")),
@@ -40,9 +43,8 @@ valid global environment:
                (("unknown_file", (17, 30), (17, 31)),
                 (Syntax.Borrow ((("unknown_file", (17, 30), (17, 31)), "p2"),
                    Syntax.Unique,
-                   (Syntax.FieldProj (
-                      (Syntax.FieldProj ((Syntax.Var "foo"), "bar1")), "int1"
-                      ))
+                   (("unknown_file", (17, 35), (17, 38)),
+                    ("foo", [(Syntax.Field "bar1"); (Syntax.Field "int1")]))
                    ))),
                (("unknown_file", (18, 4), (18, 7)),
                 (Syntax.Let ("_foo1",
@@ -56,14 +58,16 @@ valid global environment:
                     (Syntax.Borrow (
                        (("unknown_file", (18, 31), (18, 32)), "p1"),
                        Syntax.Unique,
-                       (Syntax.FieldProj (
-                          (Syntax.FieldProj ((Syntax.Var "foo"), "bar2")),
-                          "int2"))
+                       (("unknown_file", (18, 36), (18, 39)),
+                        ("foo",
+                         [(Syntax.Field "bar2"); (Syntax.Field "int2")]))
                        ))),
                    (("", (0, 0), (0, 0)),
                     (Syntax.Seq (
                        (("unknown_file", (19, 4), (19, 5)),
-                        (Syntax.Move (Syntax.Deref (Syntax.Var "bar1")))),
+                        (Syntax.Move
+                           (("unknown_file", (19, 5), (19, 9)),
+                            ("bar1", [Syntax.Deref])))),
                        (("unknown_file", (19, 9), (19, 10)),
                         (Syntax.Prim Syntax.Unit))
                        )))
