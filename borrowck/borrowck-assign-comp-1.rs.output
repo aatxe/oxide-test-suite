@@ -1,6 +1,7 @@
-error: (Syntax.SafetyErr (("unknown_file", (10, 4), (10, 5)),
-          (Syntax.Unique, (Syntax.FieldProj ((Syntax.Var "p"), "x"))),
-          (Syntax.Shared, (Syntax.Var "p"))))
+error: (Syntax.SafetyErr (
+          (Syntax.Unique,
+           (("unknown_file", (10, 4), (10, 5)), ("p", [(Syntax.Field "x")]))),
+          (Syntax.Shared, (("unknown_file", (5, 24), (5, 25)), ("p", [])))))
 invalid global environment:
  [(Syntax.RecStructDef
      (false, "Point", [], [],
@@ -14,7 +15,7 @@ invalid global environment:
        (("unknown_file", (4, 4), (4, 7)),
         (Syntax.Let ("p",
            (("unknown_file", (4, 15), (4, 20)),
-            (Syntax.Struct ("Point", [], []))),
+            (Syntax.Struct ("Point", [], [], None))),
            (("unknown_file", (4, 23), (4, 28)),
             (Syntax.RecStruct ("Point", [], [],
                [("x",
@@ -31,16 +32,18 @@ invalid global environment:
                 (Syntax.Ref ((("unknown_file", (5, 12), (5, 13)), "q"),
                    Syntax.Shared,
                    (("unknown_file", (5, 15), (5, 20)),
-                    (Syntax.Struct ("Point", [], [])))
+                    (Syntax.Struct ("Point", [], [], None)))
                    ))),
                (("unknown_file", (5, 23), (5, 24)),
                 (Syntax.Borrow ((("unknown_file", (5, 23), (5, 24)), "p1"),
-                   Syntax.Shared, (Syntax.Var "p")))),
+                   Syntax.Shared,
+                   (("unknown_file", (5, 24), (5, 25)), ("p", []))))),
                (("", (1, 0), (1, 0)),
                 (Syntax.Seq (
                    (("unknown_file", (10, 4), (10, 5)),
                     (Syntax.Assign (
-                       (Syntax.FieldProj ((Syntax.Var "p"), "x")),
+                       (("unknown_file", (10, 4), (10, 5)),
+                        ("p", [(Syntax.Field "x")])),
                        (("unknown_file", (10, 10), (10, 11)),
                         (Syntax.Prim (Syntax.Num 5)))
                        ))),
@@ -48,7 +51,8 @@ invalid global environment:
                     (Syntax.Seq (
                        (("unknown_file", (11, 4), (11, 5)),
                         (Syntax.Move
-                           (Syntax.FieldProj ((Syntax.Var "q"), "x")))),
+                           (("unknown_file", (11, 4), (11, 5)),
+                            ("q", [(Syntax.Field "x")])))),
                        (("unknown_file", (11, 7), (11, 8)),
                         (Syntax.Prim Syntax.Unit))
                        )))

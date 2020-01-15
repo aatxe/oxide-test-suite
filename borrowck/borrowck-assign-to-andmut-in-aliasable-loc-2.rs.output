@@ -16,7 +16,7 @@ valid global environment:
              Syntax.Unique,
              (("unknown_file", (8, 20), (8, 22)),
               (Syntax.Struct ("SS",
-                 [(("unknown_file", (8, 23), (8, 24)), "a")], [])))
+                 [(("unknown_file", (8, 23), (8, 24)), "a")], [], None)))
              ))))
          ],
        (("unknown_file", (8, 0), (8, 2)), (Syntax.BaseTy Syntax.Unit)),
@@ -24,16 +24,16 @@ valid global environment:
         (Syntax.Seq (
            (("unknown_file", (9, 4), (9, 5)),
             (Syntax.Assign (
-               (Syntax.Deref
-                  (Syntax.FieldProj ((Syntax.Deref (Syntax.Var "s")),
-                     "pointer"))),
+               (("unknown_file", (9, 7), (9, 8)),
+                ("s", [Syntax.Deref; (Syntax.Field "pointer"); Syntax.Deref])),
                (("unknown_file", (9, 4), (9, 5)),
                 (Syntax.BinOp (Syntax.Add,
                    (("unknown_file", (9, 4), (9, 5)),
                     (Syntax.Move
-                       (Syntax.Deref
-                          (Syntax.FieldProj ((Syntax.Deref (Syntax.Var "s")),
-                             "pointer"))))),
+                       (("unknown_file", (9, 7), (9, 8)),
+                        ("s",
+                         [Syntax.Deref; (Syntax.Field "pointer");
+                           Syntax.Deref])))),
                    (("unknown_file", (9, 21), (9, 22)),
                     (Syntax.Prim (Syntax.Num 1)))
                    )))

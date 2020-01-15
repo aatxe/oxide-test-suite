@@ -1,6 +1,5 @@
 error: (Syntax.SafetyErr (
-          (Syntax.Shared,
-           (("unknown_file", (5, 27), (5, 28)), ("b", [Syntax.Deref]))),
+          (Syntax.Unique, (("unknown_file", (6, 8), (6, 10)), ("_a", []))),
           (Syntax.Unique, (("unknown_file", (3, 30), (3, 32)), ("_a", [])))))
 invalid global environment:
  [(Syntax.FnDef

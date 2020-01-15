@@ -15,8 +15,8 @@ fn set<'a>(x: &'a mut isize) -> isize {
 }
 
 fn a<'a>(x: &'a mut isize) {
-    let c1: fn() -> isize = || get(x);
-    let c2: fn() -> isize = || get(x);
+    let c1: fn() -> isize = || get::<'a>(x);
+    let c2: fn() -> isize = || get::<'a>(x);
     c1();
     c2();
 }

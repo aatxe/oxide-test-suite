@@ -1,17 +1,25 @@
-error: (Syntax.PermissionErr (("unknown_file", (9, 4), (9, 5)),
-          (Syntax.Unique, (Syntax.Deref (Syntax.Var "s"))),
-          (("unknown_file", (8, 12), (8, 13)),
-           (Syntax.Ref ((("unknown_file", (8, 13), (8, 14)), "a"),
-              Syntax.Shared,
-              (("unknown_file", (8, 16), (8, 17)),
-               (Syntax.Ref ((("unknown_file", (8, 17), (8, 18)), "a"),
-                  Syntax.Unique,
-                  (("unknown_file", (8, 24), (8, 26)),
-                   (Syntax.Struct ("SS",
-                      [(("unknown_file", (8, 27), (8, 28)), "a")], [])))
+error: (Syntax.PermissionErr (
+          (("unknown_file", (8, 16), (8, 17)),
+           (Syntax.Ref ((("unknown_file", (8, 17), (8, 18)), "a"),
+              Syntax.Unique,
+              (("unknown_file", (8, 24), (8, 26)),
+               (Syntax.Struct ("SS",
+                  [(("unknown_file", (8, 27), (8, 28)), "a")], [],
+                  (Some (("<inferred>", (-1, -1), (-1, -1)),
+                         (Syntax.Rec
+                            [("pointer",
+                              (("unknown_file", (5, 13), (5, 14)),
+                               (Syntax.Ref (
+                                  (("unknown_file", (5, 14), (5, 15)), "a"),
+                                  Syntax.Unique,
+                                  (("unknown_file", (5, 21), (5, 26)),
+                                   (Syntax.BaseTy Syntax.U32))
+                                  ))))
+                              ])))
                   )))
-              )))
-          ))
+              ))),
+          [Syntax.Deref; (Syntax.Field "pointer"); Syntax.Deref],
+          Syntax.Unique))
 invalid global environment:
  [(Syntax.RecStructDef
      (false, "SS", [(("unknown_file", (4, 10), (4, 11)), "a")], [],
@@ -33,7 +41,7 @@ invalid global environment:
                  Syntax.Unique,
                  (("unknown_file", (8, 24), (8, 26)),
                   (Syntax.Struct ("SS",
-                     [(("unknown_file", (8, 27), (8, 28)), "a")], [])))
+                     [(("unknown_file", (8, 27), (8, 28)), "a")], [], None)))
                  )))
              ))))
          ],
@@ -42,18 +50,18 @@ invalid global environment:
         (Syntax.Seq (
            (("unknown_file", (9, 4), (9, 5)),
             (Syntax.Assign (
-               (Syntax.Deref
-                  (Syntax.FieldProj (
-                     (Syntax.Deref (Syntax.Deref (Syntax.Var "s"))),
-                     "pointer"))),
+               (("unknown_file", (9, 8), (9, 9)),
+                ("s",
+                 [Syntax.Deref; Syntax.Deref; (Syntax.Field "pointer");
+                   Syntax.Deref])),
                (("unknown_file", (9, 4), (9, 5)),
                 (Syntax.BinOp (Syntax.Add,
                    (("unknown_file", (9, 4), (9, 5)),
                     (Syntax.Move
-                       (Syntax.Deref
-                          (Syntax.FieldProj (
-                             (Syntax.Deref (Syntax.Deref (Syntax.Var "s"))),
-                             "pointer"))))),
+                       (("unknown_file", (9, 8), (9, 9)),
+                        ("s",
+                         [Syntax.Deref; Syntax.Deref;
+                           (Syntax.Field "pointer"); Syntax.Deref])))),
                    (("unknown_file", (9, 22), (9, 23)),
                     (Syntax.Prim (Syntax.Num 1)))
                    )))
