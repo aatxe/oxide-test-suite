@@ -1,7 +1,7 @@
-struct Node {
-    elem: i32,
-    next: Option<Box<Node>>,
-}
+// struct Node {
+//     elem: i32,
+//     next: Option<Box<Node>>,
+// }
 
 fn b() {
     let mut tmp: (u32, u32) = (22, 44);
