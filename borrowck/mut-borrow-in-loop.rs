@@ -17,8 +17,8 @@ fn in_while<'a, T>(wrapper: FuncWrapper<'a, T>, arg : &'a mut T) {
 }
 
 fn in_for(wrapper: FuncWrapper<'a, T>, arg : &'a mut T) {
-    let v : Vec<()> = vec![];
-    for _ in v.iter() {
+    let v : Vec<()> = Vec::new();
+    for elem in Vec::iter(v) {
         (wrapper.func)(arg) //~ ERROR cannot borrow
     }
 }
