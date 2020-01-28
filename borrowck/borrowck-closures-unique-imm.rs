@@ -8,8 +8,8 @@ pub fn main() {
     };
     let mut this: &'a mut Foo = &mut tmp;
     let mut r: fn() -> () = || {
-        let p: &'p isize = &this.x;
-        &mut this.x; //~ ERROR cannot borrow
+        let p: &'p isize = &(*this).x;
+        &mut (*this).x; //~ ERROR cannot borrow
         use_ref::<'p, isize>(p);
     };
     r()
