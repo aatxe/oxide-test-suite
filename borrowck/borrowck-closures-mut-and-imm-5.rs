@@ -17,7 +17,7 @@ fn e() {
     let c1: fn() -> isize = || get::<'a>(tmp0);
     x = 5;
     //~^ ERROR cannot assign to `x` because it is borrowed
-    drop(c1);
+    drop::<fn() -> isize>(c1);
 }
 
 fn main() {
