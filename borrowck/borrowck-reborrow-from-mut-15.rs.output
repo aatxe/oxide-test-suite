@@ -1,0 +1,104 @@
+error: (Syntax.PermissionErr (
+          (("unknown_file", (11, 36), (11, 39)),
+           (Syntax.Struct ("Foo", [], [],
+              (Some (("<inferred>", (-1, -1), (-1, -1)),
+                     (Syntax.Rec
+                        [("bar1",
+                          (("unknown_file", (2, 8), (2, 11)),
+                           (Syntax.Struct ("Bar", [], [],
+                              (Some (("<inferred>", (-1, -1), (-1, -1)),
+                                     (Syntax.Rec
+                                        [("int1",
+                                          (("unknown_file", (7, 8), (7, 13)),
+                                           (Syntax.BaseTy Syntax.U32)));
+                                          ("int2",
+                                           (("unknown_file", (8, 8), (8, 13)),
+                                            (Syntax.BaseTy Syntax.U32)))
+                                          ])))
+                              ))));
+                          ("bar2",
+                           (("unknown_file", (3, 8), (3, 11)),
+                            (Syntax.Struct ("Bar", [], [],
+                               (Some (("<inferred>", (-1, -1), (-1, -1)),
+                                      (Syntax.Rec
+                                         [("int1",
+                                           (("unknown_file", (7, 8), (7, 13)),
+                                            (Syntax.BaseTy Syntax.U32)));
+                                           ("int2",
+                                            (("unknown_file", (8, 8), (8, 13)),
+                                             (Syntax.BaseTy Syntax.U32)))
+                                           ])))
+                               ))))
+                          ])))
+              ))),
+          [(Syntax.Field "bar1")], Syntax.Unique))
+invalid global environment:
+ [(Syntax.RecStructDef
+     (false, "Foo", [], [],
+      [("bar1",
+        (("unknown_file", (2, 8), (2, 11)),
+         (Syntax.Struct ("Bar", [], [], None))));
+        ("bar2",
+         (("unknown_file", (3, 8), (3, 11)),
+          (Syntax.Struct ("Bar", [], [], None))))
+        ]));
+   (Syntax.RecStructDef
+      (false, "Bar", [], [],
+       [("int1",
+         (("unknown_file", (7, 8), (7, 13)), (Syntax.BaseTy Syntax.U32)));
+         ("int2",
+          (("unknown_file", (8, 8), (8, 13)), (Syntax.BaseTy Syntax.U32)))
+         ]));
+   (Syntax.FnDef
+      ("borrow_mut_from_imm", [(("unknown_file", (11, 23), (11, 24)), "a")],
+       [],
+       [("foo",
+         (("unknown_file", (11, 32), (11, 33)),
+          (Syntax.Ref ((("unknown_file", (11, 33), (11, 34)), "a"),
+             Syntax.Shared,
+             (("unknown_file", (11, 36), (11, 39)),
+              (Syntax.Struct ("Foo", [], [], None)))
+             ))))
+         ],
+       (("unknown_file", (11, 0), (11, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (12, 4), (12, 7)),
+        (Syntax.Let ("_bar1",
+           (("unknown_file", (12, 15), (12, 16)),
+            (Syntax.Ref ((("unknown_file", (12, 16), (12, 17)), "mut"),
+               Syntax.Shared,
+               (("unknown_file", (12, 21), (12, 24)),
+                (Syntax.Struct ("Bar", [], [], None)))
+               ))),
+           (("unknown_file", (12, 27), (12, 28)),
+            (Syntax.Borrow ((("unknown_file", (12, 27), (12, 28)), "p1"),
+               Syntax.Unique,
+               (("unknown_file", (12, 34), (12, 37)),
+                ("foo", [Syntax.Deref; (Syntax.Field "bar1")]))
+               ))),
+           (("unknown_file", (12, 43), (12, 44)), (Syntax.Prim Syntax.Unit))
+           )))));
+   (Syntax.FnDef
+      ("main", [], [], [],
+       (("unknown_file", (15, 0), (15, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (15, 10), (15, 12)), (Syntax.Prim Syntax.Unit))));
+   (Syntax.FnDef
+      ("use_mut", [(("unknown_file", (17, 11), (17, 12)), "a")], ["T"],
+       [("",
+         (("unknown_file", (17, 21), (17, 22)),
+          (Syntax.Ref ((("unknown_file", (17, 22), (17, 23)), "a"),
+             Syntax.Unique,
+             (("unknown_file", (17, 29), (17, 30)), (Syntax.TyVar "T"))))))
+         ],
+       (("unknown_file", (17, 0), (17, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (17, 32), (17, 35)), (Syntax.Prim Syntax.Unit))));
+   (Syntax.FnDef
+      ("use_imm", [(("unknown_file", (18, 11), (18, 12)), "a")], ["T"],
+       [("",
+         (("unknown_file", (18, 21), (18, 22)),
+          (Syntax.Ref ((("unknown_file", (18, 22), (18, 23)), "a"),
+             Syntax.Shared,
+             (("unknown_file", (18, 25), (18, 26)), (Syntax.TyVar "T"))))))
+         ],
+       (("unknown_file", (18, 0), (18, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (18, 28), (18, 31)), (Syntax.Prim Syntax.Unit))))
+   ]
