@@ -5,7 +5,7 @@ struct Sn<'a> {
     pointer: &'a mut isize
 }
 
-fn copy_borrowed_ptr<'a,'b>(p: &'a mut Sn<'b>) -> Sn<'b> {
+fn copy_borrowed_ptr<'a, 'b>(p: &'a mut Sn<'b>) -> Sn<'b> {
     Sn::<'b> { pointer: &mut *(*p).pointer }
     //~^ ERROR lifetime mismatch
 }
