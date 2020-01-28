@@ -1,13 +1,13 @@
-fn a<F:Fn(isize, isize) -> isize>(mut f: F) {
+fn a(mut f: fn(isize, isize) -> isize) {
     let g: &'a mut fn(isize, isize) -> isize = &mut f;
     f(1, 2);    //~ ERROR cannot borrow `f` as immutable
     use_mut::<'a, fn(isize, isize) -> isize>(g);
 }
-fn b<F:FnMut(isize, isize) -> isize>(f: F) {
+fn b(f: fn(isize, isize) -> isize) {
     f(1, 2);    //~ ERROR cannot borrow `f` as mutable, as it is not declared as mutable
 }
 
-fn c<F:FnOnce(isize, isize) -> isize>(f: F) {
+fn c(f: fn(isize, isize) -> isize) {
     f(1, 2);
     f(1, 2);    //~ ERROR use of moved value
 }
