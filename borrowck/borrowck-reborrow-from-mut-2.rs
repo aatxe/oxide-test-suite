@@ -9,9 +9,9 @@ struct Bar {
 }
 
 fn borrow_same_field_twice_mut_imm<'a>(foo: &'a mut Foo) {
-    let _bar1: &'b1 mut Bar = &mut foo.bar1;
-    let _bar2: &'b2 Bar = &foo.bar1;  //~ ERROR cannot borrow
-    use_mut::<'b1>(_bar1);
+    let _bar1: &'b1 mut Bar = &mut (*foo).bar1;
+    let _bar2: &'b2 Bar = &(*foo).bar1;  //~ ERROR cannot borrow
+    use_mut::<'b1, Bar>(_bar1);
 }
 fn main() {}
 

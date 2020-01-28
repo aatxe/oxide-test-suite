@@ -9,7 +9,7 @@ struct Bar {
 }
 
 fn borrow_mut_from_imm<'a>(foo: &'a Foo) {
-    let _bar1: &'mut Bar = &mut foo.bar1; //~ ERROR cannot borrow
+    let _bar1: &'mut Bar = &mut (*foo).bar1; //~ ERROR cannot borrow
 }
 
 fn main() {}

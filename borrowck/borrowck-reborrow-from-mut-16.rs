@@ -9,9 +9,9 @@ struct Bar {
 }
 
 fn borrow_long_path_both_mut<'a>(foo: &'a mut Foo) {
-    let _bar1: &'b1 mut isize = &mut foo.bar1.int1;
-    let _foo1: &'f1 mut isize = &mut foo.bar2.int2;
-    use_mut::<'b1>(_bar1);
+    let _bar1: &'b1 mut isize = &mut (*foo).bar1.int1;
+    let _foo1: &'f1 mut isize = &mut (*foo).bar2.int2;
+    use_mut::<'b1, isize>(_bar1);
 }
 fn main() {}
 

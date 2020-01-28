@@ -9,9 +9,9 @@ struct Bar {
 }
 
 fn borrow_mut_and_imm<'a>(foo: &'a mut Foo) {
-    let _bar1: &'b1 mut Bar = &mut foo.bar1;
-    let _foo1: &'b2 Bar = &foo.bar2;
-    use_mut::<'b1>(_bar1);
+    let _bar1: &'b1 mut Bar = &mut (*foo).bar1;
+    let _foo1: &'b2 Bar = &(*foo).bar2;
+    use_mut::<'b1, Bar>(_bar1);
 }
 fn main() {}
 
