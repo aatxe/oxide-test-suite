@@ -12,12 +12,6 @@ fn stuff() {
     drop::<Test2>(t);
     t.b = u;
     //~^ ERROR assign of moved value: `t`
-
-    let mut t: Test3 = Test3(Test(0));
-    let u: Test = Test(1);
-    drop::<Test3>(t);
-    t.0 = u;
-    //~^ ERROR assign of moved value: `t`
 }
 
 fn main() {
