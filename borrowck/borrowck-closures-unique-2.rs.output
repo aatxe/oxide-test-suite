@@ -38,7 +38,7 @@ invalid global environment:
         (Syntax.Move
            (("unknown_file", (14, 5), (14, 6)), ("x", [Syntax.Deref]))))));
    (Syntax.FnDef
-      ("a", [(("unknown_file", (17, 5), (17, 6)), "a")], [],
+      ("b", [(("unknown_file", (17, 5), (17, 6)), "a")], [],
        [("x",
          (("unknown_file", (17, 12), (17, 13)),
           (Syntax.Ref ((("unknown_file", (17, 13), (17, 14)), "a"),
@@ -79,7 +79,7 @@ invalid global environment:
                    (("unknown_file", (19, 31), (19, 34)),
                     (Syntax.App (
                        (("unknown_file", (19, 31), (19, 34)),
-                        (Syntax.Fn "get")),
+                        (Syntax.Fn "set")),
                        [(("unknown_file", (19, 37), (19, 38)), "a")], 
                        [],
                        [(("unknown_file", (19, 41), (19, 42)),
@@ -88,27 +88,18 @@ invalid global environment:
                          ]
                        )))
                    ))),
-               (("", (1, 0), (1, 0)),
+               (("", (0, 0), (0, 0)),
                 (Syntax.Seq (
                    (("unknown_file", (20, 4), (20, 6)),
-                    (Syntax.App (
-                       (("unknown_file", (20, 4), (20, 6)), (Syntax.Fn "c1")),
-                       [], [], []))),
-                   (("", (0, 0), (0, 0)),
-                    (Syntax.Seq (
-                       (("unknown_file", (21, 4), (21, 6)),
-                        (Syntax.App (
-                           (("unknown_file", (21, 4), (21, 6)),
-                            (Syntax.Fn "c2")),
-                           [], [], []))),
-                       (("unknown_file", (21, 8), (21, 9)),
-                        (Syntax.Prim Syntax.Unit))
-                       )))
+                    (Syntax.Move
+                       (("unknown_file", (20, 4), (20, 6)), ("c1", [])))),
+                   (("unknown_file", (20, 6), (20, 7)),
+                    (Syntax.Prim Syntax.Unit))
                    )))
                )))
            )))));
    (Syntax.FnDef
       ("main", [], [], [],
-       (("unknown_file", (24, 0), (24, 2)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (24, 10), (25, 1)), (Syntax.Prim Syntax.Unit))))
+       (("unknown_file", (23, 0), (23, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (23, 10), (24, 1)), (Syntax.Prim Syntax.Unit))))
    ]
