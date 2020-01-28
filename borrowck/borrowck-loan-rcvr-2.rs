@@ -12,7 +12,7 @@ fn b() {
 
     let l: &'l mut Point = &mut p;
     let tmp0: &'a Point = &p;
-    impurem(tmp0); //~ ERROR cannot borrow
+    impurem::<'a>(tmp0); //~ ERROR cannot borrow
 
     l.x += 1;
 }
