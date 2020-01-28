@@ -1,22 +1,22 @@
-struct Test;
+struct Test(usize);
 
 struct Test2 {
-    b: Option<Test>,
+    b: Test,
 }
 
-struct Test3(Option<Test>);
+struct Test3(Test);
 
 fn stuff() {
-    let mut t: Test2 = Test2 { b: None };
-    let u: Test = Test;
+    let mut t: Test2 = Test2 { b: Test(0) };
+    let u: Test = Test(1);
     drop::<Test2>(t);
-    t.b = Some(u);
+    t.b = u;
     //~^ ERROR assign of moved value: `t`
 
-    let mut t: Test3 = Test3(None);
-    let u: Test = Test;
+    let mut t: Test3 = Test3(Test(0));
+    let u: Test = Test(1);
     drop::<Test3>(t);
-    t.0 = Some(u);
+    t.0 = u;
     //~^ ERROR assign of moved value: `t`
 }
 
