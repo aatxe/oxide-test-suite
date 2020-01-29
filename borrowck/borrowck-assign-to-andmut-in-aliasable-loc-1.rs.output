@@ -7,7 +7,7 @@ error: (Syntax.PermissionErr (
                         [("pointer",
                           (("unknown_file", (5, 13), (5, 14)),
                            (Syntax.Ref (
-                              (("unknown_file", (5, 14), (5, 15)), "a"),
+                              (("unknown_file", (8, 19), (8, 20)), "a"),
                               Syntax.Unique,
                               (("unknown_file", (5, 21), (5, 26)),
                                (Syntax.BaseTy Syntax.U32))
