@@ -1,12 +1,12 @@
 // Suggest not mutably borrowing a mutable reference
 
+
 fn main() {
-    let tmp: i32 = 0;
-    f::<'tmp>(&mut tmp)
+    f(&mut 0)
 }
 
-fn f<'b>(b: &'b mut i32) {
-    g::<'b>(&mut b) //~ ERROR cannot borrow
+fn f(b: &mut i32) {
+    g(&mut b) //~ ERROR cannot borrow
 }
 
-fn g<'a>(_: &'a mut i32) {}
+fn g(_: &mut i32) {}
