@@ -1,24 +1,21 @@
 error: (Syntax.PermissionErr (
           (("unknown_file", (7, 16), (7, 17)),
-           (Syntax.Ref ((("unknown_file", (7, 17), (7, 18)), "b"),
+           (Syntax.Ref ((("unknown_file", (7, 17), (7, 18)), "a"),
               Syntax.Unique,
               (("unknown_file", (7, 24), (7, 29)), (Syntax.BaseTy Syntax.U32))
               ))),
           [Syntax.Deref], Syntax.Unique))
 invalid global environment:
  [(Syntax.FnDef
-     ("foo",
-      [(("unknown_file", (6, 7), (6, 8)), "a");
-        (("unknown_file", (6, 11), (6, 12)), "b")],
-      [],
+     ("foo", [(("unknown_file", (6, 7), (6, 8)), "a")], [],
       [("t0",
-        (("unknown_file", (6, 19), (6, 20)),
-         (Syntax.Ref ((("unknown_file", (6, 20), (6, 21)), "a"),
+        (("unknown_file", (6, 15), (6, 16)),
+         (Syntax.Ref ((("unknown_file", (6, 16), (6, 17)), "a"),
             Syntax.Shared,
-            (("unknown_file", (6, 23), (6, 24)),
-             (Syntax.Ref ((("unknown_file", (6, 24), (6, 25)), "b"),
+            (("unknown_file", (6, 19), (6, 20)),
+             (Syntax.Ref ((("unknown_file", (6, 20), (6, 21)), "a"),
                 Syntax.Unique,
-                (("unknown_file", (6, 31), (6, 36)),
+                (("unknown_file", (6, 27), (6, 32)),
                  (Syntax.BaseTy Syntax.U32))
                 )))
             ))))
@@ -30,7 +27,7 @@ invalid global environment:
            (Syntax.Ref ((("unknown_file", (7, 13), (7, 14)), "a"),
               Syntax.Shared,
               (("unknown_file", (7, 16), (7, 17)),
-               (Syntax.Ref ((("unknown_file", (7, 17), (7, 18)), "b"),
+               (Syntax.Ref ((("unknown_file", (7, 17), (7, 18)), "a"),
                   Syntax.Unique,
                   (("unknown_file", (7, 24), (7, 29)),
                    (Syntax.BaseTy Syntax.U32))
