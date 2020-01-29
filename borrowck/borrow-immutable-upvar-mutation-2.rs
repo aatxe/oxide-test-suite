@@ -10,6 +10,6 @@ fn to_fn(f: fn()) -> fn() { f }
 fn main() {
     // By-ref captures
     let mut y: usize = 0;
-    let tmp: &'t mut usize = &mut y;
+    let tmp: &'t usize = &y;
     let _g: fn() = to_fn(|| set::<'t>(tmp)); //~ ERROR cannot borrow
 }

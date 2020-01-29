@@ -10,5 +10,6 @@ fn to_fn(f: fn()) -> fn() { f }
 fn main() {
     // By-ref captures
     let mut x: usize = 0;
-    let _f: fn() = to_fn(|| x = 42); //~ ERROR cannot assign
+    let tmp0: &'t0 usize = &x;
+    let _f: fn() = to_fn(|| *tmp0 = 42); //~ ERROR cannot assign
 }
