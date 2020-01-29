@@ -10,9 +10,10 @@ fn set<'a>(x: &'a mut isize) {
 
 fn c() {
     let mut x: usize = 3;
-    let c1: fn() = to_fn_mut(|| x = 5);
     let tmp0: &'t0 mut usize = &mut x;
-    let c2: fn() = to_fn_mut(|| set::<'t0>(tmp0)); //~ ERROR cannot borrow `x` as mutable more than once
+    let c1: fn() = to_fn_mut(|| *tmp0 = 5);
+    let tmp1: &'t1 mut usize = &mut x;
+    let c2: fn() = to_fn_mut(|| set::<'t1>(tmp1)); //~ ERROR cannot borrow `x` as mutable more than once
     c1;
 }
 
