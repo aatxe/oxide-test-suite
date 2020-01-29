@@ -1,4 +1,11 @@
-valid global environment:
+error: (Syntax.SafetyErr (
+          (Syntax.Shared,
+           (("unknown_file", (8, 26), (8, 28)),
+            ("t0", [Syntax.Deref; Syntax.Deref]))),
+          (Syntax.Unique,
+           (("unknown_file", (7, 42), (7, 44)), ("t0", [Syntax.Deref])))
+          ))
+invalid global environment:
  [(Syntax.FnDef
      ("foo3",
       [(("unknown_file", (6, 8), (6, 9)), "a");

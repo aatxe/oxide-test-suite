@@ -1,4 +1,4 @@
-error: (Syntax.PartiallyMovedPath (
+error: (Syntax.PartiallyMovedExprPath (
           (("unknown_file", (10, 15), (10, 20)),
            (Syntax.Struct ("Test3", [], [],
               (Some (("<inferred>", (-1, -1), (-1, -1)),
