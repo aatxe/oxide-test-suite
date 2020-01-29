@@ -60,17 +60,11 @@ invalid global environment:
                 (Syntax.App (
                    (("unknown_file", (8, 8), (8, 12)), (Syntax.Fn "drop")),
                    [],
-                   [(("unknown_file", (8, 15), (8, 25)),
-                     (Syntax.Tup
-                        [(("unknown_file", (8, 16), (8, 19)),
-                          (Syntax.Struct ("Sty", [], [], None)));
-                          (("unknown_file", (8, 21), (8, 24)),
-                           (Syntax.BaseTy Syntax.U32))
-                          ]))
-                     ],
-                   [(("unknown_file", (8, 27), (8, 28)),
+                   [(("unknown_file", (8, 15), (8, 20)),
+                     (Syntax.Struct ("Spair", [], [], None)))],
+                   [(("unknown_file", (8, 22), (8, 23)),
                      (Syntax.Move
-                        (("unknown_file", (8, 27), (8, 28)), ("v", []))))
+                        (("unknown_file", (8, 22), (8, 23)), ("v", []))))
                      ]
                    ))),
                (("", (1, 0), (1, 0)),

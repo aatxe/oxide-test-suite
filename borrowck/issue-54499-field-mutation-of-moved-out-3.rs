@@ -5,7 +5,7 @@ struct Spair { x: Sty, y: i32 }
 
 fn main() {
         let v: Spair = Spair { x: Sty(0), y: 0 };
-        drop::<(Sty, i32)>(v);
+        drop::<Spair>(v);
         v.x = Sty(1);
         //~^ ERROR assign to part of moved value: `v` [E0382]
         //~| ERROR cannot assign to `v.x`, as `v` is not declared as mutable [E0594]
