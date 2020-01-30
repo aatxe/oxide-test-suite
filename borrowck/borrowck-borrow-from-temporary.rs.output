@@ -10,7 +10,7 @@ invalid global environment:
  [(Syntax.FnDef
      ("id", [], ["T"],
       [("x", (("unknown_file", (4, 12), (4, 13)), (Syntax.TyVar "T")))],
-      (("unknown_file", (4, 18), (4, 19)), (Syntax.TyVar "T")),
+      (("unknown_file", (4, 18), (4, 19)), (Syntax.TyVar "T")), [],
       (("unknown_file", (4, 22), (4, 23)),
        (Syntax.Move (("unknown_file", (4, 22), (4, 23)), ("x", []))))));
    (Syntax.TupStructDef
@@ -22,6 +22,7 @@ invalid global environment:
         (Syntax.Ref ((("unknown_file", (8, 17), (8, 18)), "a"),
            Syntax.Shared,
            (("unknown_file", (8, 20), (8, 25)), (Syntax.BaseTy Syntax.U32))))),
+       [],
        (("unknown_file", (9, 4), (9, 7)),
         (Syntax.Let ("tmp",
            (("unknown_file", (9, 13), (9, 16)),
@@ -59,6 +60,6 @@ invalid global environment:
            )))));
    (Syntax.FnDef
       ("main", [], [], [],
-       (("unknown_file", (14, 0), (14, 3)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (14, 14), (15, 1)), (Syntax.Prim Syntax.Unit))))
+       (("unknown_file", (14, 0), (14, 3)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (14, 14), (15, 1)), (Syntax.Prim Syntax.Unit))))
    ]

@@ -27,11 +27,13 @@ invalid global environment:
       ("make_foo", [], [], [],
        (("unknown_file", (13, 17), (13, 20)),
         (Syntax.Struct ("Foo", [], [], None))),
+       [],
        (("unknown_file", (13, 23), (13, 28)),
         (Syntax.Abort "abort: no message provided"))));
    (Syntax.FnDef
       ("borrow_same_field_twice_imm_mut", [], [], [],
-       (("unknown_file", (15, 0), (15, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (15, 0), (15, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
        (("unknown_file", (16, 4), (16, 7)),
         (Syntax.Let ("foo",
            (("unknown_file", (16, 17), (16, 20)),
@@ -83,6 +85,6 @@ invalid global environment:
            )))));
    (Syntax.FnDef
       ("main", [], [], [],
-       (("unknown_file", (22, 0), (22, 2)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (22, 10), (22, 12)), (Syntax.Prim Syntax.Unit))))
+       (("unknown_file", (22, 0), (22, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (22, 10), (22, 12)), (Syntax.Prim Syntax.Unit))))
    ]

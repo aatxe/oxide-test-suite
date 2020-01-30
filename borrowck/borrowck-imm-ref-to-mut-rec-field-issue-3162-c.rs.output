@@ -4,7 +4,8 @@ error: (Syntax.SafetyErr (
 invalid global environment:
  [(Syntax.FnDef
      ("main", [], [], [],
-      (("unknown_file", (1, 0), (1, 2)), (Syntax.BaseTy Syntax.Unit)),
+      (("unknown_file", (1, 0), (1, 2)), (Syntax.BaseTy Syntax.Unit)), 
+      [],
       (("unknown_file", (2, 4), (2, 7)),
        (Syntax.Let ("_a",
           (("unknown_file", (2, 16), (2, 19)), (Syntax.BaseTy Syntax.U32)),

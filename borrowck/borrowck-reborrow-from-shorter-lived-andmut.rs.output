@@ -27,6 +27,7 @@ invalid global environment:
        (("unknown_file", (8, 51), (8, 53)),
         (Syntax.Struct ("Sn", [(("unknown_file", (8, 54), (8, 55)), "b")],
            [], None))),
+       [],
        (("unknown_file", (9, 4), (9, 6)),
         (Syntax.RecStruct ("Sn", [(("unknown_file", (9, 9), (9, 10)), "b")],
            [],
@@ -42,7 +43,8 @@ invalid global environment:
            )))));
    (Syntax.FnDef
       ("main", [], [], [],
-       (("unknown_file", (13, 0), (13, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (13, 0), (13, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
        (("unknown_file", (14, 4), (14, 7)),
         (Syntax.Let ("x",
            (("unknown_file", (14, 15), (14, 20)), (Syntax.BaseTy Syntax.U32)),

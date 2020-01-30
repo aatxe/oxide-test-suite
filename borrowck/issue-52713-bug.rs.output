@@ -11,7 +11,8 @@ invalid global environment:
             (("unknown_file", (5, 22), (5, 25)), (Syntax.BaseTy Syntax.U32))
             ))))
         ],
-      (("unknown_file", (5, 30), (5, 33)), (Syntax.BaseTy Syntax.U32)),
+      (("unknown_file", (5, 30), (5, 33)), (Syntax.BaseTy Syntax.U32)), 
+      [],
       (("unknown_file", (6, 4), (6, 7)),
        (Syntax.Let ("x",
           (("unknown_file", (6, 15), (6, 18)), (Syntax.BaseTy Syntax.U32)),
@@ -71,11 +72,11 @@ invalid global environment:
           )))));
    (Syntax.FnDef
       ("main", [], [], [],
-       (("unknown_file", (18, 0), (18, 2)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (18, 10), (18, 13)), (Syntax.Prim Syntax.Unit))));
+       (("unknown_file", (18, 0), (18, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (18, 10), (18, 13)), (Syntax.Prim Syntax.Unit))));
    (Syntax.FnDef
       ("use_it", [], ["T"],
        [("x", (("unknown_file", (20, 16), (20, 17)), (Syntax.TyVar "T")))],
-       (("unknown_file", (20, 0), (20, 2)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (20, 19), (20, 21)), (Syntax.Prim Syntax.Unit))))
+       (("unknown_file", (20, 0), (20, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (20, 19), (20, 21)), (Syntax.Prim Syntax.Unit))))
    ]

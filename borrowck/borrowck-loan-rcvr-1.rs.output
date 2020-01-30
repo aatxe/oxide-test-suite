@@ -20,8 +20,8 @@ invalid global environment:
               (Syntax.Struct ("Point", [], [], None)))
              ))))
          ],
-       (("unknown_file", (3, 0), (3, 2)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (3, 29), (4, 1)), (Syntax.Prim Syntax.Unit))));
+       (("unknown_file", (3, 0), (3, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (3, 29), (4, 1)), (Syntax.Prim Syntax.Unit))));
    (Syntax.FnDef
       ("blockm", [(("unknown_file", (6, 10), (6, 11)), "a")], [],
        [("p",
@@ -38,13 +38,15 @@ invalid global environment:
                (Syntax.BaseTy Syntax.Unit))
               ))))
          ],
-       (("unknown_file", (6, 0), (6, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (6, 0), (6, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
        (("unknown_file", (6, 45), (6, 46)),
         (Syntax.App ((("unknown_file", (6, 45), (6, 46)), (Syntax.Fn "f")),
            [], [], [])))));
    (Syntax.FnDef
       ("a", [], [], [],
-       (("unknown_file", (8, 0), (8, 2)), (Syntax.BaseTy Syntax.Unit)),
+       (("unknown_file", (8, 0), (8, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
        (("unknown_file", (9, 4), (9, 7)),
         (Syntax.Let ("p",
            (("unknown_file", (9, 15), (9, 20)),
@@ -133,6 +135,6 @@ invalid global environment:
            )))));
    (Syntax.FnDef
       ("main", [], [], [],
-       (("unknown_file", (23, 0), (23, 2)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (23, 10), (24, 1)), (Syntax.Prim Syntax.Unit))))
+       (("unknown_file", (23, 0), (23, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (23, 10), (24, 1)), (Syntax.Prim Syntax.Unit))))
    ]

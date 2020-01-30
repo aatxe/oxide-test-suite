@@ -5,7 +5,8 @@ error: (Syntax.SafetyErr (
 invalid global environment:
  [(Syntax.FnDef
      ("main", [], [], [],
-      (("unknown_file", (3, 0), (3, 2)), (Syntax.BaseTy Syntax.Unit)),
+      (("unknown_file", (3, 0), (3, 2)), (Syntax.BaseTy Syntax.Unit)), 
+      [],
       (("unknown_file", (4, 4), (4, 7)),
        (Syntax.Let ("void",
           (("unknown_file", (4, 18), (4, 20)), (Syntax.BaseTy Syntax.Unit)),
@@ -76,8 +77,8 @@ invalid global environment:
              Syntax.Unique,
              (("unknown_file", (12, 29), (12, 30)), (Syntax.TyVar "T"))))))
          ],
-       (("unknown_file", (12, 0), (12, 2)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (12, 32), (12, 35)), (Syntax.Prim Syntax.Unit))));
+       (("unknown_file", (12, 0), (12, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (12, 32), (12, 35)), (Syntax.Prim Syntax.Unit))));
    (Syntax.FnDef
       ("use_ref", [(("unknown_file", (12, 47), (12, 48)), "a")], ["T"],
        [("x",
@@ -87,5 +88,5 @@ invalid global environment:
              (("unknown_file", (12, 61), (12, 62)), (Syntax.TyVar "T"))))))
          ],
        (("unknown_file", (12, 36), (12, 38)), (Syntax.BaseTy Syntax.Unit)),
-       (("unknown_file", (12, 64), (12, 67)), (Syntax.Prim Syntax.Unit))))
+       [], (("unknown_file", (12, 64), (12, 67)), (Syntax.Prim Syntax.Unit))))
    ]
