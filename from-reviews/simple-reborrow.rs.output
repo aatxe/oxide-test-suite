@@ -1,0 +1,38 @@
+valid global environment:
+ [(Syntax.TupStructDef
+     (false, "Point", [], [],
+      [(("unknown_file", (1, 13), (1, 16)), (Syntax.BaseTy Syntax.U32));
+        (("unknown_file", (1, 18), (1, 21)), (Syntax.BaseTy Syntax.U32))]));
+   (Syntax.FnDef
+      ("reborrow", [(("unknown_file", (3, 12), (3, 13)), "a")], [],
+       [("pt",
+         (("unknown_file", (3, 20), (3, 21)),
+          (Syntax.Ref ((("unknown_file", (3, 21), (3, 22)), "a"),
+             Syntax.Unique,
+             (("unknown_file", (3, 28), (3, 33)),
+              (Syntax.Struct ("Point", [], [], None)))
+             ))))
+         ],
+       (("unknown_file", (3, 38), (3, 39)),
+        (Syntax.Ref ((("unknown_file", (3, 39), (3, 40)), "a"),
+           Syntax.Unique,
+           (("unknown_file", (3, 46), (3, 49)), (Syntax.BaseTy Syntax.U32))))),
+       [],
+       (("unknown_file", (4, 4), (4, 7)),
+        (Syntax.Let ("r",
+           (("unknown_file", (4, 11), (4, 12)),
+            (Syntax.Ref ((("unknown_file", (4, 12), (4, 13)), "a"),
+               Syntax.Unique,
+               (("unknown_file", (4, 19), (4, 22)),
+                (Syntax.BaseTy Syntax.U32))
+               ))),
+           (("unknown_file", (4, 25), (4, 26)),
+            (Syntax.Borrow ((("unknown_file", (4, 25), (4, 26)), "p1"),
+               Syntax.Unique,
+               (("unknown_file", (4, 32), (4, 34)),
+                ("pt", [Syntax.Deref; (Syntax.Index 0)]))
+               ))),
+           (("unknown_file", (5, 4), (5, 5)),
+            (Syntax.Move (("unknown_file", (5, 4), (5, 5)), ("r", []))))
+           )))))
+   ]
