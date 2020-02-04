@@ -18,7 +18,7 @@ fn c() {
     let tmp1: &'b isize = &x;
     let c2: fn() -> isize = || (*tmp1) * 5;
     //~^ ERROR cannot borrow `x` as immutable because it is also borrowed as mutable
-    drop(c1);
+    drop::<fn() -> ()>(c1);
 }
 
 fn main() {
