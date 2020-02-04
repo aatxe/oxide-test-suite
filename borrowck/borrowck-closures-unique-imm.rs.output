@@ -3,8 +3,7 @@ error: (Syntax.SafetyErr (
            (("unknown_file", (12, 15), (12, 19)),
             ("this", [Syntax.Deref; (Syntax.Field "x")]))),
           (Syntax.Shared,
-           (("unknown_file", (11, 30), (11, 34)),
-            ("this", [Syntax.Deref; (Syntax.Field "x")])))
+           (("unknown_file", (9, 37), (9, 40)), ("tmp", [(Syntax.Field "x")])))
           ))
 invalid global environment:
  [(Syntax.RecStructDef
