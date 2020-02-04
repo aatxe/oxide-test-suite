@@ -1,10 +1,15 @@
 error: (Syntax.PermissionErr (
-          (("unknown_file", (6, 24), (6, 25)),
-           (Syntax.Ref ((("unknown_file", (6, 25), (6, 26)), "b"),
-              Syntax.Unique,
-              (("unknown_file", (6, 32), (6, 37)), (Syntax.BaseTy Syntax.U32))
+          (("unknown_file", (6, 20), (6, 21)),
+           (Syntax.Ref ((("unknown_file", (6, 21), (6, 22)), "a"),
+              Syntax.Shared,
+              (("unknown_file", (6, 24), (6, 25)),
+               (Syntax.Ref ((("unknown_file", (6, 25), (6, 26)), "b"),
+                  Syntax.Unique,
+                  (("unknown_file", (6, 32), (6, 37)),
+                   (Syntax.BaseTy Syntax.U32))
+                  )))
               ))),
-          [Syntax.Deref], Syntax.Unique))
+          [Syntax.Deref; Syntax.Deref], Syntax.Unique))
 invalid global environment:
  [(Syntax.FnDef
      ("foo4",

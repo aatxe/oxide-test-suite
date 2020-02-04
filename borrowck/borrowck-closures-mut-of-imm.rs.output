@@ -1,6 +1,11 @@
 error: (Syntax.PermissionErr (
-          (("unknown_file", (12, 16), (12, 21)), (Syntax.BaseTy Syntax.U32)),
-          [], Syntax.Unique))
+          (("unknown_file", (12, 12), (12, 13)),
+           (Syntax.Ref ((("unknown_file", (12, 13), (12, 14)), "a"),
+              Syntax.Shared,
+              (("unknown_file", (12, 16), (12, 21)),
+               (Syntax.BaseTy Syntax.U32))
+              ))),
+          [Syntax.Deref], Syntax.Unique))
 invalid global environment:
  [(Syntax.FnDef
      ("get", [(("unknown_file", (4, 7), (4, 8)), "a")], [],

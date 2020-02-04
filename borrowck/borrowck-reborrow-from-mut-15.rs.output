@@ -1,37 +1,45 @@
 error: (Syntax.PermissionErr (
-          (("unknown_file", (11, 36), (11, 39)),
-           (Syntax.Struct ("Foo", [], [],
-              (Some (("<inferred>", (-1, -1), (-1, -1)),
-                     (Syntax.Rec
-                        [("bar1",
-                          (("unknown_file", (2, 8), (2, 11)),
-                           (Syntax.Struct ("Bar", [], [],
-                              (Some (("<inferred>", (-1, -1), (-1, -1)),
-                                     (Syntax.Rec
-                                        [("int1",
-                                          (("unknown_file", (7, 8), (7, 13)),
-                                           (Syntax.BaseTy Syntax.U32)));
-                                          ("int2",
-                                           (("unknown_file", (8, 8), (8, 13)),
-                                            (Syntax.BaseTy Syntax.U32)))
-                                          ])))
-                              ))));
-                          ("bar2",
-                           (("unknown_file", (3, 8), (3, 11)),
-                            (Syntax.Struct ("Bar", [], [],
-                               (Some (("<inferred>", (-1, -1), (-1, -1)),
-                                      (Syntax.Rec
-                                         [("int1",
-                                           (("unknown_file", (7, 8), (7, 13)),
-                                            (Syntax.BaseTy Syntax.U32)));
-                                           ("int2",
-                                            (("unknown_file", (8, 8), (8, 13)),
-                                             (Syntax.BaseTy Syntax.U32)))
-                                           ])))
-                               ))))
-                          ])))
+          (("unknown_file", (11, 32), (11, 33)),
+           (Syntax.Ref ((("unknown_file", (11, 33), (11, 34)), "a"),
+              Syntax.Shared,
+              (("unknown_file", (11, 36), (11, 39)),
+               (Syntax.Struct ("Foo", [], [],
+                  (Some (("<inferred>", (-1, -1), (-1, -1)),
+                         (Syntax.Rec
+                            [("bar1",
+                              (("unknown_file", (2, 8), (2, 11)),
+                               (Syntax.Struct ("Bar", [], [],
+                                  (Some (("<inferred>", (-1, -1), (-1, -1)),
+                                         (Syntax.Rec
+                                            [("int1",
+                                              (("unknown_file", (7, 8),
+                                                (7, 13)),
+                                               (Syntax.BaseTy Syntax.U32)));
+                                              ("int2",
+                                               (("unknown_file", (8, 8),
+                                                 (8, 13)),
+                                                (Syntax.BaseTy Syntax.U32)))
+                                              ])))
+                                  ))));
+                              ("bar2",
+                               (("unknown_file", (3, 8), (3, 11)),
+                                (Syntax.Struct ("Bar", [], [],
+                                   (Some (("<inferred>", (-1, -1), (-1, -1)),
+                                          (Syntax.Rec
+                                             [("int1",
+                                               (("unknown_file", (7, 8),
+                                                 (7, 13)),
+                                                (Syntax.BaseTy Syntax.U32)));
+                                               ("int2",
+                                                (("unknown_file", (8, 8),
+                                                  (8, 13)),
+                                                 (Syntax.BaseTy Syntax.U32)))
+                                               ])))
+                                   ))))
+                              ])))
+                  )))
               ))),
-          [(Syntax.Field "bar1")], Syntax.Unique))
+          [Syntax.Deref; (Syntax.Field "bar1")], Syntax.Unique))
 invalid global environment:
  [(Syntax.RecStructDef
      (false, "Foo", [], [],

@@ -1,24 +1,30 @@
 error: (Syntax.PermissionErr (
-          (("unknown_file", (8, 16), (8, 17)),
-           (Syntax.Ref ((("unknown_file", (8, 17), (8, 18)), "a"),
-              Syntax.Unique,
-              (("unknown_file", (8, 24), (8, 26)),
-               (Syntax.Struct ("SS",
-                  [(("unknown_file", (8, 27), (8, 28)), "a")], [],
-                  (Some (("<inferred>", (-1, -1), (-1, -1)),
-                         (Syntax.Rec
-                            [("pointer",
-                              (("unknown_file", (5, 13), (5, 14)),
-                               (Syntax.Ref (
-                                  (("unknown_file", (8, 27), (8, 28)), "a"),
-                                  Syntax.Unique,
-                                  (("unknown_file", (5, 21), (5, 26)),
-                                   (Syntax.BaseTy Syntax.U32))
-                                  ))))
-                              ])))
+          (("unknown_file", (8, 12), (8, 13)),
+           (Syntax.Ref ((("unknown_file", (8, 13), (8, 14)), "a"),
+              Syntax.Shared,
+              (("unknown_file", (8, 16), (8, 17)),
+               (Syntax.Ref ((("unknown_file", (8, 17), (8, 18)), "a"),
+                  Syntax.Unique,
+                  (("unknown_file", (8, 24), (8, 26)),
+                   (Syntax.Struct ("SS",
+                      [(("unknown_file", (8, 27), (8, 28)), "a")], [],
+                      (Some (("<inferred>", (-1, -1), (-1, -1)),
+                             (Syntax.Rec
+                                [("pointer",
+                                  (("unknown_file", (5, 13), (5, 14)),
+                                   (Syntax.Ref (
+                                      (("unknown_file", (8, 27), (8, 28)),
+                                       "a"),
+                                      Syntax.Unique,
+                                      (("unknown_file", (5, 21), (5, 26)),
+                                       (Syntax.BaseTy Syntax.U32))
+                                      ))))
+                                  ])))
+                      )))
                   )))
               ))),
-          [Syntax.Deref; (Syntax.Field "pointer"); Syntax.Deref],
+          [Syntax.Deref; Syntax.Deref; (Syntax.Field "pointer"); Syntax.Deref
+            ],
           Syntax.Unique))
 invalid global environment:
  [(Syntax.RecStructDef

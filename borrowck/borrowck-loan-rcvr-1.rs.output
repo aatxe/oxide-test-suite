@@ -1,7 +1,7 @@
 error: (Syntax.SafetyErr (
           (Syntax.Unique,
            (("unknown_file", (19, 8), (19, 9)), ("p", [(Syntax.Field "x")]))),
-          (Syntax.Shared, (("unknown_file", (13, 27), (13, 28)), ("p", [])))
+          (Syntax.Shared, (("unknown_file", (17, 27), (17, 28)), ("p", [])))
           ))
 invalid global environment:
  [(Syntax.RecStructDef
