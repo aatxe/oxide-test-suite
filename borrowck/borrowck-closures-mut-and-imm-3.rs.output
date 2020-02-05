@@ -121,14 +121,20 @@ invalid global environment:
                                 (Syntax.App (
                                    (("unknown_file", (21, 4), (21, 8)),
                                     (Syntax.Fn "drop")),
-                                   [], [],
-                                   [(("unknown_file", (21, 9), (21, 11)),
+                                   [],
+                                   [(("unknown_file", (21, 11), (21, 13)),
+                                     (Syntax.Fun ([], [], [], [],
+                                        (("unknown_file", (21, 19), (21, 21)),
+                                         (Syntax.BaseTy Syntax.Unit))
+                                        )))
+                                     ],
+                                   [(("unknown_file", (21, 23), (21, 25)),
                                      (Syntax.Move
-                                        (("unknown_file", (21, 9), (21, 11)),
+                                        (("unknown_file", (21, 23), (21, 25)),
                                          ("c1", []))))
                                      ]
                                    ))),
-                               (("unknown_file", (21, 12), (21, 13)),
+                               (("unknown_file", (21, 26), (21, 27)),
                                 (Syntax.Prim Syntax.Unit))
                                )))
                            )))
