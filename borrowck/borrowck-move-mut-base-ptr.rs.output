@@ -5,7 +5,7 @@ error: (Syntax.SafetyErr (
           ))
 invalid global environment:
  [(Syntax.FnDef
-     ("foo", [(("unknown_file", (8, 7), (8, 8)), "x")], [],
+     ("foo", [], [(("unknown_file", (8, 7), (8, 8)), "x")], [],
       [("t0",
         (("unknown_file", (8, 15), (8, 16)),
          (Syntax.Ref ((("unknown_file", (8, 16), (8, 17)), "x"),
@@ -68,11 +68,12 @@ invalid global environment:
               )))
           )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (15, 0), (15, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (15, 10), (16, 1)), (Syntax.Prim Syntax.Unit))));
    (Syntax.FnDef
-      ("use_mut", [(("unknown_file", (18, 11), (18, 12)), "a")], ["T"],
+      ("use_mut", [], [(("unknown_file", (18, 11), (18, 12)), "a")], 
+       ["T"],
        [("x",
          (("unknown_file", (18, 21), (18, 22)),
           (Syntax.Ref ((("unknown_file", (18, 22), (18, 23)), "a"),
@@ -82,7 +83,8 @@ invalid global environment:
        (("unknown_file", (18, 0), (18, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (18, 32), (18, 35)), (Syntax.Prim Syntax.Unit))));
    (Syntax.FnDef
-      ("use_ref", [(("unknown_file", (18, 47), (18, 48)), "a")], ["T"],
+      ("use_ref", [], [(("unknown_file", (18, 47), (18, 48)), "a")], 
+       ["T"],
        [("x",
          (("unknown_file", (18, 57), (18, 58)),
           (Syntax.Ref ((("unknown_file", (18, 58), (18, 59)), "a"),

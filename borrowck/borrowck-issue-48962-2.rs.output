@@ -14,7 +14,7 @@ error: (Syntax.PartiallyMoved (
           ))
 invalid global environment:
  [(Syntax.FnDef
-     ("b", [], [], [],
+     ("b", [], [], [], [],
       (("unknown_file", (6, 0), (6, 2)), (Syntax.BaseTy Syntax.Unit)), 
       [],
       (("unknown_file", (7, 4), (7, 7)),
@@ -90,7 +90,7 @@ invalid global environment:
               )))
           )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (13, 0), (13, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [],
        (("", (0, 0), (0, 0)),

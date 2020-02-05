@@ -12,7 +12,7 @@ error: (Syntax.PermissionErr (
           [Syntax.Deref; Syntax.Deref], Syntax.Unique))
 invalid global environment:
  [(Syntax.FnDef
-     ("foo4",
+     ("foo4", [],
       [(("unknown_file", (6, 8), (6, 9)), "a");
         (("unknown_file", (6, 12), (6, 13)), "b")],
       [],
@@ -62,7 +62,7 @@ invalid global environment:
               )))
           )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (11, 0), (11, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (11, 10), (12, 1)), (Syntax.Prim Syntax.Unit))))
    ]

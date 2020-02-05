@@ -15,7 +15,7 @@ invalid global environment:
             ))))
         ]));
    (Syntax.FnDef
-      ("copy_borrowed_ptr", [(("unknown_file", (8, 21), (8, 22)), "a")], 
+      ("copy_borrowed_ptr", [], [(("unknown_file", (8, 21), (8, 22)), "a")],
        [],
        [("p",
          (("unknown_file", (8, 28), (8, 29)),
@@ -44,7 +44,7 @@ invalid global environment:
              ]
            )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (12, 0), (12, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [],
        (("unknown_file", (13, 4), (13, 7)),

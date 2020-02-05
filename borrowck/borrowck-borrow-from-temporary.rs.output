@@ -8,7 +8,7 @@ error: (Syntax.InvalidReturnType (
           (("unknown_file", (10, 12), (10, 13)), "x")))
 invalid global environment:
  [(Syntax.FnDef
-     ("id", [], ["T"],
+     ("id", [], [], ["T"],
       [("x", (("unknown_file", (4, 12), (4, 13)), (Syntax.TyVar "T")))],
       (("unknown_file", (4, 18), (4, 19)), (Syntax.TyVar "T")), [],
       (("unknown_file", (4, 22), (4, 23)),
@@ -17,7 +17,7 @@ invalid global environment:
       (false, "Foo", [], [],
        [(("unknown_file", (6, 11), (6, 16)), (Syntax.BaseTy Syntax.U32))]));
    (Syntax.FnDef
-      ("foo", [(("unknown_file", (8, 7), (8, 8)), "a")], [], [],
+      ("foo", [], [(("unknown_file", (8, 7), (8, 8)), "a")], [], [],
        (("unknown_file", (8, 16), (8, 17)),
         (Syntax.Ref ((("unknown_file", (8, 17), (8, 18)), "a"),
            Syntax.Shared,
@@ -59,7 +59,7 @@ invalid global environment:
                )))
            )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (14, 0), (14, 3)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (14, 14), (15, 1)), (Syntax.Prim Syntax.Unit))))
    ]

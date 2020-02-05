@@ -13,18 +13,18 @@ invalid global environment:
       ["T"],
       [("func",
         (("unknown_file", (4, 11), (4, 13)),
-         (Syntax.Fun ([], [],
+         (Syntax.Fun ([], [], [],
             [(("unknown_file", (4, 14), (4, 15)),
               (Syntax.Ref ((("unknown_file", (4, 15), (4, 16)), "a"),
                  Syntax.Unique,
                  (("unknown_file", (4, 22), (4, 23)), (Syntax.TyVar "T")))))
               ],
-            [],
+            (Syntax.Env []),
             (("unknown_file", (4, 28), (4, 30)), (Syntax.BaseTy Syntax.Unit))
             ))))
         ]));
    (Syntax.FnDef
-      ("in_while", [(("unknown_file", (7, 12), (7, 13)), "a")], ["T"],
+      ("in_while", [], [(("unknown_file", (7, 12), (7, 13)), "a")], ["T"],
        [("wrapper",
          (("unknown_file", (7, 28), (7, 39)),
           (Syntax.Struct ("FuncWrapper",
@@ -45,7 +45,7 @@ invalid global environment:
            (("unknown_file", (9, 8), (9, 11)),
             (Syntax.Let ("tmp",
                (("unknown_file", (9, 17), (9, 19)),
-                (Syntax.Fun ([], [],
+                (Syntax.Fun ([], [], [],
                    [(("unknown_file", (9, 20), (9, 21)),
                      (Syntax.Ref ((("unknown_file", (9, 21), (9, 22)), "a"),
                         Syntax.Unique,
@@ -53,7 +53,7 @@ invalid global environment:
                          (Syntax.TyVar "T"))
                         )))
                      ],
-                   [],
+                   (Syntax.Env []),
                    (("unknown_file", (9, 34), (9, 36)),
                     (Syntax.BaseTy Syntax.Unit))
                    ))),
@@ -73,7 +73,7 @@ invalid global environment:
                )))
            )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (14, 0), (14, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (14, 10), (15, 1)), (Syntax.Prim Syntax.Unit))))
    ]

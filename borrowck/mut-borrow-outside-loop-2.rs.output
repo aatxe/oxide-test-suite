@@ -6,7 +6,7 @@ error: (Syntax.SafetyErr (
           ))
 invalid global environment:
  [(Syntax.FnDef
-     ("main", [], [], [],
+     ("main", [], [], [], [],
       (("unknown_file", (3, 0), (3, 2)), (Syntax.BaseTy Syntax.Unit)), 
       [],
       (("unknown_file", (4, 4), (4, 8)),
@@ -82,7 +82,8 @@ invalid global environment:
               )))
           )))));
    (Syntax.FnDef
-      ("use_mut", [(("unknown_file", (14, 11), (14, 12)), "a")], ["T"],
+      ("use_mut", [], [(("unknown_file", (14, 11), (14, 12)), "a")], 
+       ["T"],
        [("x",
          (("unknown_file", (14, 21), (14, 22)),
           (Syntax.Ref ((("unknown_file", (14, 22), (14, 23)), "a"),
@@ -92,7 +93,8 @@ invalid global environment:
        (("unknown_file", (14, 0), (14, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (14, 32), (14, 35)), (Syntax.Prim Syntax.Unit))));
    (Syntax.FnDef
-      ("use_ref", [(("unknown_file", (14, 47), (14, 48)), "a")], ["T"],
+      ("use_ref", [], [(("unknown_file", (14, 47), (14, 48)), "a")], 
+       ["T"],
        [("x",
          (("unknown_file", (14, 57), (14, 58)),
           (Syntax.Ref ((("unknown_file", (14, 58), (14, 59)), "a"),

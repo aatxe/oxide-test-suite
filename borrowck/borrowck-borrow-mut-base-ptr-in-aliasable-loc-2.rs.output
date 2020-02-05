@@ -7,7 +7,7 @@ error: (Syntax.SafetyErr (
           ))
 invalid global environment:
  [(Syntax.FnDef
-     ("foo3",
+     ("foo3", [],
       [(("unknown_file", (6, 8), (6, 9)), "a");
         (("unknown_file", (6, 12), (6, 13)), "b")],
       [],
@@ -70,7 +70,7 @@ invalid global environment:
               )))
           )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (12, 0), (12, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (12, 10), (13, 1)), (Syntax.Prim Syntax.Unit))))
    ]

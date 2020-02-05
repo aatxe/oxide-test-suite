@@ -16,14 +16,14 @@ valid global environment:
           (("unknown_file", (10, 8), (10, 13)), (Syntax.BaseTy Syntax.U32)))
          ]));
    (Syntax.FnDef
-      ("make_foo", [], [], [],
+      ("make_foo", [], [], [], [],
        (("unknown_file", (13, 17), (13, 20)),
         (Syntax.Struct ("Foo", [], [], None))),
        [],
        (("unknown_file", (13, 23), (13, 28)),
         (Syntax.Abort "abort: no message provided"))));
    (Syntax.FnDef
-      ("borrow_same_field_twice_imm_imm", [], [], [],
+      ("borrow_same_field_twice_imm_imm", [], [], [], [],
        (("unknown_file", (15, 0), (15, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [],
        (("unknown_file", (16, 4), (16, 7)),
@@ -76,7 +76,7 @@ valid global environment:
                )))
            )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (22, 0), (22, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (22, 10), (22, 12)), (Syntax.Prim Syntax.Unit))))
    ]

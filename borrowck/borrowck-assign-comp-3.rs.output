@@ -12,7 +12,7 @@ invalid global environment:
          (("unknown_file", (1, 28), (1, 33)), (Syntax.BaseTy Syntax.U32)))
         ]));
    (Syntax.FnDef
-      ("d", [], [], [],
+      ("d", [], [], [], [],
        (("unknown_file", (3, 0), (3, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [],
        (("unknown_file", (7, 4), (7, 7)),
@@ -65,7 +65,7 @@ invalid global environment:
                )))
            )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (13, 0), (13, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (13, 10), (14, 1)), (Syntax.Prim Syntax.Unit))))
    ]

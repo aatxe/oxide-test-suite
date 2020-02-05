@@ -24,7 +24,7 @@ invalid global environment:
           (("unknown_file", (8, 8), (8, 13)), (Syntax.BaseTy Syntax.U32)))
          ]));
    (Syntax.FnDef
-      ("borrow_same_field_twice_mut_mut",
+      ("borrow_same_field_twice_mut_mut", [],
        [(("unknown_file", (11, 35), (11, 36)), "a")], [],
        [("foo",
          (("unknown_file", (11, 44), (11, 45)),
@@ -85,11 +85,12 @@ invalid global environment:
                )))
            )))));
    (Syntax.FnDef
-      ("main", [], [], [],
+      ("main", [], [], [], [],
        (("unknown_file", (16, 0), (16, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (16, 10), (16, 12)), (Syntax.Prim Syntax.Unit))));
    (Syntax.FnDef
-      ("use_mut", [(("unknown_file", (18, 11), (18, 12)), "a")], ["T"],
+      ("use_mut", [], [(("unknown_file", (18, 11), (18, 12)), "a")], 
+       ["T"],
        [("",
          (("unknown_file", (18, 21), (18, 22)),
           (Syntax.Ref ((("unknown_file", (18, 22), (18, 23)), "a"),
@@ -99,7 +100,8 @@ invalid global environment:
        (("unknown_file", (18, 0), (18, 2)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (18, 32), (18, 35)), (Syntax.Prim Syntax.Unit))));
    (Syntax.FnDef
-      ("use_imm", [(("unknown_file", (19, 11), (19, 12)), "a")], ["T"],
+      ("use_imm", [], [(("unknown_file", (19, 11), (19, 12)), "a")], 
+       ["T"],
        [("",
          (("unknown_file", (19, 21), (19, 22)),
           (Syntax.Ref ((("unknown_file", (19, 22), (19, 23)), "a"),
