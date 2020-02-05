@@ -9,7 +9,7 @@ fn a() {
     let tmp0: &'t0 mut usize = &mut x;
     let c1: fn() -> () = to_fn_mut(|| *tmp0 = 4);
     let tmp1: &'t1 mut usize = &mut x;
-    let c2: fn() = to_fn_mut(|| x = 5); //~ ERROR cannot borrow `x` as mutable more than once
+    let c2: fn() = to_fn_mut(|| *tmp1 = 5); //~ ERROR cannot borrow `x` as mutable more than once
     c1;
 }
 
