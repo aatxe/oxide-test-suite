@@ -34,15 +34,15 @@ invalid global environment:
          ]));
    (Syntax.FnDef
       ("main", [], [], [], [],
-       (("unknown_file", (8, 0), (8, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       (("unknown_file", (8, 0), (17, 1)), (Syntax.BaseTy Syntax.Unit)), 
        [],
-       (("unknown_file", (10, 8), (10, 11)),
+       (("unknown_file", (10, 8), (10, 43)),
         (Syntax.Let ("u",
            (("unknown_file", (10, 19), (10, 24)),
             (Syntax.Struct ("Tpair", [], [], None))),
-           (("unknown_file", (10, 27), (10, 32)),
+           (("unknown_file", (10, 27), (10, 42)),
             (Syntax.TupStruct ("Tpair", [], [],
-               [(("unknown_file", (10, 33), (10, 35)),
+               [(("unknown_file", (10, 33), (10, 38)),
                  (Syntax.TupStruct ("Sn", [], [],
                     [(("unknown_file", (10, 36), (10, 37)),
                       (Syntax.Prim (Syntax.Num 0)))]
@@ -53,9 +53,9 @@ invalid global environment:
                ))),
            (("", (2, 0), (2, 0)),
             (Syntax.Seq (
-               (("unknown_file", (11, 8), (11, 12)),
+               (("unknown_file", (11, 8), (11, 24)),
                 (Syntax.App (
-                   (("unknown_file", (11, 8), (11, 12)), (Syntax.Fn "drop")),
+                   (("unknown_file", (11, 8), (11, 21)), (Syntax.Fn "drop")),
                    [],
                    [(("unknown_file", (11, 15), (11, 20)),
                      (Syntax.Struct ("Tpair", [], [], None)))],
@@ -66,11 +66,11 @@ invalid global environment:
                    ))),
                (("", (1, 0), (1, 0)),
                 (Syntax.Seq (
-                   (("unknown_file", (12, 8), (12, 9)),
+                   (("unknown_file", (12, 8), (12, 19)),
                     (Syntax.Assign (
                        (("unknown_file", (12, 8), (12, 9)),
                         ("u", [(Syntax.Index 0)])),
-                       (("unknown_file", (12, 14), (12, 16)),
+                       (("unknown_file", (12, 14), (12, 19)),
                         (Syntax.TupStruct ("Sn", [], [],
                            [(("unknown_file", (12, 17), (12, 18)),
                              (Syntax.Prim (Syntax.Num 1)))]
@@ -78,7 +78,7 @@ invalid global environment:
                        ))),
                    (("", (0, 0), (0, 0)),
                     (Syntax.Seq (
-                       (("unknown_file", (14, 8), (14, 9)),
+                       (("unknown_file", (14, 8), (14, 15)),
                         (Syntax.Assign (
                            (("unknown_file", (14, 8), (14, 9)),
                             ("u", [(Syntax.Index 1)])),

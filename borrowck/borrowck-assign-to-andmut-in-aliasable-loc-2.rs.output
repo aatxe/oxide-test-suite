@@ -1,35 +1,35 @@
 valid global environment:
  [(Syntax.RecStructDef
-     (false, "SS", [(("unknown_file", (4, 10), (4, 11)), "a")], [],
+     (false, "SS", [(("unknown_file", (4, 10), (4, 12)), "a")], [],
       [("pointer",
-        (("unknown_file", (5, 13), (5, 14)),
-         (Syntax.Ref ((("unknown_file", (5, 14), (5, 15)), "a"),
+        (("unknown_file", (5, 13), (5, 26)),
+         (Syntax.Ref ((("unknown_file", (5, 14), (5, 16)), "a"),
             Syntax.Unique,
             (("unknown_file", (5, 21), (5, 26)), (Syntax.BaseTy Syntax.U32))
             ))))
         ]));
    (Syntax.FnDef
-      ("b", [], [(("unknown_file", (8, 5), (8, 6)), "a")], [],
+      ("b", [], [(("unknown_file", (8, 5), (8, 7)), "a")], [],
        [("s",
-         (("unknown_file", (8, 12), (8, 13)),
-          (Syntax.Ref ((("unknown_file", (8, 13), (8, 14)), "a"),
+         (("unknown_file", (8, 12), (8, 26)),
+          (Syntax.Ref ((("unknown_file", (8, 13), (8, 15)), "a"),
              Syntax.Unique,
-             (("unknown_file", (8, 20), (8, 22)),
+             (("unknown_file", (8, 20), (8, 26)),
               (Syntax.Struct ("SS",
-                 [(("unknown_file", (8, 23), (8, 24)), "a")], [], None)))
+                 [(("unknown_file", (8, 23), (8, 25)), "a")], [], None)))
              ))))
          ],
-       (("unknown_file", (8, 0), (8, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       (("unknown_file", (8, 0), (10, 1)), (Syntax.BaseTy Syntax.Unit)), 
        [],
        (("", (0, 0), (0, 0)),
         (Syntax.Seq (
-           (("unknown_file", (9, 4), (9, 5)),
+           (("unknown_file", (9, 4), (9, 22)),
             (Syntax.Assign (
                (("unknown_file", (9, 7), (9, 8)),
                 ("s", [Syntax.Deref; (Syntax.Field "pointer"); Syntax.Deref])),
-               (("unknown_file", (9, 4), (9, 5)),
+               (("unknown_file", (9, 4), (9, 22)),
                 (Syntax.BinOp (Syntax.Add,
-                   (("unknown_file", (9, 4), (9, 5)),
+                   (("unknown_file", (9, 4), (9, 17)),
                     (Syntax.Move
                        (("unknown_file", (9, 7), (9, 8)),
                         ("s",
@@ -42,6 +42,6 @@ valid global environment:
            (("unknown_file", (9, 22), (9, 23)), (Syntax.Prim Syntax.Unit)))))));
    (Syntax.FnDef
       ("main", [], [], [], [],
-       (("unknown_file", (12, 0), (12, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       (("unknown_file", (12, 0), (12, 12)), (Syntax.BaseTy Syntax.Unit)),
        [], (("unknown_file", (12, 10), (12, 12)), (Syntax.Prim Syntax.Unit))))
    ]

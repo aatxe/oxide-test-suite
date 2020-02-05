@@ -1,39 +1,39 @@
-error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (8, 33), (8, 34)), "a"),
-          (("unknown_file", (8, 43), (8, 44)), "b")))
+error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (8, 33), (8, 35)), "a"),
+          (("unknown_file", (8, 43), (8, 45)), "b")))
 invalid global environment:
  [(Syntax.RecStructDef
-     (false, "Sn", [(("unknown_file", (4, 10), (4, 11)), "a")], [],
+     (false, "Sn", [(("unknown_file", (4, 10), (4, 12)), "a")], [],
       [("pointer",
-        (("unknown_file", (5, 13), (5, 14)),
-         (Syntax.Ref ((("unknown_file", (5, 14), (5, 15)), "a"),
+        (("unknown_file", (5, 13), (5, 26)),
+         (Syntax.Ref ((("unknown_file", (5, 14), (5, 16)), "a"),
             Syntax.Unique,
             (("unknown_file", (5, 21), (5, 26)), (Syntax.BaseTy Syntax.U32))
             ))))
         ]));
    (Syntax.FnDef
       ("copy_borrowed_ptr", [],
-       [(("unknown_file", (8, 21), (8, 22)), "a");
-         (("unknown_file", (8, 25), (8, 26)), "b")],
+       [(("unknown_file", (8, 21), (8, 23)), "a");
+         (("unknown_file", (8, 25), (8, 27)), "b")],
        [],
        [("p",
-         (("unknown_file", (8, 32), (8, 33)),
-          (Syntax.Ref ((("unknown_file", (8, 33), (8, 34)), "a"),
+         (("unknown_file", (8, 32), (8, 46)),
+          (Syntax.Ref ((("unknown_file", (8, 33), (8, 35)), "a"),
              Syntax.Unique,
-             (("unknown_file", (8, 40), (8, 42)),
+             (("unknown_file", (8, 40), (8, 46)),
               (Syntax.Struct ("Sn",
-                 [(("unknown_file", (8, 43), (8, 44)), "b")], [], None)))
+                 [(("unknown_file", (8, 43), (8, 45)), "b")], [], None)))
              ))))
          ],
-       (("unknown_file", (8, 51), (8, 53)),
-        (Syntax.Struct ("Sn", [(("unknown_file", (8, 54), (8, 55)), "b")],
+       (("unknown_file", (8, 51), (8, 57)),
+        (Syntax.Struct ("Sn", [(("unknown_file", (8, 54), (8, 56)), "b")],
            [], None))),
        [],
-       (("unknown_file", (9, 4), (9, 6)),
-        (Syntax.RecStruct ("Sn", [(("unknown_file", (9, 9), (9, 10)), "b")],
+       (("unknown_file", (9, 4), (9, 44)),
+        (Syntax.RecStruct ("Sn", [(("unknown_file", (9, 9), (9, 11)), "b")],
            [],
            [("pointer",
-             (("unknown_file", (9, 24), (9, 25)),
-              (Syntax.Borrow ((("unknown_file", (9, 24), (9, 25)), "p1"),
+             (("unknown_file", (9, 24), (9, 42)),
+              (Syntax.Borrow ((("unknown_file", (9, 24), (9, 42)), "p1"),
                  Syntax.Unique,
                  (("unknown_file", (9, 32), (9, 33)),
                   ("p",
@@ -43,45 +43,45 @@ invalid global environment:
            )))));
    (Syntax.FnDef
       ("main", [], [], [], [],
-       (("unknown_file", (13, 0), (13, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       (("unknown_file", (13, 0), (22, 1)), (Syntax.BaseTy Syntax.Unit)), 
        [],
-       (("unknown_file", (14, 4), (14, 7)),
+       (("unknown_file", (14, 4), (14, 25)),
         (Syntax.Let ("x",
            (("unknown_file", (14, 15), (14, 20)), (Syntax.BaseTy Syntax.U32)),
            (("unknown_file", (14, 23), (14, 24)),
             (Syntax.Prim (Syntax.Num 1))),
-           (("unknown_file", (17, 8), (17, 11)),
+           (("unknown_file", (17, 8), (17, 57)),
             (Syntax.Let ("y",
-               (("unknown_file", (17, 19), (17, 21)),
+               (("unknown_file", (17, 19), (17, 25)),
                 (Syntax.Struct ("Sn",
-                   [(("unknown_file", (17, 22), (17, 23)), "x")], [], None))),
-               (("unknown_file", (17, 28), (17, 30)),
+                   [(("unknown_file", (17, 22), (17, 24)), "x")], [], None))),
+               (("unknown_file", (17, 28), (17, 56)),
                 (Syntax.RecStruct ("Sn",
-                   [(("unknown_file", (17, 33), (17, 34)), "x")], [],
+                   [(("unknown_file", (17, 33), (17, 35)), "x")], [],
                    [("pointer",
-                     (("unknown_file", (17, 48), (17, 49)),
+                     (("unknown_file", (17, 48), (17, 54)),
                       (Syntax.Borrow (
-                         (("unknown_file", (17, 48), (17, 49)), "p3"),
+                         (("unknown_file", (17, 48), (17, 54)), "p3"),
                          Syntax.Unique,
                          (("unknown_file", (17, 53), (17, 54)), ("x", []))))))
                      ]
                    ))),
-               (("unknown_file", (18, 8), (18, 11)),
+               (("unknown_file", (18, 8), (18, 60)),
                 (Syntax.Let ("z",
-                   (("unknown_file", (18, 15), (18, 17)),
+                   (("unknown_file", (18, 15), (18, 21)),
                     (Syntax.Struct ("Sn",
-                       [(("unknown_file", (18, 18), (18, 19)), "x")], 
+                       [(("unknown_file", (18, 18), (18, 20)), "x")], 
                        [], None))),
-                   (("unknown_file", (18, 24), (18, 41)),
+                   (("unknown_file", (18, 24), (18, 59)),
                     (Syntax.App (
-                       (("unknown_file", (18, 24), (18, 41)),
+                       (("unknown_file", (18, 24), (18, 51)),
                         (Syntax.Fn "copy_borrowed_ptr")),
-                       [(("unknown_file", (18, 44), (18, 45)), "y");
-                         (("unknown_file", (18, 48), (18, 49)), "x")],
+                       [(("unknown_file", (18, 44), (18, 46)), "y");
+                         (("unknown_file", (18, 48), (18, 50)), "x")],
                        [],
-                       [(("unknown_file", (18, 52), (18, 53)),
+                       [(("unknown_file", (18, 52), (18, 58)),
                          (Syntax.Borrow (
-                            (("unknown_file", (18, 52), (18, 53)), "p2"),
+                            (("unknown_file", (18, 52), (18, 58)), "p2"),
                             Syntax.Unique,
                             (("unknown_file", (18, 57), (18, 58)), ("y", []))
                             )))
@@ -89,13 +89,13 @@ invalid global environment:
                        ))),
                    (("", (1, 0), (1, 0)),
                     (Syntax.Seq (
-                       (("unknown_file", (19, 8), (19, 9)),
+                       (("unknown_file", (19, 8), (19, 23)),
                         (Syntax.Assign (
                            (("unknown_file", (19, 9), (19, 10)),
                             ("y", [(Syntax.Field "pointer"); Syntax.Deref])),
-                           (("unknown_file", (19, 8), (19, 9)),
+                           (("unknown_file", (19, 8), (19, 23)),
                             (Syntax.BinOp (Syntax.Add,
-                               (("unknown_file", (19, 8), (19, 9)),
+                               (("unknown_file", (19, 8), (19, 18)),
                                 (Syntax.Move
                                    (("unknown_file", (19, 9), (19, 10)),
                                     ("y",
@@ -106,14 +106,14 @@ invalid global environment:
                            ))),
                        (("", (0, 0), (0, 0)),
                         (Syntax.Seq (
-                           (("unknown_file", (20, 8), (20, 9)),
+                           (("unknown_file", (20, 8), (20, 23)),
                             (Syntax.Assign (
                                (("unknown_file", (20, 9), (20, 10)),
                                 ("z",
                                  [(Syntax.Field "pointer"); Syntax.Deref])),
-                               (("unknown_file", (20, 8), (20, 9)),
+                               (("unknown_file", (20, 8), (20, 23)),
                                 (Syntax.BinOp (Syntax.Add,
-                                   (("unknown_file", (20, 8), (20, 9)),
+                                   (("unknown_file", (20, 8), (20, 18)),
                                     (Syntax.Move
                                        (("unknown_file", (20, 9), (20, 10)),
                                         ("z",

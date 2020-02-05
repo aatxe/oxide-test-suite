@@ -31,9 +31,9 @@ invalid global environment:
          ]));
    (Syntax.FnDef
       ("main", [], [], [], [],
-       (("unknown_file", (6, 0), (6, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       (("unknown_file", (6, 0), (14, 1)), (Syntax.BaseTy Syntax.Unit)), 
        [],
-       (("unknown_file", (7, 8), (7, 11)),
+       (("unknown_file", (7, 8), (7, 40)),
         (Syntax.Let ("t",
            (("unknown_file", (7, 15), (7, 25)),
             (Syntax.Tup
@@ -44,7 +44,7 @@ invalid global environment:
                  ])),
            (("unknown_file", (7, 28), (7, 39)),
             (Syntax.Tup
-               [(("unknown_file", (7, 29), (7, 32)),
+               [(("unknown_file", (7, 29), (7, 35)),
                  (Syntax.TupStruct ("Sty", [], [],
                     [(("unknown_file", (7, 33), (7, 34)),
                       (Syntax.Prim (Syntax.Num 0)))]
@@ -54,9 +54,9 @@ invalid global environment:
                  ])),
            (("", (2, 0), (2, 0)),
             (Syntax.Seq (
-               (("unknown_file", (8, 8), (8, 12)),
+               (("unknown_file", (8, 8), (8, 29)),
                 (Syntax.App (
-                   (("unknown_file", (8, 8), (8, 12)), (Syntax.Fn "drop")),
+                   (("unknown_file", (8, 8), (8, 26)), (Syntax.Fn "drop")),
                    [],
                    [(("unknown_file", (8, 15), (8, 25)),
                      (Syntax.Tup
@@ -73,11 +73,11 @@ invalid global environment:
                    ))),
                (("", (1, 0), (1, 0)),
                 (Syntax.Seq (
-                   (("unknown_file", (9, 8), (9, 9)),
+                   (("unknown_file", (9, 8), (9, 20)),
                     (Syntax.Assign (
                        (("unknown_file", (9, 8), (9, 9)),
                         ("t", [(Syntax.Index 0)])),
-                       (("unknown_file", (9, 14), (9, 17)),
+                       (("unknown_file", (9, 14), (9, 20)),
                         (Syntax.TupStruct ("Sty", [], [],
                            [(("unknown_file", (9, 18), (9, 19)),
                              (Syntax.Prim (Syntax.Num 1)))]
@@ -85,7 +85,7 @@ invalid global environment:
                        ))),
                    (("", (0, 0), (0, 0)),
                     (Syntax.Seq (
-                       (("unknown_file", (12, 8), (12, 9)),
+                       (("unknown_file", (12, 8), (12, 15)),
                         (Syntax.Assign (
                            (("unknown_file", (12, 8), (12, 9)),
                             ("t", [(Syntax.Index 1)])),

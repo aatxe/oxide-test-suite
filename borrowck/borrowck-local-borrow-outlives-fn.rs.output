@@ -5,16 +5,16 @@ invalid global environment:
      ("cplusplus_mode", [], [], [],
       [("x", (("unknown_file", (1, 21), (1, 26)), (Syntax.BaseTy Syntax.U32)))
         ],
-      (("unknown_file", (1, 31), (1, 32)),
-       (Syntax.Ref ((("unknown_file", (1, 32), (1, 33)), "static"),
+      (("unknown_file", (1, 31), (1, 45)),
+       (Syntax.Ref ((("unknown_file", (1, 32), (1, 39)), "static"),
           Syntax.Shared,
           (("unknown_file", (1, 40), (1, 45)), (Syntax.BaseTy Syntax.U32))))),
       [],
-      (("unknown_file", (2, 4), (2, 5)),
-       (Syntax.Borrow ((("unknown_file", (2, 4), (2, 5)), "p1"),
+      (("unknown_file", (2, 4), (2, 6)),
+       (Syntax.Borrow ((("unknown_file", (2, 4), (2, 6)), "p1"),
           Syntax.Shared, (("unknown_file", (2, 5), (2, 6)), ("x", [])))))));
    (Syntax.FnDef
       ("main", [], [], [], [],
-       (("unknown_file", (6, 0), (6, 2)), (Syntax.BaseTy Syntax.Unit)), 
+       (("unknown_file", (6, 0), (6, 12)), (Syntax.BaseTy Syntax.Unit)), 
        [], (("unknown_file", (6, 10), (6, 12)), (Syntax.Prim Syntax.Unit))))
    ]
