@@ -2,7 +2,7 @@
 // access to the variable, whether that mutable access be used
 // for direct assignment or for taking mutable ref. Issue #6801.
 
-fn to_fn_mut(f: fn() -> ()) -> fn() -> () { f }
+fn to_fn_mut<F: Fn()>(f: F) -> F { f }
 
 fn set<'a>(x: &'a mut isize) {
     *x = 4;
@@ -11,10 +11,12 @@ fn set<'a>(x: &'a mut isize) {
 fn b() {
     let mut x: usize = 3;
     let tmp0: &'t0 mut usize = &mut x;
-    let c1: fn() -> () = to_fn_mut(|| set::<'t0>(tmp0));
+    let c1_tmp: fn() = || set::<'t0>(tmp0);
+    let c1: fn() = #[envs(c1_tmp)] to_fn_mut(c1_tmp);
     let tmp1: &'t1 mut usize = &mut x;
-    let c2: fn() -> () = to_fn_mut(|| set::<'t1>(tmp1)); //~ ERROR cannot borrow `x` as mutable more than once
-    drop::<(fn() -> (), fn() -> ())>((c1, c2));
+    let c2_tmp: fn() = || set::<'t1>(tmp1);
+    let c2: fn() = #[envs(c2_tmp)] to_fn_mut(c2_tmp); //~ ERROR cannot borrow `x` as mutable more than once
+    drop::<(fn(), fn())>((c1, c2));
 }
 
 fn main() {
