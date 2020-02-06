@@ -17,7 +17,7 @@ fn d() {
     let c2_tmp: fn() = || {
         let y_tmp: fn() = || set::<'t1>(tmp1);
         let _y: fn() = #[envs(y_tmp)] to_fn_mut(y_tmp);
-    }:
+    };
     let c2: fn() = #[envs(c2_tmp)] to_fn_mut(c2_tmp); // (nested closure)
     //~^ ERROR cannot borrow `x` as mutable more than once
     drop::<(fn(), fn())>((c1, c2));
