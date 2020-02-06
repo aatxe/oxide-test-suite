@@ -33,7 +33,7 @@ invalid global environment:
        (Syntax.Seq (
           (("unknown_file", (2, 4), (2, 11)),
            (Syntax.App ((("unknown_file", (2, 4), (2, 5)), (Syntax.Fn "f")),
-              [], [],
+              [], [], [],
               [(("unknown_file", (2, 6), (2, 7)),
                 (Syntax.Prim (Syntax.Num 1)));
                 (("unknown_file", (2, 9), (2, 10)),
@@ -45,7 +45,7 @@ invalid global environment:
               (("unknown_file", (3, 4), (3, 11)),
                (Syntax.App (
                   (("unknown_file", (3, 4), (3, 5)), (Syntax.Fn "f")), 
-                  [], [],
+                  [], [], [],
                   [(("unknown_file", (3, 6), (3, 7)),
                     (Syntax.Prim (Syntax.Num 1)));
                     (("unknown_file", (3, 9), (3, 10)),

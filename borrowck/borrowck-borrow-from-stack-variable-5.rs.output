@@ -33,7 +33,7 @@ valid global environment:
            (("unknown_file", (16, 23), (16, 33)),
             (Syntax.App (
                (("unknown_file", (16, 23), (16, 31)), (Syntax.Fn "make_foo")),
-               [], [], []))),
+               [], [], [], []))),
            (("unknown_file", (17, 4), (17, 42)),
             (Syntax.Let ("bar1",
                (("unknown_file", (17, 14), (17, 25)),

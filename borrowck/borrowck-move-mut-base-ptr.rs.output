@@ -52,7 +52,7 @@ invalid global environment:
                        (Syntax.App (
                           (("unknown_file", (12, 4), (12, 24)),
                            (Syntax.Fn "use_ref")),
-                          [(("unknown_file", (12, 14), (12, 16)), "r")],
+                          [], [(("unknown_file", (12, 14), (12, 16)), "r")],
                           [(("unknown_file", (12, 18), (12, 23)),
                             (Syntax.BaseTy Syntax.U32))],
                           [(("unknown_file", (12, 25), (12, 26)),

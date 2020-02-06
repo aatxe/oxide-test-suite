@@ -56,7 +56,7 @@ invalid global environment:
                (("unknown_file", (8, 8), (8, 24)),
                 (Syntax.App (
                    (("unknown_file", (8, 8), (8, 21)), (Syntax.Fn "drop")),
-                   [],
+                   [], [],
                    [(("unknown_file", (8, 15), (8, 20)),
                      (Syntax.Struct ("Tpair", [], [], None)))],
                    [(("unknown_file", (8, 22), (8, 23)),

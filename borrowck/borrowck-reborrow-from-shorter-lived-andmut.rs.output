@@ -76,6 +76,7 @@ invalid global environment:
                     (Syntax.App (
                        (("unknown_file", (18, 24), (18, 51)),
                         (Syntax.Fn "copy_borrowed_ptr")),
+                       [],
                        [(("unknown_file", (18, 44), (18, 46)), "y");
                          (("unknown_file", (18, 48), (18, 50)), "x")],
                        [],

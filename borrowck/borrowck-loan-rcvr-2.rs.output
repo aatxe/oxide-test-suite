@@ -41,7 +41,7 @@ invalid global environment:
        [],
        (("unknown_file", (6, 45), (6, 48)),
         (Syntax.App ((("unknown_file", (6, 45), (6, 46)), (Syntax.Fn "f")),
-           [], [], [])))));
+           [], [], [], [])))));
    (Syntax.FnDef
       ("b", [], [], [], [],
        (("unknown_file", (8, 0), (18, 1)), (Syntax.BaseTy Syntax.Unit)), 
@@ -91,7 +91,7 @@ invalid global environment:
                         (Syntax.App (
                            (("unknown_file", (15, 4), (15, 17)),
                             (Syntax.Fn "impurem")),
-                           [(("unknown_file", (15, 14), (15, 16)), "a")], 
+                           [], [(("unknown_file", (15, 14), (15, 16)), "a")],
                            [],
                            [(("unknown_file", (15, 18), (15, 22)),
                              (Syntax.Move

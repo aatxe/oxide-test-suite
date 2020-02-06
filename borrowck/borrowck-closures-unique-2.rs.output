@@ -63,7 +63,8 @@ invalid global environment:
                (("unknown_file", (18, 31), (18, 43)),
                 (Syntax.App (
                    (("unknown_file", (18, 31), (18, 40)), (Syntax.Fn "get")),
-                   [(("unknown_file", (18, 37), (18, 39)), "a")], [],
+                   [], [(("unknown_file", (18, 37), (18, 39)), "a")], 
+                   [],
                    [(("unknown_file", (18, 41), (18, 42)),
                      (Syntax.Move
                         (("unknown_file", (18, 41), (18, 42)), ("x", []))))
@@ -83,7 +84,7 @@ invalid global environment:
                     (Syntax.App (
                        (("unknown_file", (19, 31), (19, 40)),
                         (Syntax.Fn "set")),
-                       [(("unknown_file", (19, 37), (19, 39)), "a")], 
+                       [], [(("unknown_file", (19, 37), (19, 39)), "a")], 
                        [],
                        [(("unknown_file", (19, 41), (19, 42)),
                          (Syntax.Move

@@ -88,6 +88,7 @@ invalid global environment:
                         (Syntax.App (
                            (("unknown_file", (15, 4), (15, 25)),
                             (Syntax.Fn "use_mut")),
+                           [],
                            [(("unknown_file", (15, 14), (15, 17)), "b1")],
                            [(("unknown_file", (15, 19), (15, 24)),
                              (Syntax.BaseTy Syntax.U32))],

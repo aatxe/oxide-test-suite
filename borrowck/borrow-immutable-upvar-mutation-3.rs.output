@@ -84,7 +84,7 @@ invalid global environment:
                         (Syntax.App (
                            (("unknown_file", (15, 19), (15, 24)),
                             (Syntax.Fn "to_fn")),
-                           [], [],
+                           [], [], [],
                            [(("unknown_file", (15, 25), (15, 70)),
                              (Syntax.Fun ([], [], [], None,
                                 (("", (1, 0), (1, 0)),
@@ -93,6 +93,7 @@ invalid global environment:
                                      (Syntax.App (
                                         (("unknown_file", (15, 30), (15, 40)),
                                          (Syntax.Fn "set")),
+                                        [],
                                         [(("unknown_file", (15, 36), (15, 39)),
                                           "t0")],
                                         [],
@@ -110,7 +111,7 @@ invalid global environment:
                                             (("unknown_file", (15, 47),
                                               (15, 52)),
                                              (Syntax.Fn "to_fn")),
-                                            [], [],
+                                            [], [], [],
                                             [(("unknown_file", (15, 53),
                                                (15, 66)),
                                               (Syntax.Fun ([], [], [], None,

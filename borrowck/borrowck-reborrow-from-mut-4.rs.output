@@ -62,7 +62,7 @@ valid global environment:
                     (Syntax.App (
                        (("unknown_file", (14, 4), (14, 23)),
                         (Syntax.Fn "use_imm")),
-                       [(("unknown_file", (14, 14), (14, 17)), "b1")],
+                       [], [(("unknown_file", (14, 14), (14, 17)), "b1")],
                        [(("unknown_file", (14, 19), (14, 22)),
                          (Syntax.Struct ("Bar", [], [], None)))],
                        [(("unknown_file", (14, 24), (14, 29)),

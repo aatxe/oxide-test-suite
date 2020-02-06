@@ -42,7 +42,7 @@ invalid global environment:
                        (Syntax.App (
                           (("unknown_file", (8, 4), (8, 11)),
                            (Syntax.Fn "use_mut")),
-                          [], [],
+                          [], [], [],
                           [(("unknown_file", (8, 12), (8, 17)),
                             (Syntax.Move
                                (("unknown_file", (8, 12), (8, 17)),
@@ -55,7 +55,7 @@ invalid global environment:
                            (Syntax.App (
                               (("unknown_file", (9, 4), (9, 11)),
                                (Syntax.Fn "use_mut")),
-                              [], [],
+                              [], [], [],
                               [(("unknown_file", (9, 12), (9, 18)),
                                 (Syntax.Move
                                    (("unknown_file", (9, 12), (9, 18)),

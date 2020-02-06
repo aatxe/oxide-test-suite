@@ -78,6 +78,7 @@ invalid global environment:
                                     (Syntax.App (
                                        (("unknown_file", (13, 8), (13, 28)),
                                         (Syntax.Fn "use_ref")),
+                                       [],
                                        [(("unknown_file", (13, 18), (13, 20)),
                                          "p")],
                                        [(("unknown_file", (13, 22), (13, 27)),
@@ -98,7 +99,7 @@ invalid global environment:
                    (("unknown_file", (15, 4), (15, 7)),
                     (Syntax.App (
                        (("unknown_file", (15, 4), (15, 5)), (Syntax.Fn "r")),
-                       [], [], [])))
+                       [], [], [], [])))
                    )))
                )))
            )))));

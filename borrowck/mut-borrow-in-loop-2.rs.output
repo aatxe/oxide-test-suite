@@ -64,7 +64,7 @@ invalid global environment:
                (("unknown_file", (10, 8), (10, 16)),
                 (Syntax.App (
                    (("unknown_file", (10, 8), (10, 11)), (Syntax.Fn "tmp")),
-                   [], [],
+                   [], [], [],
                    [(("unknown_file", (10, 12), (10, 15)),
                      (Syntax.Move
                         (("unknown_file", (10, 12), (10, 15)), ("arg", []))))

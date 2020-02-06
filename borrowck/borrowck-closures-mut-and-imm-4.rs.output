@@ -92,7 +92,7 @@ invalid global environment:
                             (Syntax.App (
                                (("unknown_file", (20, 4), (20, 8)),
                                 (Syntax.Fn "drop")),
-                               [], [],
+                               [], [], [],
                                [(("unknown_file", (20, 9), (20, 11)),
                                  (Syntax.Move
                                     (("unknown_file", (20, 9), (20, 11)),

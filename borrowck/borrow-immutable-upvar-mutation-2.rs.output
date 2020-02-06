@@ -79,13 +79,14 @@ invalid global environment:
                     (Syntax.App (
                        (("unknown_file", (14, 19), (14, 24)),
                         (Syntax.Fn "to_fn")),
-                       [], [],
+                       [], [], [],
                        [(("unknown_file", (14, 25), (14, 42)),
                          (Syntax.Fun ([], [], [], None,
                             (("unknown_file", (14, 28), (14, 42)),
                              (Syntax.App (
                                 (("unknown_file", (14, 28), (14, 37)),
                                  (Syntax.Fn "set")),
+                                [],
                                 [(("unknown_file", (14, 34), (14, 36)), "t")],
                                 [],
                                 [(("unknown_file", (14, 38), (14, 41)),

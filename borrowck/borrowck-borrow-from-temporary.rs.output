@@ -30,7 +30,7 @@ invalid global environment:
            (("unknown_file", (9, 19), (9, 36)),
             (Syntax.App (
                (("unknown_file", (9, 19), (9, 28)), (Syntax.Fn "id")), 
-               [],
+               [], [],
                [(("unknown_file", (9, 24), (9, 27)),
                  (Syntax.Struct ("Foo", [], [], None)))],
                [(("unknown_file", (9, 29), (9, 35)),

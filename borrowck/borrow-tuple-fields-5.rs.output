@@ -60,7 +60,7 @@ invalid global environment:
                         (Syntax.App (
                            (("unknown_file", (13, 4), (13, 11)),
                             (Syntax.Fn "use_ref")),
-                           [], [],
+                           [], [], [],
                            [(("unknown_file", (13, 12), (13, 13)),
                              (Syntax.Move
                                 (("unknown_file", (13, 12), (13, 13)),

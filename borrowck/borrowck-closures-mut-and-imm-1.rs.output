@@ -144,7 +144,7 @@ invalid global environment:
                         (Syntax.App (
                            (("unknown_file", (32, 4), (32, 22)),
                             (Syntax.Fn "drop")),
-                           [],
+                           [], [],
                            [(("unknown_file", (32, 11), (32, 21)),
                              (Syntax.Fun ([], [], [], [], (Syntax.Env []),
                                 (("unknown_file", (32, 19), (32, 21)),

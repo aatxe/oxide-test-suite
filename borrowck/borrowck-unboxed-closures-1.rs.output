@@ -42,7 +42,7 @@ invalid global environment:
               (("unknown_file", (3, 4), (3, 11)),
                (Syntax.App (
                   (("unknown_file", (3, 4), (3, 5)), (Syntax.Fn "f")), 
-                  [], [],
+                  [], [], [],
                   [(("unknown_file", (3, 6), (3, 7)),
                     (Syntax.Prim (Syntax.Num 1)));
                     (("unknown_file", (3, 9), (3, 10)),
@@ -55,7 +55,7 @@ invalid global environment:
                    (Syntax.App (
                       (("unknown_file", (4, 4), (4, 44)),
                        (Syntax.Fn "use_mut")),
-                      [(("unknown_file", (4, 14), (4, 16)), "a")],
+                      [], [(("unknown_file", (4, 14), (4, 16)), "a")],
                       [(("unknown_file", (4, 18), (4, 43)),
                         (Syntax.Fun ([], [], [],
                            [(("unknown_file", (4, 21), (4, 26)),
