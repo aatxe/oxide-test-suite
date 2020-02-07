@@ -13,8 +13,8 @@ fn main() {
     let tmp: &'t mut usize = &mut z;
     let tmp0: fn() = move || {
         set::<'t>(tmp);
-        let tmp1: fn() = move || z = 42;
+        let tmp1: fn() = move || z = 42; //~ ERROR cannot assign
         #[envs(tmp1)] to_fn(tmp1);
     };
-    let _h: fn() = #[envs(tmp0)] to_fn(tmp0); //~ ERROR cannot assign
+    let _h: fn() = #[envs(tmp0)] to_fn(tmp0);
 }
