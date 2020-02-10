@@ -1,36 +1,36 @@
-error: (Syntax.InvalidProv (("unknown_file", (4, 16), (4, 17)), "x"))
+error: (Syntax.InvalidProv (("unknown_file", (4, 16), (4, 18)), "x"))
 invalid global environment:
  [(Syntax.FnDef
-     ("main", [], [], [],
-      (("unknown_file", (1, 0), (1, 2)), (Syntax.BaseTy Syntax.Unit)), 
+     ("main", [], [], [], [],
+      (("unknown_file", (1, 0), (8, 1)), (Syntax.BaseTy Syntax.Unit)), 
       [],
-      (("unknown_file", (2, 4), (2, 7)),
+      (("unknown_file", (2, 4), (6, 6)),
        (Syntax.Let ("f",
-          (("unknown_file", (2, 11), (2, 13)),
-           (Syntax.Fun ([], [], [], [],
+          (("unknown_file", (2, 11), (2, 24)),
+           (Syntax.Fun ([], [], [], [], (Syntax.Env []),
               (("unknown_file", (2, 19), (2, 24)), (Syntax.BaseTy Syntax.U32))
               ))),
-          (("unknown_file", (3, 8), (3, 11)),
+          (("unknown_file", (3, 8), (3, 25)),
            (Syntax.Let ("a",
               (("unknown_file", (3, 15), (3, 20)), (Syntax.BaseTy Syntax.U32)),
               (("unknown_file", (3, 23), (3, 24)),
                (Syntax.Prim (Syntax.Num 0))),
-              (("unknown_file", (4, 8), (4, 11)),
+              (("unknown_file", (4, 8), (4, 28)),
                (Syntax.Let ("x",
-                  (("unknown_file", (4, 15), (4, 16)),
-                   (Syntax.Ref ((("unknown_file", (4, 16), (4, 17)), "x"),
+                  (("unknown_file", (4, 15), (4, 22)),
+                   (Syntax.Ref ((("unknown_file", (4, 16), (4, 18)), "x"),
                       Syntax.Shared,
                       (("unknown_file", (4, 19), (4, 22)),
                        (Syntax.BaseTy Syntax.U32))
                       ))),
-                  (("unknown_file", (4, 25), (4, 26)),
+                  (("unknown_file", (4, 25), (4, 27)),
                    (Syntax.Borrow (
-                      (("unknown_file", (4, 25), (4, 26)), "p1"),
+                      (("unknown_file", (4, 25), (4, 27)), "p1"),
                       Syntax.Shared,
                       (("unknown_file", (4, 26), (4, 27)), ("a", []))))),
-                  (("unknown_file", (5, 8), (5, 9)),
+                  (("unknown_file", (5, 8), (5, 13)),
                    (Syntax.Fun ([], [], [], None,
-                      (("unknown_file", (5, 11), (5, 12)),
+                      (("unknown_file", (5, 11), (5, 13)),
                        (Syntax.Move
                           (("unknown_file", (5, 12), (5, 13)),
                            ("x", [Syntax.Deref]))))
@@ -39,10 +39,10 @@ invalid global environment:
               ))),
           (("", (0, 0), (0, 0)),
            (Syntax.Seq (
-              (("unknown_file", (7, 4), (7, 5)),
+              (("unknown_file", (7, 4), (7, 7)),
                (Syntax.App (
                   (("unknown_file", (7, 4), (7, 5)), (Syntax.Fn "f")), 
-                  [], [], []))),
+                  [], [], [], []))),
               (("unknown_file", (7, 7), (7, 8)), (Syntax.Prim Syntax.Unit)))))
           )))))
    ]
