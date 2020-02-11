@@ -1,5 +1,5 @@
-error: (Syntax.InvalidLoan (Syntax.Shared,
-          (("unknown_file", (2, 5), (2, 6)), ("x", []))))
+error: (Syntax.NoReferenceToParameter
+          (("unknown_file", (2, 5), (2, 6)), ("x", [])))
 invalid global environment:
  [(Syntax.FnDef
      ("cplusplus_mode", [], [], [],
