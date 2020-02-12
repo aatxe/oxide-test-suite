@@ -1,11 +1,4 @@
-error: (Syntax.InvalidReturnType (
-          (("unknown_file", (10, 11), (10, 20)),
-           (Syntax.Ref ((("unknown_file", (10, 12), (10, 14)), "x"),
-              Syntax.Shared,
-              (("unknown_file", (10, 15), (10, 20)),
-               (Syntax.BaseTy Syntax.U32))
-              ))),
-          (("unknown_file", (10, 12), (10, 14)), "x")))
+error: (Syntax.InvalidProv (("unknown_file", (10, 12), (10, 14)), "x"))
 invalid global environment:
  [(Syntax.FnDef
      ("id", [], [], ["T"],

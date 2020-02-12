@@ -1,0 +1,52 @@
+valid global environment:
+ [(Syntax.FnDef
+     ("int", [], [], [], [],
+      (("unknown_file", (3, 0), (8, 1)), (Syntax.BaseTy Syntax.Unit)), 
+      [],
+      (("unknown_file", (4, 4), (4, 24)),
+       (Syntax.Let ("_x",
+          (("unknown_file", (4, 16), (4, 19)), (Syntax.BaseTy Syntax.U32)),
+          (("unknown_file", (4, 22), (4, 23)), (Syntax.Prim (Syntax.Num 5))),
+          (("unknown_file", (5, 4), (5, 26)),
+           (Syntax.Let ("_y",
+              (("unknown_file", (5, 12), (5, 19)),
+               (Syntax.Ref ((("unknown_file", (5, 13), (5, 15)), "y"),
+                  Syntax.Shared,
+                  (("unknown_file", (5, 16), (5, 19)),
+                   (Syntax.BaseTy Syntax.U32))
+                  ))),
+              (("unknown_file", (5, 22), (5, 25)),
+               (Syntax.Borrow ((("unknown_file", (5, 22), (5, 25)), "p1"),
+                  Syntax.Shared,
+                  (("unknown_file", (5, 23), (5, 25)), ("_x", []))))),
+              (("", (2, 0), (2, 0)),
+               (Syntax.Seq (
+                  (("unknown_file", (6, 4), (6, 14)),
+                   (Syntax.Drop
+                      (("unknown_file", (6, 4), (6, 14)), ("_y", [])))),
+                  (("", (1, 0), (1, 0)),
+                   (Syntax.Seq (
+                      (("unknown_file", (7, 4), (7, 10)),
+                       (Syntax.Assign (
+                          (("unknown_file", (7, 4), (7, 6)), ("_x", [])),
+                          (("unknown_file", (7, 9), (7, 10)),
+                           (Syntax.Prim (Syntax.Num 7)))
+                          ))),
+                      (("unknown_file", (7, 10), (7, 11)),
+                       (Syntax.Prim Syntax.Unit))
+                      )))
+                  )))
+              )))
+          )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (10, 0), (12, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("", (0, 0), (0, 0)),
+        (Syntax.Seq (
+           (("unknown_file", (11, 4), (11, 9)),
+            (Syntax.App (
+               (("unknown_file", (11, 4), (11, 7)), (Syntax.Fn "int")), 
+               [], [], [], []))),
+           (("unknown_file", (11, 9), (11, 10)), (Syntax.Prim Syntax.Unit)))))))
+   ]

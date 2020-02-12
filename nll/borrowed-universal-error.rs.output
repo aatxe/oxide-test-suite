@@ -1,0 +1,91 @@
+error: (Syntax.InvalidProv (("unknown_file", (9, 12), (9, 15)), "t1"))
+invalid global environment:
+ [(Syntax.FnDef
+     ("gimme", [], [(("unknown_file", (1, 9), (1, 11)), "a")], [],
+      [("x",
+        (("unknown_file", (1, 16), (1, 26)),
+         (Syntax.Ref ((("unknown_file", (1, 17), (1, 19)), "a"),
+            Syntax.Shared,
+            (("unknown_file", (1, 20), (1, 26)),
+             (Syntax.Tup
+                [(("unknown_file", (1, 21), (1, 24)),
+                  (Syntax.BaseTy Syntax.U32))]))
+            ))))
+        ],
+      (("unknown_file", (1, 31), (1, 38)),
+       (Syntax.Ref ((("unknown_file", (1, 32), (1, 34)), "a"), Syntax.Shared,
+          (("unknown_file", (1, 35), (1, 38)), (Syntax.BaseTy Syntax.U32))))),
+      [],
+      (("unknown_file", (2, 4), (2, 11)),
+       (Syntax.Borrow ((("unknown_file", (2, 4), (2, 11)), "p1"),
+          Syntax.Shared,
+          (("unknown_file", (2, 7), (2, 8)),
+           ("x", [Syntax.Deref; (Syntax.Index 0)]))
+          )))));
+   (Syntax.FnDef
+      ("foo", [], [(("unknown_file", (5, 7), (5, 9)), "a")], [],
+       [("x",
+         (("unknown_file", (5, 14), (5, 24)),
+          (Syntax.Ref ((("unknown_file", (5, 15), (5, 17)), "a"),
+             Syntax.Shared,
+             (("unknown_file", (5, 18), (5, 24)),
+              (Syntax.Tup
+                 [(("unknown_file", (5, 19), (5, 22)),
+                   (Syntax.BaseTy Syntax.U32))]))
+             ))))
+         ],
+       (("unknown_file", (5, 29), (5, 36)),
+        (Syntax.Ref ((("unknown_file", (5, 30), (5, 32)), "a"),
+           Syntax.Shared,
+           (("unknown_file", (5, 33), (5, 36)), (Syntax.BaseTy Syntax.U32))))),
+       [],
+       (("unknown_file", (6, 4), (6, 20)),
+        (Syntax.Let ("v",
+           (("unknown_file", (6, 11), (6, 14)), (Syntax.BaseTy Syntax.U32)),
+           (("unknown_file", (6, 17), (6, 19)), (Syntax.Prim (Syntax.Num 22))),
+           (("unknown_file", (7, 4), (7, 28)),
+            (Syntax.Let ("tmp0",
+               (("unknown_file", (7, 14), (7, 20)),
+                (Syntax.Tup
+                   [(("unknown_file", (7, 15), (7, 18)),
+                     (Syntax.BaseTy Syntax.U32))])),
+               (("unknown_file", (7, 23), (7, 27)),
+                (Syntax.Tup
+                   [(("unknown_file", (7, 24), (7, 25)),
+                     (Syntax.Move
+                        (("unknown_file", (7, 24), (7, 25)), ("v", []))))
+                     ])),
+               (("unknown_file", (8, 4), (8, 34)),
+                (Syntax.Let ("tmp1",
+                   (("unknown_file", (8, 14), (8, 25)),
+                    (Syntax.Ref ((("unknown_file", (8, 15), (8, 18)), "t1"),
+                       Syntax.Shared,
+                       (("unknown_file", (8, 19), (8, 25)),
+                        (Syntax.Tup
+                           [(("unknown_file", (8, 20), (8, 23)),
+                             (Syntax.BaseTy Syntax.U32))]))
+                       ))),
+                   (("unknown_file", (8, 28), (8, 33)),
+                    (Syntax.Borrow (
+                       (("unknown_file", (8, 28), (8, 33)), "p2"),
+                       Syntax.Shared,
+                       (("unknown_file", (8, 29), (8, 33)), ("tmp0", []))))),
+                   (("unknown_file", (9, 4), (9, 22)),
+                    (Syntax.App (
+                       (("unknown_file", (9, 4), (9, 16)),
+                        (Syntax.Fn "gimme")),
+                       [], [(("unknown_file", (9, 12), (9, 15)), "t1")], 
+                       [],
+                       [(("unknown_file", (9, 17), (9, 21)),
+                         (Syntax.Move
+                            (("unknown_file", (9, 17), (9, 21)), ("tmp1", []))))
+                         ]
+                       )))
+                   )))
+               )))
+           )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (13, 0), (13, 12)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (13, 10), (13, 12)), (Syntax.Prim Syntax.Unit))))
+   ]

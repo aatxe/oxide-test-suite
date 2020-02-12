@@ -7,30 +7,30 @@ struct SomeStruct<'a, 'b: 'a> {
 }
 
 fn test() {
-    let x = 44;
-    let mut p = &x;
+    let x: i32 = 44;
+    let mut p: &'p i32 = &x;
 
     {
-        let y = 22;
+        let y: i32 = 22;
 
-        let closure = SomeStruct {
-            p: &mut p,
-            y: &y,
+        let tmp0: &'t0 mut &'p i32 = &mut p;
+        let tmp1: &'t1 i32 = &y;
+        let closure: SomeStruct<'t0, 't1> = SomeStruct::<'t0, 't1> {
+            p: tmp0,
+            y: tmp1,
             //~^ ERROR `y` does not live long enough [E0597]
         };
 
-        closure.invoke();
+        invoke::<'t0, 't1>(closure);
     }
 
-    deref(p);
+    deref::<'p>(p);
 }
 
-impl<'a, 'b> SomeStruct<'a, 'b> {
-    fn invoke(self) {
-        *self.p = self.y;
-    }
+fn invoke<'a, 'b>(data: SomeStruct<'a, 'b>) where 'b: 'a {
+    *data.p = data.y;
 }
 
-fn deref(_: &i32) { }
+fn deref<'a>(_: &'a i32) { }
 
 fn main() { }

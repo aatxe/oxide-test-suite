@@ -7,13 +7,12 @@ pub struct Block<'a> {
     unrelated: &'a u8,
 }
 
-fn bump<'a>(mut block: &mut Block<'a>) {
-    let x = &mut block;
-    println!("{}", x.current);
-    let p: &'a u8 = &*block.current;
+fn bump<'a, 'b>(mut block: &'b mut Block<'a>) {
+    let x: &'x mut Block<'a> = &mut *block;
+    let p: &'a u8 = &(*block).current;
     //~^ ERROR cannot borrow `*block.current` as immutable because it is also borrowed as mutable
-    drop(x);
-    drop(p);
+    drop::<&'x mut Block<'a>>(x);
+    drop::<&'a u8>(p);
 }
 
 fn main() {}
