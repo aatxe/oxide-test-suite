@@ -1,0 +1,40 @@
+error: (Syntax.PartiallyMoved (
+          (("unknown_file", (8, 20), (8, 21)), ("x", [])),
+          (("<inferred>", (-1, -1), (-1, -1)),
+           (Syntax.Uninit
+              (("unknown_file", (6, 22), (6, 28)),
+               (Syntax.Struct ("String", [], [],
+                  (Some (("<inferred>", (-1, -1), (-1, -1)), (Syntax.Tup [])))
+                  )))))
+          ))
+invalid global environment:
+ [(Syntax.TupStructDef (false, "String", [], [], []));
+   (Syntax.FnDef
+      ("move_after_move", [], [], [],
+       [("x",
+         (("unknown_file", (6, 22), (6, 28)),
+          (Syntax.Struct ("String", [], [], None))))
+         ],
+       (("unknown_file", (6, 0), (9, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("", (0, 0), (0, 0)),
+        (Syntax.Seq (
+           (("unknown_file", (7, 4), (7, 8)),
+            (Syntax.Fun ([], [], [], None,
+               (("unknown_file", (7, 7), (7, 8)),
+                (Syntax.Move (("unknown_file", (7, 7), (7, 8)), ("x", []))))
+               ))),
+           (("unknown_file", (8, 4), (8, 22)),
+            (Syntax.Let ("y",
+               (("unknown_file", (8, 11), (8, 17)),
+                (Syntax.Struct ("String", [], [], None))),
+               (("unknown_file", (8, 20), (8, 21)),
+                (Syntax.Move (("unknown_file", (8, 20), (8, 21)), ("x", [])))),
+               (("unknown_file", (8, 21), (8, 22)), (Syntax.Prim Syntax.Unit))
+               )))
+           )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (11, 0), (11, 12)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (11, 10), (11, 12)), (Syntax.Prim Syntax.Unit))))
+   ]
