@@ -4,7 +4,7 @@
 // check-pass
 // compile-flags:-Zborrowck=mir -Zverbose
 
-fn foo<'a, 'b>(x: &'a &'b u32) -> &'a u32 {
+fn foo<'a, 'b>(x: &'a &'b u32) -> &'a u32 where 'b: 'a {
     &**x
 }
 

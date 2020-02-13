@@ -1,0 +1,47 @@
+error: (Syntax.SafetyErr (
+          (Syntax.Unique, (("unknown_file", (5, 4), (5, 5)), ("x", []))),
+          (Syntax.Shared, (("unknown_file", (4, 22), (4, 23)), ("x", [])))))
+invalid global environment:
+ [(Syntax.FnDef
+     ("use_as_move_capture", [], [], [],
+      [("x", (("unknown_file", (3, 30), (3, 33)), (Syntax.BaseTy Syntax.U32)))
+        ],
+      (("unknown_file", (3, 0), (7, 1)), (Syntax.BaseTy Syntax.Unit)), 
+      [],
+      (("unknown_file", (4, 4), (4, 24)),
+       (Syntax.Let ("y",
+          (("unknown_file", (4, 11), (4, 18)),
+           (Syntax.Ref ((("unknown_file", (4, 12), (4, 14)), "y"),
+              Syntax.Shared,
+              (("unknown_file", (4, 15), (4, 18)), (Syntax.BaseTy Syntax.U32))
+              ))),
+          (("unknown_file", (4, 21), (4, 23)),
+           (Syntax.Borrow ((("unknown_file", (4, 21), (4, 23)), "p1"),
+              Syntax.Shared, (("unknown_file", (4, 22), (4, 23)), ("x", []))
+              ))),
+          (("", (1, 0), (1, 0)),
+           (Syntax.Seq (
+              (("unknown_file", (5, 4), (5, 9)),
+               (Syntax.Assign ((("unknown_file", (5, 4), (5, 5)), ("x", [])),
+                  (("unknown_file", (5, 8), (5, 9)),
+                   (Syntax.Prim (Syntax.Num 0)))
+                  ))),
+              (("", (0, 0), (0, 0)),
+               (Syntax.Seq (
+                  (("unknown_file", (6, 4), (6, 14)),
+                   (Syntax.Fun ([], [], [], None,
+                      (("unknown_file", (6, 12), (6, 14)),
+                       (Syntax.Move
+                          (("unknown_file", (6, 13), (6, 14)),
+                           ("y", [Syntax.Deref]))))
+                      ))),
+                  (("unknown_file", (6, 14), (6, 15)),
+                   (Syntax.Prim Syntax.Unit))
+                  )))
+              )))
+          )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (9, 0), (9, 12)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (9, 10), (9, 12)), (Syntax.Prim Syntax.Unit))))
+   ]
