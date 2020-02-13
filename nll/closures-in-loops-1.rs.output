@@ -1,0 +1,68 @@
+error: (Syntax.VarEnvMismatch (("", (0, 0), (0, 0)),
+          [("x",
+            (("unknown_file", (7, 21), (7, 27)),
+             (Syntax.Struct ("String", [], [],
+                (Some (("<inferred>", (-1, -1), (-1, -1)), (Syntax.Tup [])))
+                ))))
+            ],
+          [("x",
+            (("<inferred>", (-1, -1), (-1, -1)),
+             (Syntax.Uninit
+                (("unknown_file", (7, 21), (7, 27)),
+                 (Syntax.Struct ("String", [], [],
+                    (Some (("<inferred>", (-1, -1), (-1, -1)),
+                           (Syntax.Tup [])))
+                    ))))))
+            ]
+          ))
+invalid global environment:
+ [(Syntax.TupStructDef (false, "String", [], [], []));
+   (Syntax.FnDef
+      ("repreated_move", [], [], [],
+       [("x",
+         (("unknown_file", (7, 21), (7, 27)),
+          (Syntax.Struct ("String", [], [], None))))
+         ],
+       (("unknown_file", (7, 0), (11, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (8, 4), (10, 5)),
+        (Syntax.For ("i",
+           (("unknown_file", (8, 13), (8, 18)),
+            (Syntax.Array
+               [(("unknown_file", (8, 14), (8, 16)),
+                 (Syntax.Prim (Syntax.Num 0)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 1)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 2)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 3)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 4)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 5)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 6)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 7)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 8)));
+                 (("unknown_file", (8, 14), (8, 16)),
+                  (Syntax.Prim (Syntax.Num 9)))
+                 ])),
+           (("", (0, 0), (0, 0)),
+            (Syntax.Seq (
+               (("unknown_file", (9, 8), (9, 12)),
+                (Syntax.Fun ([], [], [], None,
+                   (("unknown_file", (9, 11), (9, 12)),
+                    (Syntax.Move
+                       (("unknown_file", (9, 11), (9, 12)), ("x", []))))
+                   ))),
+               (("unknown_file", (9, 12), (9, 13)), (Syntax.Prim Syntax.Unit))
+               )))
+           )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (13, 0), (13, 12)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (13, 10), (13, 12)), (Syntax.Prim Syntax.Unit))))
+   ]
