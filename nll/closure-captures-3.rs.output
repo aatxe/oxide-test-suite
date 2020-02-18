@@ -1,17 +1,25 @@
-error: (Syntax.SafetyErr (
-          (Syntax.Unique, (("unknown_file", (14, 38), (14, 39)), ("x", []))),
-          (Syntax.Unique, (("unknown_file", (8, 34), (8, 35)), ("x", [])))))
+error: (Syntax.UnsatisfiedEnvQualifier (Syntax.Shared,
+          (Syntax.Env
+             [("tmp0",
+               (("unknown_file", (8, 14), (8, 26)),
+                (Syntax.Ref ((("unknown_file", (8, 15), (8, 18)), "t0"),
+                   Syntax.Unique,
+                   (("unknown_file", (8, 23), (8, 26)),
+                    (Syntax.BaseTy Syntax.U32))
+                   ))))
+               ])
+          ))
 invalid global environment:
  [(Syntax.FnDef
-     ("fn_ref", ["F"], [], [],
+     ("fn_ref", [(Syntax.Shared, "F")], [], [],
       [("f",
         (("unknown_file", (5, 22), (5, 23)),
-         (Syntax.Fun ([], [], [], [], (Syntax.EnvVar "F"),
+         (Syntax.Fun ([], [], [], [], (Syntax.EnvVar (Syntax.Shared, "F")),
             (("<inferred>", (-1, -1), (-1, -1)), (Syntax.BaseTy Syntax.Unit))
             ))))
         ],
       (("unknown_file", (5, 28), (5, 29)),
-       (Syntax.Fun ([], [], [], [], (Syntax.EnvVar "F"),
+       (Syntax.Fun ([], [], [], [], (Syntax.EnvVar (Syntax.Shared, "F")),
           (("<inferred>", (-1, -1), (-1, -1)), (Syntax.BaseTy Syntax.Unit))))),
       [],
       (("unknown_file", (5, 32), (5, 33)),
@@ -37,7 +45,7 @@ invalid global environment:
            (("unknown_file", (9, 4), (11, 6)),
             (Syntax.Let ("c0",
                (("unknown_file", (9, 12), (9, 16)),
-                (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+                (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                    (("unknown_file", (9, 12), (9, 16)),
                     (Syntax.BaseTy Syntax.Unit))
                    ))),
@@ -74,7 +82,7 @@ invalid global environment:
                    (("unknown_file", (13, 4), (16, 6)),
                     (Syntax.Let ("c1",
                        (("unknown_file", (13, 12), (13, 16)),
-                        (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+                        (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                            (("unknown_file", (13, 12), (13, 16)),
                             (Syntax.BaseTy Syntax.Unit))
                            ))),
