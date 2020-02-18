@@ -2,7 +2,7 @@
 // access to the variable, whether that mutable access be used
 // for direct assignment or for taking mutable ref. Issue #6801.
 
-fn to_fn_mut<F: Fn()>(f: F) -> F { f }
+fn to_fn_mut<F: FnMut()>(f: F) -> F { f }
 
 fn set<'a>(x: &'a mut isize) {
     *x = 4;

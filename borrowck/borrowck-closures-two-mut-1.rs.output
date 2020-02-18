@@ -3,19 +3,19 @@ error: (Syntax.SafetyErr (
           (Syntax.Unique, (("unknown_file", (9, 36), (9, 37)), ("x", [])))))
 invalid global environment:
  [(Syntax.FnDef
-     ("to_fn_mut", ["F"], [], [],
+     ("to_fn_mut", [(Syntax.Unique, "F")], [], [],
       [("f",
-        (("unknown_file", (5, 25), (5, 26)),
-         (Syntax.Fun ([], [], [], [], (Syntax.EnvVar "F"),
+        (("unknown_file", (5, 28), (5, 29)),
+         (Syntax.Fun ([], [], [], [], (Syntax.EnvVar (Syntax.Unique, "F")),
             (("<inferred>", (-1, -1), (-1, -1)), (Syntax.BaseTy Syntax.Unit))
             ))))
         ],
-      (("unknown_file", (5, 31), (5, 32)),
-       (Syntax.Fun ([], [], [], [], (Syntax.EnvVar "F"),
+      (("unknown_file", (5, 34), (5, 35)),
+       (Syntax.Fun ([], [], [], [], (Syntax.EnvVar (Syntax.Unique, "F")),
           (("<inferred>", (-1, -1), (-1, -1)), (Syntax.BaseTy Syntax.Unit))))),
       [],
-      (("unknown_file", (5, 35), (5, 36)),
-       (Syntax.Move (("unknown_file", (5, 35), (5, 36)), ("f", []))))));
+      (("unknown_file", (5, 38), (5, 39)),
+       (Syntax.Move (("unknown_file", (5, 38), (5, 39)), ("f", []))))));
    (Syntax.FnDef
       ("a", [], [], [], [],
        (("unknown_file", (7, 0), (16, 1)), (Syntax.BaseTy Syntax.Unit)), 
