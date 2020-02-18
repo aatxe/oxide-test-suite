@@ -33,7 +33,7 @@ invalid global environment:
              ))));
          ("f",
           (("unknown_file", (6, 31), (6, 41)),
-           (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+           (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
               (("unknown_file", (6, 39), (6, 41)),
                (Syntax.BaseTy Syntax.Unit))
               ))))

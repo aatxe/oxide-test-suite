@@ -22,7 +22,7 @@ invalid global environment:
           (("unknown_file", (5, 4), (5, 34)),
            (Syntax.Let ("f",
               (("unknown_file", (5, 11), (5, 22)),
-               (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+               (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                   (("unknown_file", (5, 19), (5, 22)),
                    (Syntax.BaseTy Syntax.U32))
                   ))),
@@ -48,7 +48,7 @@ invalid global environment:
                           (("unknown_file", (7, 15), (7, 18)), "t1"),
                           Syntax.Shared,
                           (("unknown_file", (7, 19), (7, 30)),
-                           (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+                           (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                               (("unknown_file", (7, 27), (7, 30)),
                                (Syntax.BaseTy Syntax.U32))
                               )))
@@ -67,7 +67,7 @@ invalid global environment:
                               [],
                               [(("unknown_file", (8, 14), (8, 17)), "t1")],
                               [(("unknown_file", (8, 19), (8, 30)),
-                                (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+                                (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                                    (("unknown_file", (8, 27), (8, 30)),
                                     (Syntax.BaseTy Syntax.U32))
                                    )))

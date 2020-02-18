@@ -5,8 +5,8 @@ struct FuncWrapper<'a, T : 'a> {
 }
 
 fn in_loop<'a, T>(wrapper: FuncWrapper<'a, T>, arg : &'a mut T) {
+    let tmp: &'t0 fn(&'a mut T) -> () = &wrapper.func;
     loop {
-        let tmp: fn(&'a mut T) -> () = wrapper.func;
         tmp(arg) //~ ERROR cannot borrow
     }
 }

@@ -10,7 +10,7 @@ invalid global environment:
             [(("unknown_file", (1, 15), (1, 20)), (Syntax.BaseTy Syntax.U32));
               (("unknown_file", (1, 22), (1, 27)), (Syntax.BaseTy Syntax.U32))
               ],
-            (Syntax.Env []),
+            Syntax.Unboxed,
             (("unknown_file", (1, 32), (1, 37)), (Syntax.BaseTy Syntax.U32))
             ))))
         ],
@@ -28,7 +28,7 @@ invalid global environment:
                     (("unknown_file", (2, 29), (2, 34)),
                      (Syntax.BaseTy Syntax.U32))
                     ],
-                  (Syntax.Env []),
+                  Syntax.Unboxed,
                   (("unknown_file", (2, 39), (2, 44)),
                    (Syntax.BaseTy Syntax.U32))
                   )))
@@ -63,7 +63,7 @@ invalid global environment:
                              (("unknown_file", (4, 28), (4, 33)),
                               (Syntax.BaseTy Syntax.U32))
                              ],
-                           (Syntax.Env []),
+                           Syntax.Unboxed,
                            (("unknown_file", (4, 38), (4, 43)),
                             (Syntax.BaseTy Syntax.U32))
                            )))

@@ -32,7 +32,7 @@ invalid global environment:
                    (Syntax.Fun ([], [], [],
                       [(("unknown_file", (4, 14), (4, 17)),
                         (Syntax.BaseTy Syntax.U32))],
-                      (Syntax.Env []),
+                      Syntax.Unboxed,
                       (("unknown_file", (4, 22), (4, 24)),
                        (Syntax.BaseTy Syntax.Unit))
                       ))),

@@ -39,7 +39,7 @@ invalid global environment:
                (("unknown_file", (10, 4), (10, 36)),
                 (Syntax.Let ("c1_tmp",
                    (("unknown_file", (10, 16), (10, 20)),
-                    (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+                    (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                        (("unknown_file", (10, 16), (10, 20)),
                         (Syntax.BaseTy Syntax.Unit))
                        ))),
@@ -56,7 +56,7 @@ invalid global environment:
                    (("unknown_file", (11, 4), (11, 53)),
                     (Syntax.Let ("c1",
                        (("unknown_file", (11, 12), (11, 16)),
-                        (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+                        (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                            (("unknown_file", (11, 12), (11, 16)),
                             (Syntax.BaseTy Syntax.Unit))
                            ))),
@@ -90,7 +90,7 @@ invalid global environment:
                            (("unknown_file", (13, 4), (13, 36)),
                             (Syntax.Let ("c2_tmp",
                                (("unknown_file", (13, 16), (13, 20)),
-                                (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+                                (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                                    (("unknown_file", (13, 16), (13, 20)),
                                     (Syntax.BaseTy Syntax.Unit))
                                    ))),
@@ -108,7 +108,7 @@ invalid global environment:
                                 (Syntax.Let ("c2",
                                    (("unknown_file", (14, 12), (14, 16)),
                                     (Syntax.Fun ([], [], [], [],
-                                       (Syntax.Env []),
+                                       Syntax.Unboxed,
                                        (("unknown_file", (14, 12), (14, 16)),
                                         (Syntax.BaseTy Syntax.Unit))
                                        ))),
@@ -139,7 +139,7 @@ invalid global environment:
                                                 [(("unknown_file", (15, 12),
                                                    (15, 16)),
                                                   (Syntax.Fun ([], [], 
-                                                     [], [], (Syntax.Env []),
+                                                     [], [], Syntax.Unboxed,
                                                      (("unknown_file",
                                                        (15, 12), (15, 16)),
                                                       (Syntax.BaseTy
@@ -148,8 +148,7 @@ invalid global environment:
                                                   (("unknown_file", (
                                                     15, 18), (15, 22)),
                                                    (Syntax.Fun ([], [], 
-                                                      [], [],
-                                                      (Syntax.Env []),
+                                                      [], [], Syntax.Unboxed,
                                                       (("unknown_file",
                                                         (15, 18), (15, 22)),
                                                        (Syntax.BaseTy

@@ -31,12 +31,12 @@ invalid global environment:
       ("to_fn", [], [], [],
        [("f",
          (("unknown_file", (8, 12), (8, 16)),
-          (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+          (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
              (("unknown_file", (8, 12), (8, 16)), (Syntax.BaseTy Syntax.Unit))
              ))))
          ],
        (("unknown_file", (8, 21), (8, 25)),
-        (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+        (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
            (("unknown_file", (8, 21), (8, 25)), (Syntax.BaseTy Syntax.Unit))
            ))),
        [],
@@ -66,7 +66,7 @@ invalid global environment:
                (("unknown_file", (14, 4), (14, 40)),
                 (Syntax.Let ("_f",
                    (("unknown_file", (14, 12), (14, 16)),
-                    (Syntax.Fun ([], [], [], [], (Syntax.Env []),
+                    (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                        (("unknown_file", (14, 12), (14, 16)),
                         (Syntax.BaseTy Syntax.Unit))
                        ))),
