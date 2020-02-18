@@ -1,0 +1,38 @@
+error: (Syntax.InvalidLoan (Syntax.Shared,
+          (("unknown_file", (3, 5), (3, 6)), ("z", []))))
+invalid global environment:
+ [(Syntax.FnDef
+     ("foobaz", [],
+      [(("unknown_file", (1, 10), (1, 12)), "a");
+        (("unknown_file", (1, 14), (1, 16)), "b")],
+      [],
+      [("x",
+        (("unknown_file", (1, 21), (1, 28)),
+         (Syntax.Ref ((("unknown_file", (1, 22), (1, 24)), "a"),
+            Syntax.Shared,
+            (("unknown_file", (1, 25), (1, 28)), (Syntax.BaseTy Syntax.U32))
+            ))));
+        ("y",
+         (("unknown_file", (1, 33), (1, 40)),
+          (Syntax.Ref ((("unknown_file", (1, 34), (1, 36)), "b"),
+             Syntax.Shared,
+             (("unknown_file", (1, 37), (1, 40)), (Syntax.BaseTy Syntax.U32))
+             ))))
+        ],
+      (("unknown_file", (1, 45), (1, 52)),
+       (Syntax.Ref ((("unknown_file", (1, 46), (1, 48)), "a"), Syntax.Shared,
+          (("unknown_file", (1, 49), (1, 52)), (Syntax.BaseTy Syntax.U32))))),
+      [],
+      (("unknown_file", (2, 4), (2, 20)),
+       (Syntax.Let ("z",
+          (("unknown_file", (2, 11), (2, 14)), (Syntax.BaseTy Syntax.U32)),
+          (("unknown_file", (2, 17), (2, 19)), (Syntax.Prim (Syntax.Num 22))),
+          (("unknown_file", (3, 4), (3, 6)),
+           (Syntax.Borrow ((("unknown_file", (3, 4), (3, 6)), "p1"),
+              Syntax.Shared, (("unknown_file", (3, 5), (3, 6)), ("z", [])))))
+          )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (7, 0), (7, 13)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (7, 10), (7, 13)), (Syntax.Prim Syntax.Unit))))
+   ]
