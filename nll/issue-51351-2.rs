@@ -8,13 +8,10 @@
 //
 // compile-pass
 
-fn creash<'a>() {
-    let x: &'a () = &();
-}
-
 fn produce<'a>() {
    move || {
-        let x: &'a () = &();
+        let unit: () = ();
+        let x: &'a () = &unit;
    };
 }
 
