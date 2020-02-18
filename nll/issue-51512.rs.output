@@ -1,0 +1,41 @@
+valid global environment:
+ [(Syntax.FnDef
+     ("main", [], [], [], [],
+      (("unknown_file", (1, 0), (5, 1)), (Syntax.BaseTy Syntax.Unit)), 
+      [],
+      (("unknown_file", (2, 4), (2, 30)),
+       (Syntax.Let ("range",
+          (("unknown_file", (2, 15), (2, 23)),
+           (Syntax.Array (
+              (("unknown_file", (2, 16), (2, 19)), (Syntax.BaseTy Syntax.U32)),
+              1))),
+          (("unknown_file", (2, 26), (2, 29)),
+           (Syntax.Array
+              [(("unknown_file", (2, 27), (2, 28)),
+                (Syntax.Prim (Syntax.Num 0)))])),
+          (("unknown_file", (3, 4), (3, 28)),
+           (Syntax.Let ("r",
+              (("unknown_file", (3, 11), (3, 19)),
+               (Syntax.Array (
+                  (("unknown_file", (3, 12), (3, 15)),
+                   (Syntax.BaseTy Syntax.U32)),
+                  1))),
+              (("unknown_file", (3, 22), (3, 27)),
+               (Syntax.Move
+                  (("unknown_file", (3, 22), (3, 27)), ("range", [])))),
+              (("unknown_file", (4, 4), (4, 26)),
+               (Syntax.Let ("x",
+                  (("unknown_file", (4, 11), (4, 14)),
+                   (Syntax.BaseTy Syntax.U32)),
+                  (("unknown_file", (4, 17), (4, 25)),
+                   (Syntax.Idx (
+                      (("unknown_file", (4, 17), (4, 22)), ("range", [])),
+                      (("unknown_file", (4, 23), (4, 24)),
+                       (Syntax.Prim (Syntax.Num 0)))
+                      ))),
+                  (("unknown_file", (4, 25), (4, 26)),
+                   (Syntax.Prim Syntax.Unit))
+                  )))
+              )))
+          )))))
+   ]

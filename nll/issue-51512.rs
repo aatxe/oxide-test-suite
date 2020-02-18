@@ -1,6 +1,10 @@
 fn main() {
-    let range = 0..1;
-    let r = range;
-    let x = range.start;
-    //~^ ERROR use of moved value: `range` [E0382]
+    let range: [u32; 1] = [0];
+    let r: [u32; 1] = range;
+    let x: u32 = range[0];
+    // this example originally used ranges and errored, but
+    // the array desugaring turns them into something that implements Copy
+    //
+    // we could instead produce the same behavior by making a separate Range construct
+    // Ranges could be identical to Arrays but not implement Copy
 }
