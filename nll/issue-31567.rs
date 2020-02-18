@@ -4,24 +4,27 @@
 
 #![feature(nll)]
 
-struct VecWrapper<'a>(&'a mut S);
+struct Box<T>(T);
 
-struct S(Box<u32>);
+struct VecWrapper<'a>(&'a mut SS);
+
+struct SS(Box<u32>);
 
 fn get_dangling<'a>(v: VecWrapper<'a>) -> &'a u32 {
-    let s_inner: &'a S = &*v.0; //~ ERROR borrow may still be in use when destructor runs [E0713]
-    &s_inner.0
+    let s_inner: &'a SS = &*v.0; //~ ERROR borrow may still be in use when destructor runs [E0713]
+    let res: &'a u32 = &((*s_inner).0).0;
+    let tmp0: &'t0 mut VecWrapper<'a> = &mut v;
+    drop_wrapper::<'t0>(tmp0);
+    res
 }
 
-impl<'a> Drop for VecWrapper<'a> {
-    fn drop(&mut self) {
-        *self.0 = S(Box::new(0));
-    }
+fn drop_wrapper<'a>(wrapper: &'a mut VecWrapper<'a>) {
+    *self.0 = SS(Box(0));
 }
 
 fn main() {
-    let mut s = S(Box::new(11));
-    let vw = VecWrapper(&mut s);
-    let dangling = get_dangling(vw);
-    println!("{}", dangling);
+    let mut s: SS = SS(Box(11));
+    let tmp0: &'t0 mut SS = &mut s;
+    let vw: VecWrapper<'t0> = VecWrapper(tmp0);
+    let dangling: &'t0 u32 = get_dangling::<'t0>(vw);
 }

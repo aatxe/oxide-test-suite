@@ -3,28 +3,28 @@
 
 // compile-pass
 
+// dummy string, any non-copyable value will do
+struct String;
+
 fn main() {
-    let _s = construct().borrow().consume_borrowed();
+    let tmp0: Value = construct();
+    let tmp1: &'t1 Value = &tmp0;
+    let tmp2: Borrowed<'t1> = borrow::<'t1>(tmp1);
+    let _s: String = consume_borrowed::<'t1>(tmp2);
 }
 
-fn construct() -> Value { Value }
+fn construct() -> Value { Value() }
 
 pub struct Value;
 
-impl Value {
-    fn borrow<'a>(&'a self) -> Borrowed<'a> { unimplemented!() }
-}
+fn borrow<'a>(value: &'a Value) -> Borrowed<'a> { unimplemented!() }
 
 pub struct Borrowed<'a> {
     _inner: Guard<'a, Value>,
 }
 
-impl<'a> Borrowed<'a> {
-    fn consume_borrowed(self) -> String { unimplemented!() }
-}
+fn consume_borrowed<'a>(borrowed: Borrowed<'a>) -> String { unimplemented!() }
 
-pub struct Guard<'a, T: ?Sized + 'a> {
+pub struct Guard<'a, T: 'a> {
     _lock: &'a T,
 }
-
-impl<'a, T: ?Sized> Drop for Guard<'a, T> { fn drop(&mut self) {} }

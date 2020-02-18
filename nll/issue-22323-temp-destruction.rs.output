@@ -1,0 +1,125 @@
+valid global environment:
+ [(Syntax.TupStructDef (false, "String", [], [], []));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (9, 0), (14, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (10, 4), (10, 34)),
+        (Syntax.Let ("tmp0",
+           (("unknown_file", (10, 14), (10, 19)),
+            (Syntax.Struct ("Value", [], [], None))),
+           (("unknown_file", (10, 22), (10, 33)),
+            (Syntax.App (
+               (("unknown_file", (10, 22), (10, 31)), (Syntax.Fn "construct")),
+               [], [], [], []))),
+           (("unknown_file", (11, 4), (11, 33)),
+            (Syntax.Let ("tmp1",
+               (("unknown_file", (11, 14), (11, 24)),
+                (Syntax.Ref ((("unknown_file", (11, 15), (11, 18)), "t1"),
+                   Syntax.Shared,
+                   (("unknown_file", (11, 19), (11, 24)),
+                    (Syntax.Struct ("Value", [], [], None)))
+                   ))),
+               (("unknown_file", (11, 27), (11, 32)),
+                (Syntax.Borrow ((("unknown_file", (11, 27), (11, 32)), "p1"),
+                   Syntax.Shared,
+                   (("unknown_file", (11, 28), (11, 32)), ("tmp0", []))))),
+               (("unknown_file", (12, 4), (12, 50)),
+                (Syntax.Let ("tmp2",
+                   (("unknown_file", (12, 14), (12, 27)),
+                    (Syntax.Struct ("Borrowed",
+                       [(("unknown_file", (12, 23), (12, 26)), "t1")], 
+                       [], None))),
+                   (("unknown_file", (12, 30), (12, 49)),
+                    (Syntax.App (
+                       (("unknown_file", (12, 30), (12, 43)),
+                        (Syntax.Fn "borrow")),
+                       [], [(("unknown_file", (12, 39), (12, 42)), "t1")],
+                       [],
+                       [(("unknown_file", (12, 44), (12, 48)),
+                         (Syntax.Move
+                            (("unknown_file", (12, 44), (12, 48)),
+                             ("tmp1", []))))
+                         ]
+                       ))),
+                   (("unknown_file", (13, 4), (13, 51)),
+                    (Syntax.Let ("_s",
+                       (("unknown_file", (13, 12), (13, 18)),
+                        (Syntax.Struct ("String", [], [], None))),
+                       (("unknown_file", (13, 21), (13, 50)),
+                        (Syntax.App (
+                           (("unknown_file", (13, 21), (13, 44)),
+                            (Syntax.Fn "consume_borrowed")),
+                           [],
+                           [(("unknown_file", (13, 40), (13, 43)), "t1")],
+                           [],
+                           [(("unknown_file", (13, 45), (13, 49)),
+                             (Syntax.Move
+                                (("unknown_file", (13, 45), (13, 49)),
+                                 ("tmp2", []))))
+                             ]
+                           ))),
+                       (("unknown_file", (13, 50), (13, 51)),
+                        (Syntax.Prim Syntax.Unit))
+                       )))
+                   )))
+               )))
+           )))));
+   (Syntax.FnDef
+      ("construct", [], [], [], [],
+       (("unknown_file", (16, 18), (16, 23)),
+        (Syntax.Struct ("Value", [], [], None))),
+       [],
+       (("unknown_file", (16, 26), (16, 33)),
+        (Syntax.TupStruct ("Value", [], [], [])))));
+   (Syntax.TupStructDef (false, "Value", [], [], []));
+   (Syntax.FnDef
+      ("borrow", [], [(("unknown_file", (20, 10), (20, 12)), "a")], [],
+       [("value",
+         (("unknown_file", (20, 21), (20, 30)),
+          (Syntax.Ref ((("unknown_file", (20, 22), (20, 24)), "a"),
+             Syntax.Shared,
+             (("unknown_file", (20, 25), (20, 30)),
+              (Syntax.Struct ("Value", [], [], None)))
+             ))))
+         ],
+       (("unknown_file", (20, 35), (20, 47)),
+        (Syntax.Struct ("Borrowed",
+           [(("unknown_file", (20, 44), (20, 46)), "a")], [], None))),
+       [],
+       (("unknown_file", (20, 50), (20, 66)),
+        (Syntax.Abort "abort: unimplemented"))));
+   (Syntax.RecStructDef
+      (false, "Borrowed", [(("unknown_file", (22, 20), (22, 22)), "a")], 
+       [],
+       [("_inner",
+         (("unknown_file", (23, 12), (23, 28)),
+          (Syntax.Struct ("Guard",
+             [(("unknown_file", (23, 18), (23, 20)), "a")],
+             [(("unknown_file", (23, 22), (23, 27)),
+               (Syntax.Struct ("Value", [], [], None)))],
+             None))))
+         ]));
+   (Syntax.FnDef
+      ("consume_borrowed", [], [(("unknown_file", (26, 20), (26, 22)), "a")],
+       [],
+       [("borrowed",
+         (("unknown_file", (26, 34), (26, 46)),
+          (Syntax.Struct ("Borrowed",
+             [(("unknown_file", (26, 43), (26, 45)), "a")], [], None))))
+         ],
+       (("unknown_file", (26, 51), (26, 57)),
+        (Syntax.Struct ("String", [], [], None))),
+       [],
+       (("unknown_file", (26, 60), (26, 76)),
+        (Syntax.Abort "abort: unimplemented"))));
+   (Syntax.RecStructDef
+      (false, "Guard", [(("unknown_file", (28, 17), (28, 19)), "a")], 
+       ["T"],
+       [("_lock",
+         (("unknown_file", (29, 11), (29, 16)),
+          (Syntax.Ref ((("unknown_file", (29, 12), (29, 14)), "a"),
+             Syntax.Shared,
+             (("unknown_file", (29, 15), (29, 16)), (Syntax.TyVar "T"))))))
+         ]))
+   ]

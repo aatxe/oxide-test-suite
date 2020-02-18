@@ -3,8 +3,8 @@ struct FancyNum {
 }
 
 fn main() {
-    let mut fancy = FancyNum{ num: 5 };
-    let fancy_ref = &(&mut fancy);
-    fancy_ref.num = 6; //~ ERROR E0594
-    println!("{}", fancy_ref.num);
+    let mut fancy: FancyNum = FancyNum{ num: 5 };
+    let tmp0: &'t0 mut FancyNum = &mut fancy;
+    let fancy_ref: &'f &'t0 mut FancyNum = &tmp0;
+    (**fancy_ref).num = 6; //~ ERROR E0594
 }

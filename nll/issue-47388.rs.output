@@ -1,0 +1,87 @@
+error: (Syntax.PermissionErr (
+          (("unknown_file", (8, 19), (8, 40)),
+           (Syntax.Ref ((("unknown_file", (8, 20), (8, 22)), "f"),
+              Syntax.Shared,
+              (("unknown_file", (8, 23), (8, 40)),
+               (Syntax.Ref ((("unknown_file", (8, 24), (8, 27)), "t0"),
+                  Syntax.Unique,
+                  (("unknown_file", (8, 32), (8, 40)),
+                   (Syntax.Struct ("FancyNum", [], [],
+                      (Some (("<inferred>", (-1, -1), (-1, -1)),
+                             (Syntax.Rec
+                                [("num",
+                                  (("unknown_file", (2, 9), (2, 11)),
+                                   (Syntax.BaseTy Syntax.U32)))
+                                  ])))
+                      )))
+                  )))
+              ))),
+          [Syntax.Deref; Syntax.Deref; (Syntax.Field "num")], Syntax.Unique))
+invalid global environment:
+ [(Syntax.RecStructDef
+     (false, "FancyNum", [], [],
+      [("num",
+        (("unknown_file", (2, 9), (2, 11)), (Syntax.BaseTy Syntax.U32)))]));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (5, 0), (10, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (6, 4), (6, 49)),
+        (Syntax.Let ("fancy",
+           (("unknown_file", (6, 19), (6, 27)),
+            (Syntax.Struct ("FancyNum", [], [], None))),
+           (("unknown_file", (6, 30), (6, 48)),
+            (Syntax.RecStruct ("FancyNum", [], [],
+               [("num",
+                 (("unknown_file", (6, 45), (6, 46)),
+                  (Syntax.Prim (Syntax.Num 5))))
+                 ]
+               ))),
+           (("unknown_file", (7, 4), (7, 45)),
+            (Syntax.Let ("tmp0",
+               (("unknown_file", (7, 14), (7, 31)),
+                (Syntax.Ref ((("unknown_file", (7, 15), (7, 18)), "t0"),
+                   Syntax.Unique,
+                   (("unknown_file", (7, 23), (7, 31)),
+                    (Syntax.Struct ("FancyNum", [], [], None)))
+                   ))),
+               (("unknown_file", (7, 34), (7, 44)),
+                (Syntax.Borrow ((("unknown_file", (7, 34), (7, 44)), "p2"),
+                   Syntax.Unique,
+                   (("unknown_file", (7, 39), (7, 44)), ("fancy", []))))),
+               (("unknown_file", (8, 4), (8, 49)),
+                (Syntax.Let ("fancy_ref",
+                   (("unknown_file", (8, 19), (8, 40)),
+                    (Syntax.Ref ((("unknown_file", (8, 20), (8, 22)), "f"),
+                       Syntax.Shared,
+                       (("unknown_file", (8, 23), (8, 40)),
+                        (Syntax.Ref (
+                           (("unknown_file", (8, 24), (8, 27)), "t0"),
+                           Syntax.Unique,
+                           (("unknown_file", (8, 32), (8, 40)),
+                            (Syntax.Struct ("FancyNum", [], [], None)))
+                           )))
+                       ))),
+                   (("unknown_file", (8, 43), (8, 48)),
+                    (Syntax.Borrow (
+                       (("unknown_file", (8, 43), (8, 48)), "p1"),
+                       Syntax.Shared,
+                       (("unknown_file", (8, 44), (8, 48)), ("tmp0", []))))),
+                   (("", (0, 0), (0, 0)),
+                    (Syntax.Seq (
+                       (("unknown_file", (9, 4), (9, 25)),
+                        (Syntax.Assign (
+                           (("unknown_file", (9, 7), (9, 16)),
+                            ("fancy_ref",
+                             [Syntax.Deref; Syntax.Deref;
+                               (Syntax.Field "num")])),
+                           (("unknown_file", (9, 24), (9, 25)),
+                            (Syntax.Prim (Syntax.Num 6)))
+                           ))),
+                       (("unknown_file", (9, 25), (9, 26)),
+                        (Syntax.Prim Syntax.Unit))
+                       )))
+                   )))
+               )))
+           )))))
+   ]
