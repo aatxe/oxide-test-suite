@@ -1,16 +1,21 @@
-struct A {
-    b: B,
+struct AA {
+    b: BB,
 }
 
-#[derive(Clone)]
-struct B;
+#[derive(Clone, Copy)]
+struct BB;
 
-fn foo(_: A) {}
+fn clone<'a>(b: &'a BB) -> BB {
+    *b
+}
 
-fn bar(mut a: A) -> B {
-    a.b = B;
+fn foo(a: AA) {}
+
+fn bar(mut a: AA) -> BB {
+    a.b = BB();
     foo(a);
-    a.b.clone()
+    let tmp0: &'t0 BB = &a.b;
+    clone::<'t0>(tmp0)
 //~^ ERROR borrow of moved value
 }
 
