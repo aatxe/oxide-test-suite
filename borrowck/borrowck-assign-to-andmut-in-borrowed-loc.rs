@@ -6,7 +6,7 @@ struct SS<'a> {
 }
 
 fn copy_borrowed_ptr<'a>(p: &'a mut SS<'a>) -> SS<'a> {
-    let tmp0: &'a mut isize = &mut *(*p).pointer;
+    let tmp0 = #[lft = "a"] &mut *(*p).pointer;
     SS::<'a> { pointer: tmp0 }
 }
 
