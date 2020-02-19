@@ -1,0 +1,47 @@
+valid global environment:
+ [(Syntax.RecStructDef
+     (false, "SomeStruct", [], ["T"],
+      [("t", (("unknown_file", (4, 26), (4, 27)), (Syntax.TyVar "T")))]));
+   (Syntax.FnDef
+      ("no_annot", [], [], [], [],
+       (("unknown_file", (6, 0), (10, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (7, 4), (7, 15)),
+        (Syntax.Let ("c", (("unknown_file", (7, 4), (7, 7)), Syntax.Infer),
+           (("unknown_file", (7, 12), (7, 14)), (Syntax.Prim (Syntax.Num 66))),
+           (("unknown_file", (8, 4), (8, 26)),
+            (Syntax.Let ("tmp",
+               (("unknown_file", (8, 13), (8, 20)),
+                (Syntax.Ref ((("unknown_file", (8, 14), (8, 16)), "t"),
+                   Syntax.Shared,
+                   (("unknown_file", (8, 17), (8, 20)),
+                    (Syntax.BaseTy Syntax.U32))
+                   ))),
+               (("unknown_file", (8, 23), (8, 25)),
+                (Syntax.Borrow ((("unknown_file", (8, 23), (8, 25)), "p1"),
+                   Syntax.Shared,
+                   (("unknown_file", (8, 24), (8, 25)), ("c", []))))),
+               (("", (0, 0), (0, 0)),
+                (Syntax.Seq (
+                   (("unknown_file", (9, 4), (9, 36)),
+                    (Syntax.RecStruct ("SomeStruct", [],
+                       [(("unknown_file", (9, 17), (9, 24)),
+                         (Syntax.Ref (
+                            (("unknown_file", (9, 18), (9, 20)), "t"),
+                            Syntax.Shared,
+                            (("unknown_file", (9, 21), (9, 24)),
+                             (Syntax.BaseTy Syntax.U32))
+                            )))
+                         ],
+                       [("t",
+                         (("unknown_file", (9, 31), (9, 34)),
+                          (Syntax.Move
+                             (("unknown_file", (9, 31), (9, 34)), ("tmp", [])))))
+                         ]
+                       ))),
+                   (("unknown_file", (9, 36), (9, 37)),
+                    (Syntax.Prim Syntax.Unit))
+                   )))
+               )))
+           )))))
+   ]

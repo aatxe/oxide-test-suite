@@ -1,0 +1,35 @@
+valid global environment:
+ [(Syntax.RecStructDef
+     (false, "SomeStruct", [], ["T"],
+      [("t", (("unknown_file", (4, 26), (4, 27)), (Syntax.TyVar "T")))]));
+   (Syntax.FnDef
+      ("annot_reference_named_lifetime_ok", [],
+       [(("unknown_file", (6, 37), (6, 39)), "a")], [],
+       [("c",
+         (("unknown_file", (6, 44), (6, 51)),
+          (Syntax.Ref ((("unknown_file", (6, 45), (6, 47)), "a"),
+             Syntax.Shared,
+             (("unknown_file", (6, 48), (6, 51)), (Syntax.BaseTy Syntax.U32))
+             ))))
+         ],
+       (("unknown_file", (6, 0), (8, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("", (0, 0), (0, 0)),
+        (Syntax.Seq (
+           (("unknown_file", (7, 4), (7, 34)),
+            (Syntax.RecStruct ("SomeStruct", [],
+               [(("unknown_file", (7, 17), (7, 24)),
+                 (Syntax.Ref ((("unknown_file", (7, 18), (7, 20)), "a"),
+                    Syntax.Shared,
+                    (("unknown_file", (7, 21), (7, 24)),
+                     (Syntax.BaseTy Syntax.U32))
+                    )))
+                 ],
+               [("t",
+                 (("unknown_file", (7, 31), (7, 32)),
+                  (Syntax.Move
+                     (("unknown_file", (7, 31), (7, 32)), ("c", [])))))
+                 ]
+               ))),
+           (("unknown_file", (7, 34), (7, 35)), (Syntax.Prim Syntax.Unit)))))))
+   ]

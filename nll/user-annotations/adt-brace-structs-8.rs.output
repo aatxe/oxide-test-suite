@@ -1,0 +1,45 @@
+valid global environment:
+ [(Syntax.RecStructDef
+     (false, "SomeStruct", [], ["T"],
+      [("t", (("unknown_file", (4, 26), (4, 27)), (Syntax.TyVar "T")))]));
+   (Syntax.FnDef
+      ("annot_reference_named_lifetime_in_closure_ok", [],
+       [(("unknown_file", (6, 48), (6, 50)), "a")], [],
+       [("c",
+         (("unknown_file", (6, 55), (6, 62)),
+          (Syntax.Ref ((("unknown_file", (6, 56), (6, 58)), "a"),
+             Syntax.Shared,
+             (("unknown_file", (6, 59), (6, 62)), (Syntax.BaseTy Syntax.U32))
+             ))))
+         ],
+       (("unknown_file", (6, 0), (10, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (7, 4), (9, 6)),
+        (Syntax.Let ("_closure",
+           (("unknown_file", (7, 4), (7, 7)), Syntax.Infer),
+           (("unknown_file", (7, 19), (9, 5)),
+            (Syntax.Fun ([], [], [], None,
+               (("", (0, 0), (0, 0)),
+                (Syntax.Seq (
+                   (("unknown_file", (8, 8), (8, 38)),
+                    (Syntax.RecStruct ("SomeStruct", [],
+                       [(("unknown_file", (8, 21), (8, 28)),
+                         (Syntax.Ref (
+                            (("unknown_file", (8, 22), (8, 24)), "a"),
+                            Syntax.Shared,
+                            (("unknown_file", (8, 25), (8, 28)),
+                             (Syntax.BaseTy Syntax.U32))
+                            )))
+                         ],
+                       [("t",
+                         (("unknown_file", (8, 35), (8, 36)),
+                          (Syntax.Move
+                             (("unknown_file", (8, 35), (8, 36)), ("c", [])))))
+                         ]
+                       ))),
+                   (("unknown_file", (8, 38), (8, 39)),
+                    (Syntax.Prim Syntax.Unit))
+                   )))
+               ))),
+           (("unknown_file", (9, 5), (9, 6)), (Syntax.Prim Syntax.Unit)))))))
+   ]
