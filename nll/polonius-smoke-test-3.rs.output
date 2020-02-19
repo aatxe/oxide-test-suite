@@ -1,0 +1,46 @@
+error: (Syntax.SafetyErr (
+          (Syntax.Unique, (("unknown_file", (7, 25), (7, 26)), ("x", []))),
+          (Syntax.Unique,
+           (("unknown_file", (6, 31), (6, 32)), ("x", [Syntax.Deref])))
+          ))
+invalid global environment:
+ [(Syntax.FnDef
+     ("use_while_mut_fr", [], [(("unknown_file", (5, 24), (5, 26)), "a")],
+      [],
+      [("x",
+        (("unknown_file", (5, 31), (5, 42)),
+         (Syntax.Ref ((("unknown_file", (5, 32), (5, 34)), "a"),
+            Syntax.Unique,
+            (("unknown_file", (5, 39), (5, 42)), (Syntax.BaseTy Syntax.U32))
+            ))))
+        ],
+      (("unknown_file", (5, 47), (5, 58)),
+       (Syntax.Ref ((("unknown_file", (5, 48), (5, 50)), "a"), Syntax.Unique,
+          (("unknown_file", (5, 55), (5, 58)), (Syntax.BaseTy Syntax.U32))))),
+      [],
+      (("unknown_file", (6, 4), (6, 33)),
+       (Syntax.Let ("y",
+          (("unknown_file", (6, 11), (6, 22)),
+           (Syntax.Ref ((("unknown_file", (6, 12), (6, 14)), "y"),
+              Syntax.Unique,
+              (("unknown_file", (6, 19), (6, 22)), (Syntax.BaseTy Syntax.U32))
+              ))),
+          (("unknown_file", (6, 25), (6, 32)),
+           (Syntax.Borrow ((("unknown_file", (6, 25), (6, 32)), "p1"),
+              Syntax.Unique,
+              (("unknown_file", (6, 31), (6, 32)), ("x", [Syntax.Deref]))))),
+          (("unknown_file", (7, 4), (7, 27)),
+           (Syntax.Let ("z",
+              (("unknown_file", (7, 11), (7, 22)),
+               (Syntax.Ref ((("unknown_file", (7, 12), (7, 14)), "a"),
+                  Syntax.Unique,
+                  (("unknown_file", (7, 19), (7, 22)),
+                   (Syntax.BaseTy Syntax.U32))
+                  ))),
+              (("unknown_file", (7, 25), (7, 26)),
+               (Syntax.Move (("unknown_file", (7, 25), (7, 26)), ("x", [])))),
+              (("unknown_file", (8, 4), (8, 5)),
+               (Syntax.Move (("unknown_file", (8, 4), (8, 5)), ("y", []))))
+              )))
+          )))))
+   ]

@@ -1,5 +1,8 @@
+// wrap it to prevent copying
+struct Wrap([u32; 3]);
+
 fn main() {
-    let x = (vec![1, 2, 3], );
-    drop(x.0);
-    drop(x); //~ ERROR use of moved value
+    let x: (Wrap,) = (Wrap([1, 2, 3]), );
+    drop::<Wrap>(x.0);
+    drop::<(Wrap,)>(x); //~ ERROR use of moved value
 }
