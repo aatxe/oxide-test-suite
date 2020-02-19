@@ -6,15 +6,18 @@ struct SS<'a> {
 }
 
 fn copy_borrowed_ptr<'a>(p: &'a mut SS<'a>) -> SS<'a> {
-    SS::<'a> { pointer: &mut *(*p).pointer }
+    let tmp0: &'a mut isize = &mut *(*p).pointer;
+    SS::<'a> { pointer: tmp0 }
 }
 
 fn main() {
     let mut x: u32 = 1;
 
     {
-        let mut y: SS<'a> = SS::<'a> { pointer: &mut x };
-        let z: SS<'a> = copy_borrowed_ptr::<'a>(&mut y);
+        let tmp0: &'t0 mut u32 = &mut x;
+        let mut y = SS::<'t0> { pointer: tmp0 };
+        let tmp1: &'t1 mut SS<'t0> = &mut x;
+        let z: SS<'t1> = copy_borrowed_ptr::<'t1>(tmp1);
         *y.pointer += 1;
         //~^ ERROR cannot use `*y.pointer`
         //~| ERROR cannot assign to `*y.pointer`
