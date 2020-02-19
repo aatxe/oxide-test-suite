@@ -10,7 +10,7 @@ where
 }
 
 fn bar<'a, 'b>(x: &'a u32, y: &'b u32) -> (&'a u32, &'b u32) {
-    foo(x, y)
+    foo::<'a, 'b>(x, y)
     //~^ ERROR lifetime may not live long enough
 }
 

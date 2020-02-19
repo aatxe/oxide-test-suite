@@ -1,0 +1,86 @@
+error: (Syntax.ProvArityMismatch ("UT-Function",
+          [(("unknown_file", (10, 20), (10, 22)), "a");
+            (("unknown_file", (10, 24), (10, 26)), "b")],
+          [(("unknown_file", (15, 15), (15, 17)), "a")]))
+invalid global environment:
+ [(Syntax.FnDef
+     ("make_it", [], [], [], [],
+      (("unknown_file", (10, 16), (10, 59)),
+       (Syntax.Fun ([],
+          [(("unknown_file", (10, 20), (10, 22)), "a");
+            (("unknown_file", (10, 24), (10, 26)), "b")],
+          [],
+          [(("unknown_file", (10, 31), (10, 38)),
+            (Syntax.Ref ((("unknown_file", (10, 32), (10, 34)), "a"),
+               Syntax.Shared,
+               (("unknown_file", (10, 35), (10, 38)),
+                (Syntax.BaseTy Syntax.U32))
+               )));
+            (("unknown_file", (10, 40), (10, 47)),
+             (Syntax.Ref ((("unknown_file", (10, 41), (10, 43)), "b"),
+                Syntax.Shared,
+                (("unknown_file", (10, 44), (10, 47)),
+                 (Syntax.BaseTy Syntax.U32))
+                )))
+            ],
+          Syntax.Unboxed,
+          (("unknown_file", (10, 52), (10, 59)),
+           (Syntax.Ref ((("unknown_file", (10, 53), (10, 55)), "a"),
+              Syntax.Shared,
+              (("unknown_file", (10, 56), (10, 59)),
+               (Syntax.BaseTy Syntax.U32))
+              )))
+          ))),
+      [],
+      (("unknown_file", (11, 4), (11, 12)),
+       (Syntax.Abort "abort: no message provided"))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (14, 0), (17, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (15, 4), (15, 63)),
+        (Syntax.Let ("a",
+           (("unknown_file", (15, 11), (15, 50)),
+            (Syntax.Fun ([], [(("unknown_file", (15, 15), (15, 17)), "a")],
+               [],
+               [(("unknown_file", (15, 22), (15, 29)),
+                 (Syntax.Ref ((("unknown_file", (15, 23), (15, 25)), "a"),
+                    Syntax.Shared,
+                    (("unknown_file", (15, 26), (15, 29)),
+                     (Syntax.BaseTy Syntax.U32))
+                    )));
+                 (("unknown_file", (15, 31), (15, 38)),
+                  (Syntax.Ref ((("unknown_file", (15, 32), (15, 34)), "a"),
+                     Syntax.Shared,
+                     (("unknown_file", (15, 35), (15, 38)),
+                      (Syntax.BaseTy Syntax.U32))
+                     )))
+                 ],
+               Syntax.Unboxed,
+               (("unknown_file", (15, 43), (15, 50)),
+                (Syntax.Ref ((("unknown_file", (15, 44), (15, 46)), "a"),
+                   Syntax.Shared,
+                   (("unknown_file", (15, 47), (15, 50)),
+                    (Syntax.BaseTy Syntax.U32))
+                   )))
+               ))),
+           (("unknown_file", (15, 53), (15, 62)),
+            (Syntax.App (
+               (("unknown_file", (15, 53), (15, 60)), (Syntax.Fn "make_it")),
+               [], [], [], []))),
+           (("", (0, 0), (0, 0)),
+            (Syntax.Seq (
+               (("unknown_file", (16, 4), (16, 11)),
+                (Syntax.App (
+                   (("unknown_file", (16, 4), (16, 8)), (Syntax.Fn "drop")),
+                   [], [], [],
+                   [(("unknown_file", (16, 9), (16, 10)),
+                     (Syntax.Move
+                        (("unknown_file", (16, 9), (16, 10)), ("a", []))))
+                     ]
+                   ))),
+               (("unknown_file", (16, 11), (16, 12)),
+                (Syntax.Prim Syntax.Unit))
+               )))
+           )))))
+   ]

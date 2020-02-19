@@ -11,7 +11,7 @@ fn make_it() -> fn(&'static u32) -> &'static u32 {
 }
 
 fn main() {
-    let a: fn(_) -> _ = make_it();
+    let a: fn(&'static u32) -> &'static u32 = make_it();
     let b: fn(&u32) -> &u32 = a; //~ ERROR higher-ranked subtype error
     drop(a);
 }
