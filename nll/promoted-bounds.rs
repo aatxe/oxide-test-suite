@@ -4,22 +4,19 @@ where
     'b: 'min,
 {
     if *a < *b {
-        &a
+        &*a
     } else {
-        &b
+        &*b
     }
 }
 
 fn main() {
-    let promoted_fn_item_ref = &shorten_lifetime;
-
-    let a = &5;
-    let ptr = {
-        let l = 3;
-        let b = &l; //~ ERROR does not live long enough
-        let c = promoted_fn_item_ref(a, b);
+    let tmp0: i32 = 5;
+    let a: &'a i32 = &tmp0;
+    let ptr: &'min i32 = {
+        let l: i32 = 3;
+        let b: &'b i32 = &l; //~ ERROR does not live long enough
+        let c: &'min i32 = shorten_lifetime::<'a, 'b, 'min>(a, b);
         c
     };
-
-    println!("ptr = {:?}", ptr);
 }
