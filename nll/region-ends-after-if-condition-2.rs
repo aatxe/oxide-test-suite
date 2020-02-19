@@ -6,24 +6,15 @@
 #![feature(rustc_attrs)]
 
 struct MyStruct {
-    field: String
-}
-
-fn foo1() {
-    let mut my_struct = MyStruct { field: format!("Hello") };
-
-    let value = &my_struct.field;
-    if value.is_empty() {
-        my_struct.field.push_str("Hello, world!");
-    }
+    field: bool
 }
 
 fn foo2() {
-    let mut my_struct = MyStruct { field: format!("Hello") };
+    let mut my_struct = MyStruct { field: false };
 
     let value = &my_struct.field;
-    if value.is_empty() {
-        my_struct.field.push_str("Hello, world!");
+    if *value {
+        my_struct.field = false;
         //~^ ERROR [E0502]
     }
     drop(value);

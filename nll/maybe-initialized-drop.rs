@@ -4,14 +4,15 @@
 
 struct Wrap<'p> { p: &'p mut i32 }
 
-impl<'p> Drop for Wrap<'p> {
-    fn drop(&mut self) {
-        *self.p += 1;
-    }
+fn drop_wrap<'a, 'b>(wrap: &'a mut Wrap<'b>) where 'b: 'a {
+    *(*wrap).p += 1;
 }
 
 fn main() {
     let mut x = 0;
-    let wrap = Wrap { p: &mut x };
+    let tmp0: &'t0 mut i32 = &mut x;
+    let wrap = Wrap::<'t0> { p: tmp0 };
     x = 1; //~ ERROR cannot assign to `x` because it is borrowed [E0506]
+    let tmp1: &'t1 mut Wrap<'t0> = &mut wrap;
+    drop_wrap::<'t1, 't0>(tmp1);
 }

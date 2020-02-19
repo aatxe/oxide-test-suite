@@ -1,0 +1,63 @@
+valid global environment:
+ [(Syntax.RecStructDef
+     (false, "MyStruct", [], [],
+      [("field",
+        (("unknown_file", (9, 11), (9, 15)), (Syntax.BaseTy Syntax.Bool)))]));
+   (Syntax.FnDef
+      ("foo1", [], [], [], [],
+       (("unknown_file", (12, 0), (20, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (13, 4), (13, 50)),
+        (Syntax.Let ("my_struct",
+           (("unknown_file", (13, 4), (13, 7)), Syntax.Infer),
+           (("unknown_file", (13, 24), (13, 49)),
+            (Syntax.RecStruct ("MyStruct", [], [],
+               [("field",
+                 (("unknown_file", (13, 42), (13, 47)),
+                  (Syntax.Prim Syntax.False)))
+                 ]
+               ))),
+           (("unknown_file", (15, 4), (15, 33)),
+            (Syntax.Let ("value",
+               (("unknown_file", (15, 4), (15, 7)), Syntax.Infer),
+               (("unknown_file", (15, 16), (15, 32)),
+                (Syntax.Borrow ((("unknown_file", (15, 16), (15, 32)), "p1"),
+                   Syntax.Shared,
+                   (("unknown_file", (15, 17), (15, 26)),
+                    ("my_struct", [(Syntax.Field "field")]))
+                   ))),
+               (("unknown_file", (16, 4), (19, 5)),
+                (Syntax.Branch (
+                   (("unknown_file", (16, 7), (16, 13)),
+                    (Syntax.Move
+                       (("unknown_file", (16, 8), (16, 13)),
+                        ("value", [Syntax.Deref])))),
+                   (("", (1, 0), (1, 0)),
+                    (Syntax.Seq (
+                       (("unknown_file", (17, 8), (17, 21)),
+                        (Syntax.Drop
+                           (("unknown_file", (17, 8), (17, 21)),
+                            ("value", [])))),
+                       (("", (0, 0), (0, 0)),
+                        (Syntax.Seq (
+                           (("unknown_file", (18, 8), (18, 31)),
+                            (Syntax.Assign (
+                               (("unknown_file", (18, 8), (18, 17)),
+                                ("my_struct", [(Syntax.Field "field")])),
+                               (("unknown_file", (18, 26), (18, 31)),
+                                (Syntax.Prim Syntax.False))
+                               ))),
+                           (("unknown_file", (18, 31), (18, 32)),
+                            (Syntax.Prim Syntax.Unit))
+                           )))
+                       ))),
+                   (("unknown_file", (16, 4), (16, 6)),
+                    (Syntax.Prim Syntax.Unit))
+                   )))
+               )))
+           )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (22, 0), (22, 13)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (22, 10), (22, 13)), (Syntax.Prim Syntax.Unit))))
+   ]
