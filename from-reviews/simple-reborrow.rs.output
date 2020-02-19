@@ -19,15 +19,9 @@ valid global environment:
            (("unknown_file", (3, 46), (3, 49)), (Syntax.BaseTy Syntax.U32))))),
        [],
        (("unknown_file", (4, 4), (4, 38)),
-        (Syntax.Let ("r",
-           (("unknown_file", (4, 11), (4, 22)),
-            (Syntax.Ref ((("unknown_file", (4, 12), (4, 14)), "a"),
-               Syntax.Unique,
-               (("unknown_file", (4, 19), (4, 22)),
-                (Syntax.BaseTy Syntax.U32))
-               ))),
-           (("unknown_file", (4, 25), (4, 37)),
-            (Syntax.Borrow ((("unknown_file", (4, 25), (4, 37)), "p1"),
+        (Syntax.Let ("r", (("unknown_file", (4, 4), (4, 7)), Syntax.Infer),
+           (("unknown_file", (4, 12), (4, 37)),
+            (Syntax.Borrow ((("unknown_file", (4, 12), (4, 37)), "a"),
                Syntax.Unique,
                (("unknown_file", (4, 32), (4, 34)),
                 ("pt", [Syntax.Deref; (Syntax.Index 0)]))

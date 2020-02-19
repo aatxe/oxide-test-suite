@@ -21,10 +21,10 @@ valid global environment:
           (("unknown_file", (1, 54), (1, 57)), (Syntax.BaseTy Syntax.U32))))),
       [((("unknown_file", (1, 68), (1, 70)), "a"),
         (("unknown_file", (1, 64), (1, 66)), "b"))],
-      (("unknown_file", (2, 4), (2, 13)),
-       (Syntax.Borrow ((("unknown_file", (2, 4), (2, 13)), "p1"),
+      (("unknown_file", (2, 4), (2, 26)),
+       (Syntax.Borrow ((("unknown_file", (2, 4), (2, 26)), "a"),
           Syntax.Unique,
-          (("unknown_file", (2, 11), (2, 13)),
+          (("unknown_file", (2, 24), (2, 26)),
            ("pt", [Syntax.Deref; Syntax.Deref]))
           )))))
    ]
