@@ -1,0 +1,62 @@
+error: (Syntax.PermissionErr (
+          (("unknown_file", (6, 11), (6, 18)),
+           (Syntax.Ref ((("unknown_file", (6, 12), (6, 15)), "t0"),
+              Syntax.Shared,
+              (("unknown_file", (6, 16), (6, 18)),
+               (Syntax.Struct ("AA", [], [],
+                  (Some (("<inferred>", (-1, -1), (-1, -1)),
+                         (Syntax.Tup
+                            [(("unknown_file", (2, 10), (2, 16)),
+                              (Syntax.Struct ("String", [], [],
+                                 (Some (("<inferred>", (-1, -1), (-1, -1)),
+                                        (Syntax.Tup [])))
+                                 )))
+                              ])))
+                  )))
+              ))),
+          [Syntax.Deref], Syntax.Unique))
+invalid global environment:
+ [(Syntax.TupStructDef (false, "String", [], [], []));
+   (Syntax.TupStructDef
+      (false, "AA", [], [],
+       [(("unknown_file", (2, 10), (2, 16)),
+         (Syntax.Struct ("String", [], [], None)))]));
+   (Syntax.FnDef
+      ("suggest_remove_deref", [], [], [], [],
+       (("unknown_file", (4, 0), (9, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (5, 4), (5, 32)),
+        (Syntax.Let ("tmp0",
+           (("unknown_file", (5, 14), (5, 16)),
+            (Syntax.Struct ("AA", [], [], None))),
+           (("unknown_file", (5, 19), (5, 31)),
+            (Syntax.TupStruct ("AA", [], [],
+               [(("unknown_file", (5, 22), (5, 30)),
+                 (Syntax.TupStruct ("String", [], [], [])))]
+               ))),
+           (("unknown_file", (6, 4), (6, 27)),
+            (Syntax.Let ("a",
+               (("unknown_file", (6, 11), (6, 18)),
+                (Syntax.Ref ((("unknown_file", (6, 12), (6, 15)), "t0"),
+                   Syntax.Shared,
+                   (("unknown_file", (6, 16), (6, 18)),
+                    (Syntax.Struct ("AA", [], [], None)))
+                   ))),
+               (("unknown_file", (6, 21), (6, 26)),
+                (Syntax.Borrow ((("unknown_file", (6, 21), (6, 26)), "p1"),
+                   Syntax.Shared,
+                   (("unknown_file", (6, 22), (6, 26)), ("tmp0", []))))),
+               (("unknown_file", (7, 4), (7, 19)),
+                (Syntax.Let ("b",
+                   (("unknown_file", (7, 11), (7, 13)),
+                    (Syntax.Struct ("AA", [], [], None))),
+                   (("unknown_file", (7, 16), (7, 18)),
+                    (Syntax.Move
+                       (("unknown_file", (7, 17), (7, 18)),
+                        ("a", [Syntax.Deref])))),
+                   (("unknown_file", (7, 18), (7, 19)),
+                    (Syntax.Prim Syntax.Unit))
+                   )))
+               )))
+           )))))
+   ]

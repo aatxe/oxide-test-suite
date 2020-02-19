@@ -1,0 +1,85 @@
+error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (6, 62), (6, 64)), "b"),
+          (("unknown_file", (6, 36), (6, 38)), "a")))
+invalid global environment:
+ [(Syntax.FnDef
+     ("bar", [],
+      [(("unknown_file", (5, 7), (5, 9)), "a");
+        (("unknown_file", (5, 11), (5, 13)), "b")],
+      [], [],
+      (("unknown_file", (5, 20), (5, 51)),
+       (Syntax.Fun ([], [], [],
+          [(("unknown_file", (5, 23), (5, 30)),
+            (Syntax.Ref ((("unknown_file", (5, 24), (5, 26)), "a"),
+               Syntax.Shared,
+               (("unknown_file", (5, 27), (5, 30)),
+                (Syntax.BaseTy Syntax.U32))
+               )));
+            (("unknown_file", (5, 32), (5, 39)),
+             (Syntax.Ref ((("unknown_file", (5, 33), (5, 35)), "b"),
+                Syntax.Shared,
+                (("unknown_file", (5, 36), (5, 39)),
+                 (Syntax.BaseTy Syntax.U32))
+                )))
+            ],
+          Syntax.Unboxed,
+          (("unknown_file", (5, 44), (5, 51)),
+           (Syntax.Ref ((("unknown_file", (5, 45), (5, 47)), "a"),
+              Syntax.Shared,
+              (("unknown_file", (5, 48), (5, 51)), (Syntax.BaseTy Syntax.U32))
+              )))
+          ))),
+      [],
+      (("unknown_file", (6, 4), (6, 72)),
+       (Syntax.Let ("g",
+          (("unknown_file", (6, 11), (6, 42)),
+           (Syntax.Fun ([], [], [],
+              [(("unknown_file", (6, 14), (6, 21)),
+                (Syntax.Ref ((("unknown_file", (6, 15), (6, 17)), "a"),
+                   Syntax.Shared,
+                   (("unknown_file", (6, 18), (6, 21)),
+                    (Syntax.BaseTy Syntax.U32))
+                   )));
+                (("unknown_file", (6, 23), (6, 30)),
+                 (Syntax.Ref ((("unknown_file", (6, 24), (6, 26)), "b"),
+                    Syntax.Shared,
+                    (("unknown_file", (6, 27), (6, 30)),
+                     (Syntax.BaseTy Syntax.U32))
+                    )))
+                ],
+              Syntax.Unboxed,
+              (("unknown_file", (6, 35), (6, 42)),
+               (Syntax.Ref ((("unknown_file", (6, 36), (6, 38)), "a"),
+                  Syntax.Shared,
+                  (("unknown_file", (6, 39), (6, 42)),
+                   (Syntax.BaseTy Syntax.U32))
+                  )))
+              ))),
+          (("unknown_file", (6, 45), (6, 71)),
+           (Syntax.Fun ([], [],
+              [("x",
+                (("unknown_file", (6, 49), (6, 56)),
+                 (Syntax.Ref ((("unknown_file", (6, 50), (6, 52)), "a"),
+                    Syntax.Shared,
+                    (("unknown_file", (6, 53), (6, 56)),
+                     (Syntax.BaseTy Syntax.U32))
+                    ))));
+                ("y",
+                 (("unknown_file", (6, 61), (6, 68)),
+                  (Syntax.Ref ((("unknown_file", (6, 62), (6, 64)), "b"),
+                     Syntax.Shared,
+                     (("unknown_file", (6, 65), (6, 68)),
+                      (Syntax.BaseTy Syntax.U32))
+                     ))))
+                ],
+              None,
+              (("unknown_file", (6, 70), (6, 71)),
+               (Syntax.Move (("unknown_file", (6, 70), (6, 71)), ("y", []))))
+              ))),
+          (("unknown_file", (7, 4), (7, 5)),
+           (Syntax.Move (("unknown_file", (7, 4), (7, 5)), ("g", []))))
+          )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (11, 0), (11, 12)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (11, 10), (11, 12)), (Syntax.Prim Syntax.Unit))))
+   ]

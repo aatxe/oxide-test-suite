@@ -1,0 +1,111 @@
+error: (Syntax.PartiallyMovedTypes (
+          (("unknown_file", (14, 10), (14, 16)),
+           (Syntax.Uninit
+              (("unknown_file", (14, 10), (14, 16)),
+               (Syntax.Struct ("String", [], [],
+                  (Some (("<inferred>", (-1, -1), (-1, -1)), (Syntax.Tup [])))
+                  ))))),
+          (("unknown_file", (14, 10), (14, 16)),
+           (Syntax.Struct ("String", [], [],
+              (Some (("<inferred>", (-1, -1), (-1, -1)), (Syntax.Tup []))))))
+          ))
+invalid global environment:
+ [(Syntax.TupStructDef (false, "String", [], [], []));
+   (Syntax.TupStructDef
+      (false, "CC", [], [],
+       [(("unknown_file", (2, 10), (2, 12)),
+         (Syntax.Struct ("DD", [], [], None)))]));
+   (Syntax.FnDef
+      ("suggest_ref", [], [], [], [],
+       (("unknown_file", (4, 0), (12, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (5, 4), (5, 33)),
+        (Syntax.Let ("c",
+           (("unknown_file", (5, 11), (5, 13)),
+            (Syntax.Struct ("CC", [], [], None))),
+           (("unknown_file", (5, 16), (5, 32)),
+            (Syntax.TupStruct ("CC", [], [],
+               [(("unknown_file", (5, 19), (5, 31)),
+                 (Syntax.TupStruct ("DD", [], [],
+                    [(("unknown_file", (5, 22), (5, 30)),
+                      (Syntax.TupStruct ("String", [], [], [])))]
+                    )))
+                 ]
+               ))),
+           (("unknown_file", (6, 4), (6, 23)),
+            (Syntax.Let ("tmp0",
+               (("unknown_file", (6, 14), (6, 16)),
+                (Syntax.Struct ("DD", [], [], None))),
+               (("unknown_file", (6, 19), (6, 22)),
+                (Syntax.Move
+                   (("unknown_file", (6, 19), (6, 20)),
+                    ("c", [(Syntax.Index 0)])))),
+               (("unknown_file", (7, 4), (7, 27)),
+                (Syntax.Let ("s",
+                   (("unknown_file", (7, 11), (7, 17)),
+                    (Syntax.Struct ("String", [], [], None))),
+                   (("unknown_file", (7, 20), (7, 26)),
+                    (Syntax.Move
+                       (("unknown_file", (7, 20), (7, 24)),
+                        ("tmp0", [(Syntax.Index 0)])))),
+                   (("unknown_file", (8, 4), (8, 38)),
+                    (Syntax.Let ("tmp1",
+                       (("unknown_file", (8, 14), (8, 25)),
+                        (Syntax.Ref (
+                           (("unknown_file", (8, 15), (8, 18)), "t1"),
+                           Syntax.Unique,
+                           (("unknown_file", (8, 23), (8, 25)),
+                            (Syntax.Struct ("DD", [], [], None)))
+                           ))),
+                       (("unknown_file", (8, 28), (8, 37)),
+                        (Syntax.Borrow (
+                           (("unknown_file", (8, 28), (8, 37)), "p1"),
+                           Syntax.Unique,
+                           (("unknown_file", (8, 33), (8, 37)), ("tmp0", []))
+                           ))),
+                       (("", (1, 0), (1, 0)),
+                        (Syntax.Seq (
+                           (("unknown_file", (9, 4), (9, 23)),
+                            (Syntax.App (
+                               (("unknown_file", (9, 4), (9, 17)),
+                                (Syntax.Fn "drop_d")),
+                               [],
+                               [(("unknown_file", (9, 13), (9, 16)), "t1")],
+                               [],
+                               [(("unknown_file", (9, 18), (9, 22)),
+                                 (Syntax.Move
+                                    (("unknown_file", (9, 18), (9, 22)),
+                                     ("tmp1", []))))
+                                 ]
+                               ))),
+                           (("", (0, 0), (0, 0)),
+                            (Syntax.Seq (
+                               (("unknown_file", (10, 4), (10, 16)),
+                                (Syntax.Drop
+                                   (("unknown_file", (10, 4), (10, 16)),
+                                    ("tmp0", [])))),
+                               (("unknown_file", (10, 16), (10, 17)),
+                                (Syntax.Prim Syntax.Unit))
+                               )))
+                           )))
+                       )))
+                   )))
+               )))
+           )))));
+   (Syntax.TupStructDef
+      (false, "DD", [], [],
+       [(("unknown_file", (14, 10), (14, 16)),
+         (Syntax.Struct ("String", [], [], None)))]));
+   (Syntax.FnDef
+      ("drop_d", [], [(("unknown_file", (16, 10), (16, 12)), "a")], [],
+       [("d",
+         (("unknown_file", (16, 17), (16, 27)),
+          (Syntax.Ref ((("unknown_file", (16, 18), (16, 20)), "a"),
+             Syntax.Unique,
+             (("unknown_file", (16, 25), (16, 27)),
+              (Syntax.Struct ("DD", [], [], None)))
+             ))))
+         ],
+       (("unknown_file", (16, 0), (16, 31)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (16, 29), (16, 31)), (Syntax.Prim Syntax.Unit))))
+   ]

@@ -1,0 +1,40 @@
+error: (Syntax.CannotMove (("unknown_file", (6, 16), (6, 20)), ("tmp0", [])))
+invalid global environment:
+ [(Syntax.TupStructDef (false, "String", [], [], []));
+   (Syntax.TupStructDef
+      (false, "AA", [], [],
+       [(("unknown_file", (2, 10), (2, 16)),
+         (Syntax.Struct ("String", [], [], None)))]));
+   (Syntax.FnDef
+      ("suggest_borrow4", [], [], [], [],
+       (("unknown_file", (4, 0), (8, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (5, 4), (5, 39)),
+        (Syntax.Let ("tmp0",
+           (("unknown_file", (5, 14), (5, 21)),
+            (Syntax.Array (
+               (("unknown_file", (5, 15), (5, 17)),
+                (Syntax.Struct ("AA", [], [], None))),
+               1))),
+           (("unknown_file", (5, 24), (5, 38)),
+            (Syntax.Array
+               [(("unknown_file", (5, 25), (5, 37)),
+                 (Syntax.TupStruct ("AA", [], [],
+                    [(("unknown_file", (5, 28), (5, 36)),
+                      (Syntax.TupStruct ("String", [], [], [])))]
+                    )))
+                 ])),
+           (("unknown_file", (6, 4), (6, 24)),
+            (Syntax.Let ("a",
+               (("unknown_file", (6, 11), (6, 13)),
+                (Syntax.Struct ("AA", [], [], None))),
+               (("unknown_file", (6, 16), (6, 23)),
+                (Syntax.Idx (
+                   (("unknown_file", (6, 16), (6, 20)), ("tmp0", [])),
+                   (("unknown_file", (6, 21), (6, 22)),
+                    (Syntax.Prim (Syntax.Num 0)))
+                   ))),
+               (("unknown_file", (6, 23), (6, 24)), (Syntax.Prim Syntax.Unit))
+               )))
+           )))))
+   ]
