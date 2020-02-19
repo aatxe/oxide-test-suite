@@ -9,11 +9,9 @@ struct Bar<'b> {
     z: &'b u32,
 }
 
-impl Foo<'_, '_> {
-    fn take_bar(&mut self, b: Bar<'_>) {
-        self.y = b.z
-        //~^ ERROR
-    }
+fn take_bar<'a, 'b, 'c>(foo: Foo<'a, 'b>, b: Bar<'c>) {
+    foo.y = b.z
+    //~^ ERROR
 }
 
 fn main() {}

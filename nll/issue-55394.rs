@@ -4,10 +4,8 @@ struct Foo<'s> {
     bar: &'s mut Bar,
 }
 
-impl Foo<'_> {
-    fn new(bar: &mut Bar) -> Self {
-        Foo { bar } //~ERROR
-    }
+fn new<'a, 'b>(bar: &'b mut Bar) -> Foo<'a> {
+    Foo::<'a> { bar } //~ERROR
 }
 
 fn main() { }

@@ -1,0 +1,44 @@
+error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (7, 21), (7, 23)), "b"),
+          (("unknown_file", (8, 10), (8, 12)), "a")))
+invalid global environment:
+ [(Syntax.TupStructDef (false, "Bar", [], [], []));
+   (Syntax.RecStructDef
+      (false, "Foo", [(("unknown_file", (3, 11), (3, 13)), "s")], [],
+       [("bar",
+         (("unknown_file", (4, 9), (4, 20)),
+          (Syntax.Ref ((("unknown_file", (4, 10), (4, 12)), "s"),
+             Syntax.Unique,
+             (("unknown_file", (4, 17), (4, 20)),
+              (Syntax.Struct ("Bar", [], [], None)))
+             ))))
+         ]));
+   (Syntax.FnDef
+      ("new", [],
+       [(("unknown_file", (7, 7), (7, 9)), "a");
+         (("unknown_file", (7, 11), (7, 13)), "b")],
+       [],
+       [("bar",
+         (("unknown_file", (7, 20), (7, 31)),
+          (Syntax.Ref ((("unknown_file", (7, 21), (7, 23)), "b"),
+             Syntax.Unique,
+             (("unknown_file", (7, 28), (7, 31)),
+              (Syntax.Struct ("Bar", [], [], None)))
+             ))))
+         ],
+       (("unknown_file", (7, 36), (7, 43)),
+        (Syntax.Struct ("Foo", [(("unknown_file", (7, 40), (7, 42)), "a")],
+           [], None))),
+       [],
+       (("unknown_file", (8, 4), (8, 21)),
+        (Syntax.RecStruct ("Foo",
+           [(("unknown_file", (8, 10), (8, 12)), "a")], [],
+           [("bar",
+             (("unknown_file", (8, 16), (8, 19)),
+              (Syntax.Move (("unknown_file", (8, 16), (8, 19)), ("bar", [])))))
+             ]
+           )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (11, 0), (11, 13)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (11, 10), (11, 13)), (Syntax.Prim Syntax.Unit))))
+   ]

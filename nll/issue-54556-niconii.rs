@@ -9,17 +9,24 @@
 struct Mutex;
 struct MutexGuard<'a>(&'a Mutex);
 
-impl Drop for Mutex { fn drop(&mut self) { println!("Mutex::drop"); } }
-impl<'a> Drop for MutexGuard<'a> { fn drop(&mut self) { println!("MutexGuard::drop");  } }
+fn drop_mutex<'a>(mutex: &'a mut Mutex) { }
+fn drop_guard<'a>(guard: &'a mut MutexGuard<'a>) { }
 
-impl Mutex {
-    fn lock(&self) -> Result<MutexGuard, ()> { Ok(MutexGuard(self)) }
+fn lock<'a>(mutex: &'a Mutex) -> MutexGuard<'a> {
+    MutexGuard::<'a>(mutex)
 }
 
 fn main() {
-    let counter = Mutex;
+    let counter: Mutex = Mutex();
 
-    if let Ok(_) = counter.lock() { } //~ ERROR does not live long enough
+    let tmp0: &'t0 Mutex = &counter;
+    let guard: MutexGuard<'t0> = lock::<'t0>(tmp0); //~ ERROR does not live long enough
+    #[drop] tmp0; // temporary dies, but guard still has the loans
+
+    let tmp1: &'t1 mut Mutex = &mut counter;
+    drop_mutex::<'t1>(tmp1);
+    let tmp2: &'t2 mut MutexGuard<'t0> = &mut counter;
+    drop_guard(tmp2)
 
     // With this code as written, the dynamic semantics here implies
     // that `Mutex::drop` for `counter` runs *before*
