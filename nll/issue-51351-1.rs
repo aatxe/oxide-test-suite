@@ -10,7 +10,7 @@
 
 fn creash<'a>() {
     let unit: () = ();
-    let x: &'a () = &unit;
+    let x: &'a () = #[lft = "a"] &unit;
 }
 
 fn main() {}

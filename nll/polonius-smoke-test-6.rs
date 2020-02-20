@@ -3,7 +3,7 @@
 // compile-flags: -Z borrowck=mir -Zpolonius
 
 fn foo<'a, 'b>(p: &'b &'a mut usize) -> &'b usize where 'a: 'b {
-    &**p
+    #[lft = "b"] &**p
 }
 
 // Check that we create constraints for well-formedness of function arguments

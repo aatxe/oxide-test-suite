@@ -4,7 +4,7 @@
 
 // Cases like this are why we have Polonius.
 pub fn position_dependent_outlives<'a>(x: &'a mut i32, cond: bool) -> &'a mut i32 {
-    let y: &'a mut i32 = &mut *x;
+    let y: &'a mut i32 = #[lft = "a"] &mut *x;
     if cond {
         y
     } else {

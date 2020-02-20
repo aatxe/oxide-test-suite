@@ -13,7 +13,7 @@ valid global environment:
                    (Syntax.BaseTy Syntax.Unit)),
                   (("unknown_file", (13, 23), (13, 25)),
                    (Syntax.Prim Syntax.Unit)),
-                  (("unknown_file", (14, 8), (14, 30)),
+                  (("unknown_file", (14, 8), (14, 43)),
                    (Syntax.Let ("x",
                       (("unknown_file", (14, 15), (14, 21)),
                        (Syntax.Ref (
@@ -22,13 +22,13 @@ valid global environment:
                           (("unknown_file", (14, 19), (14, 21)),
                            (Syntax.BaseTy Syntax.Unit))
                           ))),
-                      (("unknown_file", (14, 24), (14, 29)),
+                      (("unknown_file", (14, 24), (14, 42)),
                        (Syntax.Borrow (
-                          (("unknown_file", (14, 24), (14, 29)), "p1"),
+                          (("unknown_file", (14, 24), (14, 42)), "a"),
                           Syntax.Shared,
-                          (("unknown_file", (14, 25), (14, 29)), ("unit", []))
+                          (("unknown_file", (14, 38), (14, 42)), ("unit", []))
                           ))),
-                      (("unknown_file", (14, 29), (14, 30)),
+                      (("unknown_file", (14, 42), (14, 43)),
                        (Syntax.Prim Syntax.Unit))
                       )))
                   )))

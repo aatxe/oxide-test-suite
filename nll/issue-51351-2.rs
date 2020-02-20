@@ -11,7 +11,7 @@
 fn produce<'a>() {
    move || {
         let unit: () = ();
-        let x: &'a () = &unit;
+        let x: &'a () = #[lft = "a"] &unit;
    };
 }
 

@@ -7,7 +7,7 @@ valid global environment:
        (Syntax.Let ("unit",
           (("unknown_file", (12, 14), (12, 16)), (Syntax.BaseTy Syntax.Unit)),
           (("unknown_file", (12, 19), (12, 21)), (Syntax.Prim Syntax.Unit)),
-          (("unknown_file", (13, 4), (13, 26)),
+          (("unknown_file", (13, 4), (13, 39)),
            (Syntax.Let ("x",
               (("unknown_file", (13, 11), (13, 17)),
                (Syntax.Ref ((("unknown_file", (13, 12), (13, 14)), "a"),
@@ -15,11 +15,11 @@ valid global environment:
                   (("unknown_file", (13, 15), (13, 17)),
                    (Syntax.BaseTy Syntax.Unit))
                   ))),
-              (("unknown_file", (13, 20), (13, 25)),
-               (Syntax.Borrow ((("unknown_file", (13, 20), (13, 25)), "p1"),
+              (("unknown_file", (13, 20), (13, 38)),
+               (Syntax.Borrow ((("unknown_file", (13, 20), (13, 38)), "a"),
                   Syntax.Shared,
-                  (("unknown_file", (13, 21), (13, 25)), ("unit", []))))),
-              (("unknown_file", (13, 25), (13, 26)),
+                  (("unknown_file", (13, 34), (13, 38)), ("unit", []))))),
+              (("unknown_file", (13, 38), (13, 39)),
                (Syntax.Prim Syntax.Unit))
               )))
           )))));
