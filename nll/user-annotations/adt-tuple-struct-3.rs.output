@@ -1,0 +1,33 @@
+valid global environment:
+ [(Syntax.TupStructDef
+     (false, "SomeStruct", [], ["T"],
+      [(("unknown_file", (4, 21), (4, 22)), (Syntax.TyVar "T"))]));
+   (Syntax.FnDef
+      ("annot_reference_any_lifetime", [], [], [], [],
+       (("unknown_file", (6, 0), (9, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("unknown_file", (7, 4), (7, 15)),
+        (Syntax.Let ("c", (("unknown_file", (7, 4), (7, 7)), Syntax.Infer),
+           (("unknown_file", (7, 12), (7, 14)), (Syntax.Prim (Syntax.Num 66))),
+           (("", (0, 0), (0, 0)),
+            (Syntax.Seq (
+               (("unknown_file", (8, 4), (8, 42)),
+                (Syntax.TupStruct ("SomeStruct", [],
+                   [(("unknown_file", (8, 17), (8, 24)),
+                     (Syntax.Ref ((("unknown_file", (8, 18), (8, 20)), "c"),
+                        Syntax.Shared,
+                        (("unknown_file", (8, 21), (8, 24)),
+                         (Syntax.BaseTy Syntax.U32))
+                        )))
+                     ],
+                   [(("unknown_file", (8, 26), (8, 41)),
+                     (Syntax.Borrow (
+                        (("unknown_file", (8, 26), (8, 41)), "c"),
+                        Syntax.Shared,
+                        (("unknown_file", (8, 40), (8, 41)), ("c", [])))))
+                     ]
+                   ))),
+               (("unknown_file", (8, 42), (8, 43)), (Syntax.Prim Syntax.Unit))
+               )))
+           )))))
+   ]
