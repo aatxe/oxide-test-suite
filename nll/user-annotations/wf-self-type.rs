@@ -2,7 +2,7 @@
 
 struct Foo<'a, 'b: 'a>(&'a &'b ());
 
-fn xmute<'a, 'b>(a: &'b ()) -> &'a () {
+fn xmute<'a, 'b>(a: &'b ()) -> &'a () where 'b: 'a {
     unreachable!()
 }
 

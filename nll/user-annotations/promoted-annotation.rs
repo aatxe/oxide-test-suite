@@ -2,7 +2,7 @@
 
 fn foo<'a>() {
     let x = 0;
-    let f = &drop::<&'a i32>;
+    let f = |x: &'a i32| drop::<&'a i32>(x);
     f(&x);
     //~^ ERROR `x` does not live long enough
 }

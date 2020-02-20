@@ -1,0 +1,50 @@
+error: (Syntax.CannotPromoteLocalProvToAbstract (
+          (("unknown_file", (4, 14), (4, 16)), "f"),
+          (("unknown_file", (4, 27), (4, 29)), "a")))
+invalid global environment:
+ [(Syntax.FnDef
+     ("test", [], [(("unknown_file", (3, 8), (3, 10)), "a")], [], [],
+      (("unknown_file", (3, 0), (6, 1)), (Syntax.BaseTy Syntax.Unit)), 
+      [],
+      (("unknown_file", (4, 4), (4, 37)),
+       (Syntax.Let ("f",
+          (("unknown_file", (4, 10), (4, 20)),
+           (Syntax.Fun ([], [], [],
+              [(("unknown_file", (4, 13), (4, 19)),
+                (Syntax.Ref ((("unknown_file", (4, 14), (4, 16)), "f"),
+                   Syntax.Shared,
+                   (("unknown_file", (4, 17), (4, 19)),
+                    (Syntax.BaseTy Syntax.Unit))
+                   )))
+                ],
+              Syntax.Unboxed,
+              (("unknown_file", (4, 10), (4, 20)),
+               (Syntax.BaseTy Syntax.Unit))
+              ))),
+          (("unknown_file", (4, 23), (4, 36)),
+           (Syntax.Fun ([], [],
+              [("x",
+                (("unknown_file", (4, 26), (4, 32)),
+                 (Syntax.Ref ((("unknown_file", (4, 27), (4, 29)), "a"),
+                    Syntax.Shared,
+                    (("unknown_file", (4, 30), (4, 32)),
+                     (Syntax.BaseTy Syntax.Unit))
+                    ))))
+                ],
+              None,
+              (("unknown_file", (4, 34), (4, 36)), (Syntax.Prim Syntax.Unit))
+              ))),
+          (("unknown_file", (4, 36), (4, 37)), (Syntax.Prim Syntax.Unit)))))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (8, 0), (10, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [],
+       (("", (0, 0), (0, 0)),
+        (Syntax.Seq (
+           (("unknown_file", (9, 4), (9, 17)),
+            (Syntax.App (
+               (("unknown_file", (9, 4), (9, 15)), (Syntax.Fn "test")), 
+               [], [(("unknown_file", (9, 11), (9, 14)), "t0")], [], 
+               []))),
+           (("unknown_file", (9, 17), (9, 18)), (Syntax.Prim Syntax.Unit)))))))
+   ]
