@@ -1,5 +1,4 @@
-error: (Syntax.InvalidLoan (Syntax.Shared,
-          (("unknown_file", (9, 9), (9, 13)), ("tmp0", []))))
+error: (Syntax.InvalidProv (("unknown_file", (9, 8), (9, 13)), "p2"))
 invalid global environment:
  [(Syntax.FnDef
      ("gimme", [], [(("unknown_file", (1, 9), (1, 11)), "a")], [],
