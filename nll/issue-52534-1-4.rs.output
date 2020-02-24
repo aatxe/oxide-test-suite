@@ -1,4 +1,6 @@
-error: (Syntax.InvalidProv (("unknown_file", (3, 4), (3, 6)), "p1"))
+error: (Syntax.UnboundLoanInProv (
+          (("unknown_file", (3, 5), (3, 6)), ("z", [])),
+          (("unknown_file", (3, 4), (3, 6)), "p1")))
 invalid global environment:
  [(Syntax.FnDef
      ("foobazbar", [], [(("unknown_file", (1, 13), (1, 15)), "a")], [],
