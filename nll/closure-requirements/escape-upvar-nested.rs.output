@@ -1,4 +1,6 @@
-error: (Syntax.InvalidProv (("unknown_file", (15, 16), (15, 18)), "p"))
+error: (Syntax.UnboundLoanInProv (
+          (("unknown_file", (21, 30), (21, 31)), ("y", [])),
+          (("unknown_file", (20, 28), (20, 30)), "p")))
 invalid global environment:
  [(Syntax.FnDef
      ("test", [], [], [], [],
@@ -70,7 +72,7 @@ invalid global environment:
                                (Syntax.Let ("closure",
                                   (("unknown_file", (22, 25), (22, 29)),
                                    (Syntax.Fun ([], [], [], [],
-                                      (Syntax.Env []),
+                                      Syntax.Unboxed,
                                       (("unknown_file", (22, 25), (22, 29)),
                                        (Syntax.BaseTy Syntax.Unit))
                                       ))),
@@ -81,7 +83,7 @@ invalid global environment:
                                           (("unknown_file", (23, 30),
                                             (23, 34)),
                                            (Syntax.Fun ([], [], [], [],
-                                              (Syntax.Env []),
+                                              Syntax.Unboxed,
                                               (("unknown_file", (23, 30),
                                                 (23, 34)),
                                                (Syntax.BaseTy Syntax.Unit))
