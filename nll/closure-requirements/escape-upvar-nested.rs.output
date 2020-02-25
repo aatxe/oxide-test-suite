@@ -1,6 +1,6 @@
 error: (Syntax.UnboundLoanInProv (
           (("unknown_file", (21, 30), (21, 31)), ("y", [])),
-          (("unknown_file", (20, 28), (20, 30)), "p")))
+          (("unknown_file", (15, 16), (15, 18)), "p")))
 invalid global environment:
  [(Syntax.FnDef
      ("test", [], [], [], [],
