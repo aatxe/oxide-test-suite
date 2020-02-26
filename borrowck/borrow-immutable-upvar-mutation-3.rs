@@ -12,5 +12,5 @@ fn main() {
     let mut z: usize = 0;
     let tmp0: &'t0 mut usize = &mut z;
     let tmp1: &'t1 mut usize = &mut z;
-    let _h: fn() = to_fn(|| { set::<'t0>(tmp); to_fn(|| *tmp1 = 42); }); //~ ERROR cannot assign
+    let _h: fn() = to_fn(|| { set::<'t0>(tmp0); to_fn(|| *tmp1 = 42); }); //~ ERROR cannot assign
 }
