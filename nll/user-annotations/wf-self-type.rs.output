@@ -1,0 +1,75 @@
+error: (Syntax.AbsProvsNotSubtype (
+          (("unknown_file", (10, 12), (10, 14)), "a"),
+          (("unknown_file", (10, 16), (10, 18)), "b")))
+invalid global environment:
+ [(Syntax.TupStructDef
+     (false, "Foo",
+      [(("unknown_file", (3, 11), (3, 13)), "a");
+        (("unknown_file", (3, 15), (3, 17)), "b")],
+      [],
+      [(("unknown_file", (3, 23), (3, 33)),
+        (Syntax.Ref ((("unknown_file", (3, 24), (3, 26)), "a"),
+           Syntax.Shared,
+           (("unknown_file", (3, 27), (3, 33)),
+            (Syntax.Ref ((("unknown_file", (3, 28), (3, 30)), "b"),
+               Syntax.Shared,
+               (("unknown_file", (3, 31), (3, 33)),
+                (Syntax.BaseTy Syntax.Unit))
+               )))
+           )))
+        ]));
+   (Syntax.FnDef
+      ("xmute", [],
+       [(("unknown_file", (5, 9), (5, 11)), "a");
+         (("unknown_file", (5, 13), (5, 15)), "b")],
+       [],
+       [("a",
+         (("unknown_file", (5, 20), (5, 26)),
+          (Syntax.Ref ((("unknown_file", (5, 21), (5, 23)), "b"),
+             Syntax.Shared,
+             (("unknown_file", (5, 24), (5, 26)), (Syntax.BaseTy Syntax.Unit))
+             ))))
+         ],
+       (("unknown_file", (5, 31), (5, 37)),
+        (Syntax.Ref ((("unknown_file", (5, 32), (5, 34)), "a"),
+           Syntax.Shared,
+           (("unknown_file", (5, 35), (5, 37)), (Syntax.BaseTy Syntax.Unit))
+           ))),
+       [((("unknown_file", (5, 48), (5, 50)), "a"),
+         (("unknown_file", (5, 44), (5, 46)), "b"))],
+       (("unknown_file", (6, 4), (6, 18)),
+        (Syntax.Abort "abort: unreachable"))));
+   (Syntax.FnDef
+      ("foo", [],
+       [(("unknown_file", (9, 11), (9, 13)), "a");
+         (("unknown_file", (9, 15), (9, 17)), "b")],
+       [],
+       [("u",
+         (("unknown_file", (9, 22), (9, 28)),
+          (Syntax.Ref ((("unknown_file", (9, 23), (9, 25)), "b"),
+             Syntax.Shared,
+             (("unknown_file", (9, 26), (9, 28)), (Syntax.BaseTy Syntax.Unit))
+             ))))
+         ],
+       (("unknown_file", (9, 33), (9, 39)),
+        (Syntax.Ref ((("unknown_file", (9, 34), (9, 36)), "a"),
+           Syntax.Shared,
+           (("unknown_file", (9, 37), (9, 39)), (Syntax.BaseTy Syntax.Unit))
+           ))),
+       [],
+       (("unknown_file", (10, 4), (10, 22)),
+        (Syntax.App (
+           (("unknown_file", (10, 4), (10, 19)), (Syntax.Fn "xmute")), 
+           [],
+           [(("unknown_file", (10, 12), (10, 14)), "a");
+             (("unknown_file", (10, 16), (10, 18)), "b")],
+           [],
+           [(("unknown_file", (10, 20), (10, 21)),
+             (Syntax.Move (("unknown_file", (10, 20), (10, 21)), ("u", []))))
+             ]
+           )))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (13, 0), (13, 12)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (13, 10), (13, 12)), (Syntax.Prim Syntax.Unit))))
+   ]
