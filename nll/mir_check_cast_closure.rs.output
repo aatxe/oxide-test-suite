@@ -26,8 +26,8 @@ invalid global environment:
            (Syntax.Ref ((("unknown_file", (5, 45), (5, 47)), "a"),
               Syntax.Shared,
               (("unknown_file", (5, 48), (5, 51)), (Syntax.BaseTy Syntax.U32))
-              )))
-          ))),
+              ))),
+          []))),
       [],
       (("unknown_file", (6, 4), (6, 72)),
        (Syntax.Let ("g",
@@ -52,8 +52,8 @@ invalid global environment:
                   Syntax.Shared,
                   (("unknown_file", (6, 39), (6, 42)),
                    (Syntax.BaseTy Syntax.U32))
-                  )))
-              ))),
+                  ))),
+              []))),
           (("unknown_file", (6, 45), (6, 71)),
            (Syntax.Fun ([], [],
               [("x",

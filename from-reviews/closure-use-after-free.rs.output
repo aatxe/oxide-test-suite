@@ -8,8 +8,8 @@ invalid global environment:
        (Syntax.Let ("f",
           (("unknown_file", (2, 11), (2, 24)),
            (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
-              (("unknown_file", (2, 19), (2, 24)), (Syntax.BaseTy Syntax.U32))
-              ))),
+              (("unknown_file", (2, 19), (2, 24)), (Syntax.BaseTy Syntax.U32)),
+              []))),
           (("unknown_file", (3, 8), (3, 25)),
            (Syntax.Let ("a",
               (("unknown_file", (3, 15), (3, 20)), (Syntax.BaseTy Syntax.U32)),

@@ -11,8 +11,8 @@ error: (Syntax.MovedFunction (
                     ],
                   Syntax.Unboxed,
                   (("unknown_file", (1, 28), (1, 33)),
-                   (Syntax.BaseTy Syntax.U32))
-                  )))))
+                   (Syntax.BaseTy Syntax.U32)),
+                  [])))))
           ))
 invalid global environment:
  [(Syntax.FnDef
@@ -24,8 +24,8 @@ invalid global environment:
               (("unknown_file", (1, 18), (1, 23)), (Syntax.BaseTy Syntax.U32))
               ],
             Syntax.Unboxed,
-            (("unknown_file", (1, 28), (1, 33)), (Syntax.BaseTy Syntax.U32))
-            ))))
+            (("unknown_file", (1, 28), (1, 33)), (Syntax.BaseTy Syntax.U32)),
+            []))))
         ],
       (("unknown_file", (1, 0), (4, 1)), (Syntax.BaseTy Syntax.Unit)), 
       [],

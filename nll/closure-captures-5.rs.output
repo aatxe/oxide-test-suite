@@ -19,12 +19,13 @@ invalid global environment:
       [("f",
         (("unknown_file", (5, 22), (5, 23)),
          (Syntax.Fun ([], [], [], [], (Syntax.EnvVar (Syntax.Shared, "F")),
-            (("<inferred>", (-1, -1), (-1, -1)), (Syntax.BaseTy Syntax.Unit))
-            ))))
+            (("<inferred>", (-1, -1), (-1, -1)), (Syntax.BaseTy Syntax.Unit)),
+            []))))
         ],
       (("unknown_file", (5, 28), (5, 29)),
        (Syntax.Fun ([], [], [], [], (Syntax.EnvVar (Syntax.Shared, "F")),
-          (("<inferred>", (-1, -1), (-1, -1)), (Syntax.BaseTy Syntax.Unit))))),
+          (("<inferred>", (-1, -1), (-1, -1)), (Syntax.BaseTy Syntax.Unit)),
+          []))),
       [],
       (("unknown_file", (5, 32), (5, 33)),
        (Syntax.Move (("unknown_file", (5, 32), (5, 33)), ("f", []))))));
@@ -61,8 +62,8 @@ invalid global environment:
                (("unknown_file", (9, 12), (9, 16)),
                 (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                    (("unknown_file", (9, 12), (9, 16)),
-                    (Syntax.BaseTy Syntax.Unit))
-                   ))),
+                    (Syntax.BaseTy Syntax.Unit)),
+                   []))),
                (("unknown_file", (9, 19), (11, 5)),
                 (Syntax.Fun ([], [], [], None,
                    (("", (3, 0), (3, 0)),
@@ -98,8 +99,8 @@ invalid global environment:
                        (("unknown_file", (13, 12), (13, 16)),
                         (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                            (("unknown_file", (13, 12), (13, 16)),
-                            (Syntax.BaseTy Syntax.Unit))
-                           ))),
+                            (Syntax.BaseTy Syntax.Unit)),
+                           []))),
                        (("unknown_file", (13, 19), (16, 5)),
                         (Syntax.Fun ([], [], [], None,
                            (("unknown_file", (14, 8), (14, 48)),

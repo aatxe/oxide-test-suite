@@ -20,8 +20,8 @@ invalid global environment:
                  (("unknown_file", (4, 22), (4, 23)), (Syntax.TyVar "T")))))
               ],
             Syntax.Unboxed,
-            (("unknown_file", (4, 28), (4, 30)), (Syntax.BaseTy Syntax.Unit))
-            ))))
+            (("unknown_file", (4, 28), (4, 30)), (Syntax.BaseTy Syntax.Unit)),
+            []))))
         ]));
    (Syntax.FnDef
       ("in_while", [], [(("unknown_file", (7, 12), (7, 14)), "a")], ["T"],
@@ -55,8 +55,8 @@ invalid global environment:
                      ],
                    Syntax.Unboxed,
                    (("unknown_file", (8, 34), (8, 36)),
-                    (Syntax.BaseTy Syntax.Unit))
-                   )))
+                    (Syntax.BaseTy Syntax.Unit)),
+                   [])))
                ))),
            (("unknown_file", (8, 39), (8, 52)),
             (Syntax.Borrow ((("unknown_file", (8, 39), (8, 52)), "p1"),

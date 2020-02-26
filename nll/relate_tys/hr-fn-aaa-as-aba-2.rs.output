@@ -27,8 +27,8 @@ invalid global environment:
            (Syntax.Ref ((("unknown_file", (9, 49), (9, 51)), "a"),
               Syntax.Shared,
               (("unknown_file", (9, 52), (9, 55)), (Syntax.BaseTy Syntax.U32))
-              )))
-          ))),
+              ))),
+          []))),
       [],
       (("unknown_file", (10, 4), (10, 12)),
        (Syntax.Abort "abort: no message provided"))));
@@ -62,8 +62,8 @@ invalid global environment:
                    Syntax.Shared,
                    (("unknown_file", (16, 51), (16, 54)),
                     (Syntax.BaseTy Syntax.U32))
-                   )))
-               ))),
+                   ))),
+               []))),
            (("unknown_file", (16, 57), (16, 66)),
             (Syntax.App (
                (("unknown_file", (16, 57), (16, 64)), (Syntax.Fn "make_it")),

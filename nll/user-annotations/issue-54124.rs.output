@@ -19,8 +19,8 @@ invalid global environment:
                 ],
               Syntax.Unboxed,
               (("unknown_file", (4, 10), (4, 20)),
-               (Syntax.BaseTy Syntax.Unit))
-              ))),
+               (Syntax.BaseTy Syntax.Unit)),
+              []))),
           (("unknown_file", (4, 23), (4, 36)),
            (Syntax.Fun ([], [],
               [("x",

@@ -1,4 +1,6 @@
-error: (Syntax.InvalidProv (("unknown_file", (10, 12), (10, 14)), "x"))
+error: (Syntax.UnboundLoanInProv (
+          (("unknown_file", (10, 24), (10, 27)), ("tmp", [(Syntax.Index 0)])),
+          (("unknown_file", (10, 12), (10, 14)), "x")))
 invalid global environment:
  [(Syntax.FnDef
      ("id", [], [], ["T"],
