@@ -21,6 +21,6 @@ fn main() {
     let foo = Foo::<'t0> { a: s, b: wrap };
     #[drop] foo.a;
     x = 1; //~ ERROR cannot assign to `x` because it is borrowed [E0506]
-    let tmp1: &'t1 mut Wrap<'t0> = &mut foo.b;
+    let tmp1 = #[lft="t1"] &mut foo.b;
     drop_wrap::<'t1, 't0>(tmp1);
 }

@@ -20,7 +20,7 @@ fn main() {
     let s: String = String();
     let foo: Foo<'t0> = Foo::<'t0> { a: s, b: wrap };
     #[drop] foo.a;
-    let tmp1: &'t1 mut Wrap<'t0> = &mut foo.b;
+    let tmp1 = #[lft="t1"] &mut foo.b;
     drop_wrapper::<'t1, 't0>(tmp1);
     #[drop] foo.b;
     x = 1; //~ ERROR cannot assign to `x` because it is borrowed [E0506]
