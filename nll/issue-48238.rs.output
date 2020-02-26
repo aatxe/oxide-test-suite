@@ -1,4 +1,5 @@
-error: (Syntax.InvalidProv (("unknown_file", (13, 18), (13, 21)), "t0"))
+error: (Syntax.NoReferenceToCaptured
+          (("unknown_file", (12, 29), (12, 33)), ("orig", [])))
 invalid global environment:
  [(Syntax.FnDef
      ("use_val", [], [(("unknown_file", (5, 11), (5, 13)), "a")], [],
