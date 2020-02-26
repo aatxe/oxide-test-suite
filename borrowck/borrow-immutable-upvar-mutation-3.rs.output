@@ -73,23 +73,23 @@ invalid global environment:
                        (("unknown_file", (14, 31), (14, 37)), "p1"),
                        Syntax.Unique,
                        (("unknown_file", (14, 36), (14, 37)), ("z", []))))),
-                   (("unknown_file", (15, 4), (15, 72)),
+                   (("unknown_file", (15, 4), (15, 73)),
                     (Syntax.Let ("_h",
                        (("unknown_file", (15, 12), (15, 16)),
                         (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
                            (("unknown_file", (15, 12), (15, 16)),
                             (Syntax.BaseTy Syntax.Unit))
                            ))),
-                       (("unknown_file", (15, 19), (15, 71)),
+                       (("unknown_file", (15, 19), (15, 72)),
                         (Syntax.App (
                            (("unknown_file", (15, 19), (15, 24)),
                             (Syntax.Fn "to_fn")),
                            [], [], [],
-                           [(("unknown_file", (15, 25), (15, 70)),
+                           [(("unknown_file", (15, 25), (15, 71)),
                              (Syntax.Fun ([], [], [], None,
                                 (("", (1, 0), (1, 0)),
                                  (Syntax.Seq (
-                                    (("unknown_file", (15, 30), (15, 45)),
+                                    (("unknown_file", (15, 30), (15, 46)),
                                      (Syntax.App (
                                         (("unknown_file", (15, 30), (15, 40)),
                                          (Syntax.Fn "set")),
@@ -97,46 +97,46 @@ invalid global environment:
                                         [(("unknown_file", (15, 36), (15, 39)),
                                           "t0")],
                                         [],
-                                        [(("unknown_file", (15, 41), (15, 44)),
+                                        [(("unknown_file", (15, 41), (15, 45)),
                                           (Syntax.Move
                                              (("unknown_file", (15, 41),
-                                               (15, 44)),
-                                              ("tmp", []))))
+                                               (15, 45)),
+                                              ("tmp0", []))))
                                           ]
                                         ))),
                                     (("", (0, 0), (0, 0)),
                                      (Syntax.Seq (
-                                        (("unknown_file", (15, 47), (15, 67)),
+                                        (("unknown_file", (15, 48), (15, 68)),
                                          (Syntax.App (
-                                            (("unknown_file", (15, 47),
-                                              (15, 52)),
+                                            (("unknown_file", (15, 48),
+                                              (15, 53)),
                                              (Syntax.Fn "to_fn")),
                                             [], [], [],
-                                            [(("unknown_file", (15, 53),
-                                               (15, 66)),
+                                            [(("unknown_file", (15, 54),
+                                               (15, 67)),
                                               (Syntax.Fun ([], [], [], None,
-                                                 (("unknown_file", (15, 56),
-                                                   (15, 66)),
+                                                 (("unknown_file", (15, 57),
+                                                   (15, 67)),
                                                   (Syntax.Assign (
                                                      (("unknown_file",
-                                                       (15, 57), (15, 61)),
+                                                       (15, 58), (15, 62)),
                                                       ("tmp1", [Syntax.Deref])),
                                                      (("unknown_file",
-                                                       (15, 64), (15, 66)),
+                                                       (15, 65), (15, 67)),
                                                       (Syntax.Prim
                                                          (Syntax.Num 42)))
                                                      )))
                                                  )))
                                               ]
                                             ))),
-                                        (("unknown_file", (15, 67), (15, 68)),
+                                        (("unknown_file", (15, 68), (15, 69)),
                                          (Syntax.Prim Syntax.Unit))
                                         )))
                                     )))
                                 )))
                              ]
                            ))),
-                       (("unknown_file", (15, 71), (15, 72)),
+                       (("unknown_file", (15, 72), (15, 73)),
                         (Syntax.Prim Syntax.Unit))
                        )))
                    )))
