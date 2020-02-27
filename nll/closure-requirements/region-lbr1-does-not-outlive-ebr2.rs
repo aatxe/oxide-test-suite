@@ -6,7 +6,7 @@
 // compile-flags:-Zborrowck=mir -Zverbose
 
 fn foo<'a, 'b>(x: &'a u32, y: &'b u32) -> &'b u32 {
-    &*x
+    #[lft="b"] &*x
     //~^ ERROR lifetime may not live long enough
 }
 

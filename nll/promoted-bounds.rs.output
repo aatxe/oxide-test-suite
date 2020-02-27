@@ -1,4 +1,6 @@
-error: (Syntax.InvalidProv (("unknown_file", (19, 16), (19, 20)), "min"))
+error: (Syntax.UnboundLoanInProv (
+          (("unknown_file", (18, 26), (18, 27)), ("l", [])),
+          (("unknown_file", (19, 16), (19, 20)), "min")))
 invalid global environment:
  [(Syntax.FnDef
      ("shorten_lifetime", [],

@@ -69,16 +69,17 @@ invalid global environment:
                        (("unknown_file", (16, 34), (16, 35)), ("v", []))))),
                    (("", (1, 0), (1, 0)),
                     (Syntax.Seq (
-                       (("unknown_file", (17, 4), (17, 29)),
+                       (("unknown_file", (17, 4), (17, 33)),
                         (Syntax.App (
-                           (("unknown_file", (17, 4), (17, 23)),
+                           (("unknown_file", (17, 4), (17, 27)),
                             (Syntax.Fn "drop_wrapper")),
                            [],
-                           [(("unknown_file", (17, 19), (17, 22)), "t0")],
+                           [(("unknown_file", (17, 19), (17, 22)), "t0");
+                             (("unknown_file", (17, 24), (17, 26)), "a")],
                            [],
-                           [(("unknown_file", (17, 24), (17, 28)),
+                           [(("unknown_file", (17, 28), (17, 32)),
                              (Syntax.Move
-                                (("unknown_file", (17, 24), (17, 28)),
+                                (("unknown_file", (17, 28), (17, 32)),
                                  ("tmp0", []))))
                              ]
                            ))),
@@ -90,19 +91,22 @@ invalid global environment:
                )))
            )))));
    (Syntax.FnDef
-      ("drop_wrapper", [], [(("unknown_file", (21, 16), (21, 18)), "a")], 
+      ("drop_wrapper", [],
+       [(("unknown_file", (21, 16), (21, 18)), "o");
+         (("unknown_file", (21, 20), (21, 22)), "i")],
        [],
        [("wrapper",
-         (("unknown_file", (21, 29), (21, 51)),
-          (Syntax.Ref ((("unknown_file", (21, 30), (21, 32)), "a"),
+         (("unknown_file", (21, 33), (21, 55)),
+          (Syntax.Ref ((("unknown_file", (21, 34), (21, 36)), "o"),
              Syntax.Unique,
-             (("unknown_file", (21, 37), (21, 51)),
+             (("unknown_file", (21, 41), (21, 55)),
               (Syntax.Struct ("VecWrapper",
-                 [(("unknown_file", (21, 48), (21, 50)), "a")], [], None)))
+                 [(("unknown_file", (21, 52), (21, 54)), "i")], [], None)))
              ))))
          ],
-       (("unknown_file", (21, 0), (23, 1)), (Syntax.BaseTy Syntax.Unit)), 
-       [],
+       (("unknown_file", (21, 0), (23, 1)), (Syntax.BaseTy Syntax.Unit)),
+       [((("unknown_file", (21, 67), (21, 69)), "o"),
+         (("unknown_file", (21, 63), (21, 65)), "i"))],
        (("", (0, 0), (0, 0)),
         (Syntax.Seq (
            (("unknown_file", (22, 4), (22, 37)),

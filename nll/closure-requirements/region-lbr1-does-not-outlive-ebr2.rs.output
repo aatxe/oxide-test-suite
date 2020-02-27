@@ -1,0 +1,34 @@
+error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (9, 4), (9, 18)), "b"),
+          (("unknown_file", (8, 19), (8, 21)), "a")))
+invalid global environment:
+ [(Syntax.FnDef
+     ("foo", [],
+      [(("unknown_file", (8, 7), (8, 9)), "a");
+        (("unknown_file", (8, 11), (8, 13)), "b")],
+      [],
+      [("x",
+        (("unknown_file", (8, 18), (8, 25)),
+         (Syntax.Ref ((("unknown_file", (8, 19), (8, 21)), "a"),
+            Syntax.Shared,
+            (("unknown_file", (8, 22), (8, 25)), (Syntax.BaseTy Syntax.U32))
+            ))));
+        ("y",
+         (("unknown_file", (8, 30), (8, 37)),
+          (Syntax.Ref ((("unknown_file", (8, 31), (8, 33)), "b"),
+             Syntax.Shared,
+             (("unknown_file", (8, 34), (8, 37)), (Syntax.BaseTy Syntax.U32))
+             ))))
+        ],
+      (("unknown_file", (8, 42), (8, 49)),
+       (Syntax.Ref ((("unknown_file", (8, 43), (8, 45)), "b"), Syntax.Shared,
+          (("unknown_file", (8, 46), (8, 49)), (Syntax.BaseTy Syntax.U32))))),
+      [],
+      (("unknown_file", (9, 4), (9, 18)),
+       (Syntax.Borrow ((("unknown_file", (9, 4), (9, 18)), "b"),
+          Syntax.Shared,
+          (("unknown_file", (9, 17), (9, 18)), ("x", [Syntax.Deref])))))));
+   (Syntax.FnDef
+      ("main", [], [], [], [],
+       (("unknown_file", (13, 0), (13, 12)), (Syntax.BaseTy Syntax.Unit)),
+       [], (("unknown_file", (13, 10), (13, 12)), (Syntax.Prim Syntax.Unit))))
+   ]

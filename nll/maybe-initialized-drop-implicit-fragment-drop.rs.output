@@ -1,8 +1,4 @@
-error: (Syntax.SafetyErr (
-          (Syntax.Unique, (("unknown_file", (21, 4), (21, 5)), ("x", []))),
-          (Syntax.Unique, (("unknown_file", (14, 34), (14, 35)), ("x", [])))
-          ))
-invalid global environment:
+valid global environment:
  [(Syntax.RecStructDef
      (false, "Wrap", [(("unknown_file", (1, 12), (1, 14)), "p")], [],
       [("p",
@@ -60,7 +56,7 @@ invalid global environment:
          ]));
    (Syntax.FnDef
       ("main", [], [], [], [],
-       (("unknown_file", (12, 0), (23, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       (("unknown_file", (12, 0), (24, 1)), (Syntax.BaseTy Syntax.Unit)), 
        [],
        (("unknown_file", (13, 4), (13, 23)),
         (Syntax.Let ("x",
