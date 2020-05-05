@@ -1,4 +1,7 @@
-error: (Syntax.InvalidProv (("unknown_file", (18, 19), (18, 21)), "a"))
+error: (Syntax.SafetyErr (
+          (Syntax.Unique, (("unknown_file", (25, 39), (25, 40)), ("x", []))),
+          (Syntax.Unique, (("unknown_file", (18, 39), (18, 40)), ("x", [])))
+          ))
 invalid global environment:
  [(Syntax.FnDef
      ("get", [], [(("unknown_file", (6, 7), (6, 9)), "a")], [],
