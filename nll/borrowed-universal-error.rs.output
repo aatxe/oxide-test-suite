@@ -1,6 +1,6 @@
-error: (Syntax.UnboundLoanInProv (
-          (("unknown_file", (8, 28), (8, 32)), ("tmp0", [])),
-          (("unknown_file", (9, 12), (9, 15)), "t1")))
+error: (Syntax.CannotPromoteLocalProvToAbstract (
+          (("unknown_file", (9, 12), (9, 15)), "t1"),
+          (("unknown_file", (5, 30), (5, 32)), "a")))
 invalid global environment:
  [(Syntax.FnDef
      ("gimme", [], [(("unknown_file", (1, 9), (1, 11)), "a")], [],

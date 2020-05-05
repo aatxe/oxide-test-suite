@@ -1,6 +1,6 @@
 error: (Syntax.PartiallyMoved (
           (("unknown_file", (8, 20), (8, 21)), ("x", [])),
-          (("<inferred>", (-1, -1), (-1, -1)),
+          (("unknown_file", (6, 22), (6, 28)),
            (Syntax.Uninit
               (("unknown_file", (6, 22), (6, 28)),
                (Syntax.Struct ("String", [], [],

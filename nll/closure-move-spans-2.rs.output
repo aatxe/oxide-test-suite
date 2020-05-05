@@ -1,5 +1,5 @@
 error: (Syntax.PartiallyMovedTypes (
-          (("<inferred>", (-1, -1), (-1, -1)),
+          (("unknown_file", (6, 24), (6, 30)),
            (Syntax.Uninit
               (("unknown_file", (6, 24), (6, 30)),
                (Syntax.Struct ("String", [], [],

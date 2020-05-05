@@ -1,23 +1,24 @@
 error: (Syntax.UnsatisfiedEnvQualifier (Syntax.Shared,
           (Syntax.Env
-             [("tmp0",
-               (("unknown_file", (8, 17), (8, 46)),
-                (Syntax.Ref ((("unknown_file", (8, 18), (8, 21)), "t0"),
-                   Syntax.Unique,
-                   (("unknown_file", (8, 26), (8, 46)),
-                    (Syntax.Tup
-                       [(("unknown_file", (8, 27), (8, 35)),
-                         (Syntax.Array (
-                            (("unknown_file", (8, 28), (8, 31)),
-                             (Syntax.BaseTy Syntax.U32)),
-                            1)));
-                         (("unknown_file", (8, 37), (8, 45)),
-                          (Syntax.Array (
-                             (("unknown_file", (8, 38), (8, 41)),
-                              (Syntax.BaseTy Syntax.U32)),
-                             1)))
-                         ]))
-                   ))))
+             [(Syntax.Id ("tmp0",
+                 (("unknown_file", (8, 17), (8, 46)),
+                  (Syntax.Ref ((("unknown_file", (8, 18), (8, 21)), "t0"),
+                     Syntax.Unique,
+                     (("unknown_file", (8, 26), (8, 46)),
+                      (Syntax.Tup
+                         [(("unknown_file", (8, 27), (8, 35)),
+                           (Syntax.Array (
+                              (("unknown_file", (8, 28), (8, 31)),
+                               (Syntax.BaseTy Syntax.U32)),
+                              1)));
+                           (("unknown_file", (8, 37), (8, 45)),
+                            (Syntax.Array (
+                               (("unknown_file", (8, 38), (8, 41)),
+                                (Syntax.BaseTy Syntax.U32)),
+                               1)))
+                           ]))
+                     )))
+                 ))
                ])
           ))
 invalid global environment:

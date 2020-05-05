@@ -1,18 +1,22 @@
 error: (Syntax.VarEnvMismatch (("", (0, 0), (0, 0)),
-          [("x",
-            (("unknown_file", (7, 21), (7, 27)),
-             (Syntax.Struct ("String", [], [],
-                (Some (("<inferred>", (-1, -1), (-1, -1)), (Syntax.Tup [])))
-                ))))
+          [[(Syntax.Id ("x",
+               (("unknown_file", (7, 21), (7, 27)),
+                (Syntax.Struct ("String", [], [],
+                   (Some (("<inferred>", (-1, -1), (-1, -1)), (Syntax.Tup [])))
+                   )))
+               ))
+             ]
             ],
-          [("x",
-            (("<inferred>", (-1, -1), (-1, -1)),
-             (Syntax.Uninit
-                (("unknown_file", (7, 21), (7, 27)),
-                 (Syntax.Struct ("String", [], [],
-                    (Some (("<inferred>", (-1, -1), (-1, -1)),
-                           (Syntax.Tup [])))
-                    ))))))
+          [[(Syntax.Id ("x",
+               (("unknown_file", (7, 21), (7, 27)),
+                (Syntax.Uninit
+                   (("unknown_file", (7, 21), (7, 27)),
+                    (Syntax.Struct ("String", [], [],
+                       (Some (("<inferred>", (-1, -1), (-1, -1)),
+                              (Syntax.Tup [])))
+                       )))))
+               ))
+             ]
             ]
           ))
 invalid global environment:
