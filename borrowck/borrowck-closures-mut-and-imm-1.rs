@@ -17,15 +17,13 @@ fn a() {
     let c1: fn() -> () = {
         let tmp0: &'a mut isize = &mut x;
         || {
-            let tmp1: &'b mut isize = tmp0;
-            *tmp1 = 4
+            *tmp0 = 4
         }
     };
     let c2: fn() -> isize = {
-        let tmp0: &'c mut isize = &mut x;
+        let tmp0: &'b isize = &x;
         || {
-            let tmp1: &'d mut isize = tmp0;
-            *tmp1 * 5
+            *tmp0 * 5
         }
     };
     //~^ ERROR cannot borrow `x` as immutable because it is also borrowed as mutable
