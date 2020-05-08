@@ -1,14 +1,4 @@
-error: (Syntax.PartiallyMoved (
-          (("unknown_file", (19, 41), (19, 42)), ("x", [])),
-          (("unknown_file", (17, 12), (17, 25)),
-           (Syntax.Uninit
-              (("unknown_file", (17, 12), (17, 25)),
-               (Syntax.Ref ((("unknown_file", (17, 13), (17, 15)), "a"),
-                  Syntax.Unique,
-                  (("unknown_file", (17, 20), (17, 25)),
-                   (Syntax.BaseTy Syntax.U32))
-                  )))))
-          ))
+error: (Syntax.InvalidProv (("unknown_file", (17, 13), (17, 15)), "a"))
 invalid global environment:
  [(Syntax.FnDef
      ("get", [], [(("unknown_file", (9, 7), (9, 9)), "a")], [],

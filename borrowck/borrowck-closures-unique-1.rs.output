@@ -1,15 +1,4 @@
-error: (Syntax.PartiallyMoved (
-          (("unknown_file", (19, 41), (19, 42)), ("x", [])),
-          (("unknown_file", (17, 12), (17, 25)),
-           (Syntax.Uninit
-              (("unknown_file", (17, 12), (17, 25)),
-               (Syntax.Ref ((("unknown_file", (17, 13), (17, 15)), "a"),
-                  Syntax.Unique,
-                  (("unknown_file", (17, 20), (17, 25)),
-                   (Syntax.BaseTy Syntax.U32))
-                  )))))
-          ))
-invalid global environment:
+valid global environment:
  [(Syntax.FnDef
      ("get", [], [(("unknown_file", (9, 7), (9, 9)), "a")], [],
       [("x",
@@ -49,70 +38,87 @@ invalid global environment:
               (Syntax.BaseTy Syntax.U32))
              ))))
          ],
-       (("unknown_file", (17, 0), (22, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       (("unknown_file", (17, 0), (24, 1)), (Syntax.BaseTy Syntax.Unit)), 
        [],
-       (("unknown_file", (18, 4), (18, 44)),
-        (Syntax.Let ("c1",
-           (("unknown_file", (18, 12), (18, 25)),
-            (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
-               (("unknown_file", (18, 20), (18, 25)),
-                (Syntax.BaseTy Syntax.U32)),
-               []))),
-           (("unknown_file", (18, 28), (18, 43)),
-            (Syntax.Fun ([], [], [], None,
-               (("unknown_file", (18, 31), (18, 43)),
-                (Syntax.App (
-                   (("unknown_file", (18, 31), (18, 40)), (Syntax.Fn "get")),
-                   [], [(("unknown_file", (18, 37), (18, 39)), "a")], 
-                   [],
-                   [(("unknown_file", (18, 41), (18, 42)),
-                     (Syntax.Move
-                        (("unknown_file", (18, 41), (18, 42)), ("x", []))))
-                     ]
-                   )))
+       (("unknown_file", (18, 4), (18, 30)),
+        (Syntax.Let ("tmp0",
+           (("unknown_file", (18, 4), (18, 7)), Syntax.Infer),
+           (("unknown_file", (18, 15), (18, 29)),
+            (Syntax.Borrow ((("unknown_file", (18, 15), (18, 29)), "a"),
+               Syntax.Shared,
+               (("unknown_file", (18, 28), (18, 29)), ("x", [Syntax.Deref]))
                ))),
-           (("unknown_file", (19, 4), (19, 44)),
-            (Syntax.Let ("c2",
-               (("unknown_file", (19, 12), (19, 25)),
-                (Syntax.Fun ([], [], [], [], Syntax.Unboxed,
-                   (("unknown_file", (19, 20), (19, 25)),
-                    (Syntax.BaseTy Syntax.U32)),
-                   []))),
-               (("unknown_file", (19, 28), (19, 43)),
+           (("unknown_file", (19, 4), (19, 37)),
+            (Syntax.Let ("c1",
+               (("unknown_file", (19, 4), (19, 7)), Syntax.Infer),
+               (("unknown_file", (19, 13), (19, 36)),
                 (Syntax.Fun ([], [], [], None,
-                   (("unknown_file", (19, 31), (19, 43)),
+                   (("unknown_file", (19, 21), (19, 36)),
                     (Syntax.App (
-                       (("unknown_file", (19, 31), (19, 40)),
+                       (("unknown_file", (19, 21), (19, 30)),
                         (Syntax.Fn "get")),
-                       [], [(("unknown_file", (19, 37), (19, 39)), "a")], 
+                       [], [(("unknown_file", (19, 27), (19, 29)), "a")], 
                        [],
-                       [(("unknown_file", (19, 41), (19, 42)),
+                       [(("unknown_file", (19, 31), (19, 35)),
                          (Syntax.Move
-                            (("unknown_file", (19, 41), (19, 42)), ("x", []))))
+                            (("unknown_file", (19, 31), (19, 35)),
+                             ("tmp0", []))))
                          ]
                        )))
                    ))),
-               (("", (1, 0), (1, 0)),
-                (Syntax.Seq (
-                   (("unknown_file", (20, 4), (20, 8)),
-                    (Syntax.App (
-                       (("unknown_file", (20, 4), (20, 6)), (Syntax.Fn "c1")),
-                       [], [], [], []))),
-                   (("", (0, 0), (0, 0)),
-                    (Syntax.Seq (
-                       (("unknown_file", (21, 4), (21, 8)),
-                        (Syntax.App (
-                           (("unknown_file", (21, 4), (21, 6)),
-                            (Syntax.Fn "c2")),
-                           [], [], [], []))),
-                       (("unknown_file", (21, 8), (21, 9)),
-                        (Syntax.Prim Syntax.Unit))
+               (("unknown_file", (20, 4), (20, 30)),
+                (Syntax.Let ("tmp1",
+                   (("unknown_file", (20, 4), (20, 7)), Syntax.Infer),
+                   (("unknown_file", (20, 15), (20, 29)),
+                    (Syntax.Borrow (
+                       (("unknown_file", (20, 15), (20, 29)), "a"),
+                       Syntax.Shared,
+                       (("unknown_file", (20, 28), (20, 29)),
+                        ("x", [Syntax.Deref]))
+                       ))),
+                   (("unknown_file", (21, 4), (21, 37)),
+                    (Syntax.Let ("c2",
+                       (("unknown_file", (21, 4), (21, 7)), Syntax.Infer),
+                       (("unknown_file", (21, 13), (21, 36)),
+                        (Syntax.Fun ([], [], [], None,
+                           (("unknown_file", (21, 21), (21, 36)),
+                            (Syntax.App (
+                               (("unknown_file", (21, 21), (21, 30)),
+                                (Syntax.Fn "get")),
+                               [],
+                               [(("unknown_file", (21, 27), (21, 29)), "a")],
+                               [],
+                               [(("unknown_file", (21, 31), (21, 35)),
+                                 (Syntax.Move
+                                    (("unknown_file", (21, 31), (21, 35)),
+                                     ("tmp1", []))))
+                                 ]
+                               )))
+                           ))),
+                       (("", (1, 0), (1, 0)),
+                        (Syntax.Seq (
+                           (("unknown_file", (22, 4), (22, 8)),
+                            (Syntax.App (
+                               (("unknown_file", (22, 4), (22, 6)),
+                                (Syntax.Fn "c1")),
+                               [], [], [], []))),
+                           (("", (0, 0), (0, 0)),
+                            (Syntax.Seq (
+                               (("unknown_file", (23, 4), (23, 8)),
+                                (Syntax.App (
+                                   (("unknown_file", (23, 4), (23, 6)),
+                                    (Syntax.Fn "c2")),
+                                   [], [], [], []))),
+                               (("unknown_file", (23, 8), (23, 9)),
+                                (Syntax.Prim Syntax.Unit))
+                               )))
+                           )))
                        )))
                    )))
                )))
            )))));
    (Syntax.FnDef
       ("main", [], [], [], [],
-       (("unknown_file", (24, 0), (25, 1)), (Syntax.BaseTy Syntax.Unit)), 
-       [], (("unknown_file", (24, 10), (25, 1)), (Syntax.Prim Syntax.Unit))))
+       (("unknown_file", (26, 0), (27, 1)), (Syntax.BaseTy Syntax.Unit)), 
+       [], (("unknown_file", (26, 10), (27, 1)), (Syntax.Prim Syntax.Unit))))
    ]

@@ -15,8 +15,10 @@ fn set<'a>(x: &'a mut isize) -> isize {
 }
 
 fn b<'a>(x: &'a mut isize) {
-    let c1: fn() -> isize = || get::<'a>(x);
-    let c2: fn() -> isize = || set::<'a>(x); //~ ERROR closure requires unique access to `x`
+    let tmp0 = #[lft="a"] &*x;
+    let c1 = || get::<'a>(tmp0);
+    let tmp1 = #[lft="a"] &mut *x;
+    let c2 = || set::<'a>(tmp1); //~ ERROR closure requires unique access to `x`
     c1;
 }
 

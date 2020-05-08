@@ -15,8 +15,10 @@ fn set<'a>(x: &'a mut isize) -> isize {
 }
 
 fn a<'a>(x: &'a mut isize) {
-    let c1: fn() -> isize = || get::<'a>(x);
-    let c2: fn() -> isize = || get::<'a>(x);
+    let tmp0 = #[lft="a"] &*x;
+    let c1 = move || get::<'a>(tmp0);
+    let tmp1 = #[lft="a"] &*x;
+    let c2 = move || get::<'a>(tmp1);
     c1();
     c2();
 }
