@@ -3,12 +3,12 @@ struct Foo {
 }
 
 pub fn main() {
-    let mut tmp: Foo = Foo {
+    let mut tmp = Foo {
         x: 1,
     };
-    let mut this: &'a mut Foo = &mut tmp;
-    let mut r: fn() -> () = || {
-        let p: &'p isize = &(*this).x;
+    let mut this = &mut tmp;
+    let mut r = || {
+        let p = #[lft="p"] &(*this).x;
         &mut (*this).x; //~ ERROR cannot borrow
         use_ref::<'p, isize>(p);
     };
