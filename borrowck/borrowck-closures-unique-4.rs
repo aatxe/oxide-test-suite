@@ -15,10 +15,10 @@ fn set<'a>(x: &'a mut isize) -> isize {
 }
 
 fn d<'a>(x: &'a mut isize) {
-    let tmp0 = #[lft="a"] &mut *x;
-    let c1 = || set::<'a>(tmp0);
-    let tmp1 = #[lft="a"] &mut *x;
-    let c2 = || set::<'a>(tmp1); //~ ERROR two closures require unique access to `x` at the same time
+    let tmp0 = #[lft="t0"] &mut *x;
+    let c1 = || set::<'t0>(tmp0);
+    let tmp1 = #[lft="t1"] &mut *x;
+    let c2 = || set::<'t1>(tmp1); //~ ERROR two closures require unique access to `x` at the same time
     c1;
 }
 

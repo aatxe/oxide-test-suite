@@ -28,22 +28,22 @@ invalid global environment:
         (Syntax.Struct ("SS", [(("unknown_file", (8, 50), (8, 52)), "a")],
            [], None))),
        [],
-       (("unknown_file", (9, 4), (9, 47)),
+       (("unknown_file", (9, 4), (9, 48)),
         (Syntax.Let ("tmp0",
            (("unknown_file", (9, 4), (9, 7)), Syntax.Infer),
-           (("unknown_file", (9, 15), (9, 46)),
-            (Syntax.Borrow ((("unknown_file", (9, 15), (9, 46)), "a"),
+           (("unknown_file", (9, 15), (9, 47)),
+            (Syntax.Borrow ((("unknown_file", (9, 15), (9, 47)), "t0"),
                Syntax.Unique,
-               (("unknown_file", (9, 36), (9, 37)),
+               (("unknown_file", (9, 37), (9, 38)),
                 ("p", [Syntax.Deref; (Syntax.Field "pointer"); Syntax.Deref]))
                ))),
-           (("unknown_file", (10, 4), (10, 30)),
+           (("unknown_file", (10, 4), (10, 31)),
             (Syntax.RecStruct ("SS",
-               [(("unknown_file", (10, 9), (10, 11)), "a")], [],
+               [(("unknown_file", (10, 9), (10, 12)), "t0")], [],
                [("pointer",
-                 (("unknown_file", (10, 24), (10, 28)),
+                 (("unknown_file", (10, 25), (10, 29)),
                   (Syntax.Move
-                     (("unknown_file", (10, 24), (10, 28)), ("tmp0", [])))))
+                     (("unknown_file", (10, 25), (10, 29)), ("tmp0", [])))))
                  ]
                )))
            )))));
