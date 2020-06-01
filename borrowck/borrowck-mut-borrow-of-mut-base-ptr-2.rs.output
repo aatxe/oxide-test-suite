@@ -1,7 +1,7 @@
 error: (Syntax.SafetyErr (
-          (Syntax.Unique, (("unknown_file", (11, 45), (11, 47)), ("t0", []))),
+          (Syntax.Unique, (("unknown_file", (11, 34), (11, 36)), ("t0", []))),
           (Syntax.Unique,
-           (("unknown_file", (10, 33), (10, 35)), ("t0", [Syntax.Deref])))
+           (("unknown_file", (10, 28), (10, 30)), ("t0", [Syntax.Deref])))
           ))
 invalid global environment:
  [(Syntax.FnDef
@@ -21,35 +21,20 @@ invalid global environment:
         ],
       (("unknown_file", (8, 0), (14, 1)), (Syntax.BaseTy Syntax.Unit)), 
       [],
-      (("unknown_file", (10, 4), (10, 36)),
-       (Syntax.Let ("p",
-          (("unknown_file", (10, 11), (10, 24)),
-           (Syntax.Ref ((("unknown_file", (10, 12), (10, 14)), "p"),
+      (("unknown_file", (10, 4), (10, 31)),
+       (Syntax.Let ("p", (("unknown_file", (10, 4), (10, 7)), Syntax.Infer),
+          (("unknown_file", (10, 12), (10, 30)),
+           (Syntax.Borrow ((("unknown_file", (10, 12), (10, 30)), "p"),
               Syntax.Unique,
-              (("unknown_file", (10, 19), (10, 24)),
-               (Syntax.BaseTy Syntax.U32))
+              (("unknown_file", (10, 28), (10, 30)), ("t0", [Syntax.Deref]))
               ))),
-          (("unknown_file", (10, 27), (10, 35)),
-           (Syntax.Borrow ((("unknown_file", (10, 27), (10, 35)), "p2"),
-              Syntax.Unique,
-              (("unknown_file", (10, 33), (10, 35)), ("t0", [Syntax.Deref]))
-              ))),
-          (("unknown_file", (11, 4), (11, 48)),
+          (("unknown_file", (11, 4), (11, 37)),
            (Syntax.Let ("t2",
-              (("unknown_file", (11, 16), (11, 37)),
-               (Syntax.Ref ((("unknown_file", (11, 17), (11, 19)), "t"),
+              (("unknown_file", (11, 4), (11, 7)), Syntax.Infer),
+              (("unknown_file", (11, 17), (11, 36)),
+               (Syntax.Borrow ((("unknown_file", (11, 17), (11, 36)), "t2"),
                   Syntax.Unique,
-                  (("unknown_file", (11, 24), (11, 37)),
-                   (Syntax.Ref ((("unknown_file", (11, 25), (11, 27)), "a"),
-                      Syntax.Unique,
-                      (("unknown_file", (11, 32), (11, 37)),
-                       (Syntax.BaseTy Syntax.U32))
-                      )))
-                  ))),
-              (("unknown_file", (11, 40), (11, 47)),
-               (Syntax.Borrow ((("unknown_file", (11, 40), (11, 47)), "p1"),
-                  Syntax.Unique,
-                  (("unknown_file", (11, 45), (11, 47)), ("t0", []))))),
+                  (("unknown_file", (11, 34), (11, 36)), ("t0", []))))),
               (("", (1, 0), (1, 0)),
                (Syntax.Seq (
                   (("unknown_file", (12, 4), (12, 13)),
