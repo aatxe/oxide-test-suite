@@ -1,5 +1,5 @@
 fn gimme<'a>(x: &'a (u32,)) -> &'a u32 {
-    #[lft = "a"] &(*x).0
+    #[lft = "t"] &(*x).0
 }
 
 fn main() {
