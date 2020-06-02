@@ -21,7 +21,7 @@ valid global environment:
        (("unknown_file", (4, 4), (4, 38)),
         (Syntax.Let ("r", (("unknown_file", (4, 4), (4, 7)), Syntax.Infer),
            (("unknown_file", (4, 12), (4, 37)),
-            (Syntax.Borrow ((("unknown_file", (4, 12), (4, 37)), "a"),
+            (Syntax.Borrow ((("unknown_file", (4, 12), (4, 37)), "r"),
                Syntax.Unique,
                (("unknown_file", (4, 32), (4, 34)),
                 ("pt", [Syntax.Deref; (Syntax.Index 0)]))
