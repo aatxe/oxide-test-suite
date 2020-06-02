@@ -12,9 +12,9 @@ struct SS(Box<u32>);
 
 fn get_dangling<'a>(v: VecWrapper<'a>) -> &'a u32 {
     let s_inner = &*v.0; //~ ERROR borrow may still be in use when destructor runs [E0713]
-    let res = #[lft = "a"] &((*s_inner).0).0;
+    let res = #[lft = "res"] &((*s_inner).0).0;
     let tmp0 = #[lft = "t0"] &mut v;
-    drop_wrapper::<'t0, 'a>(tmp0);
+    drop_wrapper::<'t0, 'res>(tmp0);
     res
 }
 

@@ -1,4 +1,7 @@
-valid global environment:
+error: (Syntax.CannotPromoteLocalProvToAbstract (
+          (("unknown_file", (14, 24), (14, 29)), "p1"),
+          (("unknown_file", (14, 16), (14, 18)), "a")))
+invalid global environment:
  [(Syntax.FnDef
      ("produce", [], [(("unknown_file", (11, 11), (11, 13)), "a")], [], 
       [], (("unknown_file", (11, 0), (16, 1)), (Syntax.BaseTy Syntax.Unit)),
@@ -7,13 +10,12 @@ valid global environment:
        (Syntax.Seq (
           (("unknown_file", (12, 3), (15, 4)),
            (Syntax.Fun ([], [], [], None,
-              (("unknown_file", (13, 8), (13, 26)),
+              (("unknown_file", (13, 8), (13, 22)),
                (Syntax.Let ("unit",
-                  (("unknown_file", (13, 18), (13, 20)),
-                   (Syntax.BaseTy Syntax.Unit)),
-                  (("unknown_file", (13, 23), (13, 25)),
+                  (("unknown_file", (13, 8), (13, 11)), Syntax.Infer),
+                  (("unknown_file", (13, 19), (13, 21)),
                    (Syntax.Prim Syntax.Unit)),
-                  (("unknown_file", (14, 8), (14, 43)),
+                  (("unknown_file", (14, 8), (14, 30)),
                    (Syntax.Let ("x",
                       (("unknown_file", (14, 15), (14, 21)),
                        (Syntax.Ref (
@@ -22,13 +24,13 @@ valid global environment:
                           (("unknown_file", (14, 19), (14, 21)),
                            (Syntax.BaseTy Syntax.Unit))
                           ))),
-                      (("unknown_file", (14, 24), (14, 42)),
+                      (("unknown_file", (14, 24), (14, 29)),
                        (Syntax.Borrow (
-                          (("unknown_file", (14, 24), (14, 42)), "a"),
+                          (("unknown_file", (14, 24), (14, 29)), "p1"),
                           Syntax.Shared,
-                          (("unknown_file", (14, 38), (14, 42)), ("unit", []))
+                          (("unknown_file", (14, 25), (14, 29)), ("unit", []))
                           ))),
-                      (("unknown_file", (14, 42), (14, 43)),
+                      (("unknown_file", (14, 29), (14, 30)),
                        (Syntax.Prim Syntax.Unit))
                       )))
                   )))

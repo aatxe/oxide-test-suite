@@ -10,8 +10,8 @@
 
 fn produce<'a>() {
    move || {
-        let unit: () = ();
-        let x: &'a () = #[lft = "a"] &unit;
+        let unit = ();
+        let x: &'a () = &unit;
    };
 }
 
