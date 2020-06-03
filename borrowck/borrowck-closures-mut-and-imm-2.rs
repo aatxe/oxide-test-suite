@@ -12,11 +12,11 @@ fn set<'a>(x: &'a mut isize) {
 }
 
 fn b() {
-    let mut x: isize = 3;
-    let tmp0: &'a mut isize = &mut x;
-    let c1: fn() -> () = || set::<'a>(tmp0);
-    let tmp1: &'b isize = &x;
-    let c2: fn() -> isize = || get::<'b>(tmp1);
+    let mut x = 3;
+    let tmp0 = #[lft="t0"] &mut x;
+    let c1 = || set::<'t0>(tmp0);
+    let tmp1 = #[lft="t1"] &x;
+    let c2 = || get::<'t1>(tmp1);
     //~^ ERROR cannot borrow `x` as immutable because it is also borrowed as mutable
     drop::<fn() -> ()>(c1);
 }
