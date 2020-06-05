@@ -1,6 +1,69 @@
-error: (Syntax.UnboundLoanInProv (
-          (("unknown_file", (18, 26), (18, 27)), ("l", [])),
-          (("unknown_file", (19, 16), (19, 20)), "min")))
+error: (Syntax.VarEnvMismatch (("unknown_file", (6, 4), (10, 5)),
+          [[(Syntax.Prov ((("unknown_file", (9, 8), (9, 11)), "p2"),
+               [(Syntax.Shared,
+                 (("unknown_file", (9, 10), (9, 11)), ("b", [Syntax.Deref])));
+                 (Syntax.Shared,
+                  (("unknown_file", (7, 10), (7, 11)), ("a", [Syntax.Deref])))
+                 ]
+               ));
+             (Syntax.Prov ((("unknown_file", (7, 8), (7, 11)), "p1"),
+                [(Syntax.Shared,
+                  (("unknown_file", (9, 10), (9, 11)), ("b", [Syntax.Deref])));
+                  (Syntax.Shared,
+                   (("unknown_file", (7, 10), (7, 11)), ("a", [Syntax.Deref])))
+                  ]
+                ));
+             (Syntax.Id ("b",
+                (("unknown_file", (1, 49), (1, 56)),
+                 (Syntax.Ref ((("unknown_file", (1, 50), (1, 52)), "b"),
+                    Syntax.Shared,
+                    (("unknown_file", (1, 53), (1, 56)),
+                     (Syntax.BaseTy Syntax.U32))
+                    )))
+                ));
+             (Syntax.Id ("a",
+                (("unknown_file", (1, 37), (1, 44)),
+                 (Syntax.Ref ((("unknown_file", (1, 38), (1, 40)), "a"),
+                    Syntax.Shared,
+                    (("unknown_file", (1, 41), (1, 44)),
+                     (Syntax.BaseTy Syntax.U32))
+                    )))
+                ))
+             ]
+            ],
+          [[(Syntax.Prov ((("unknown_file", (9, 8), (9, 11)), "p2"),
+               [(Syntax.Shared,
+                 (("unknown_file", (7, 10), (7, 11)), ("a", [Syntax.Deref])));
+                 (Syntax.Shared,
+                  (("unknown_file", (9, 10), (9, 11)), ("b", [Syntax.Deref])))
+                 ]
+               ));
+             (Syntax.Prov ((("unknown_file", (7, 8), (7, 11)), "p1"),
+                [(Syntax.Shared,
+                  (("unknown_file", (7, 10), (7, 11)), ("a", [Syntax.Deref])));
+                  (Syntax.Shared,
+                   (("unknown_file", (9, 10), (9, 11)), ("b", [Syntax.Deref])))
+                  ]
+                ));
+             (Syntax.Id ("b",
+                (("unknown_file", (1, 49), (1, 56)),
+                 (Syntax.Ref ((("unknown_file", (1, 50), (1, 52)), "b"),
+                    Syntax.Shared,
+                    (("unknown_file", (1, 53), (1, 56)),
+                     (Syntax.BaseTy Syntax.U32))
+                    )))
+                ));
+             (Syntax.Id ("a",
+                (("unknown_file", (1, 37), (1, 44)),
+                 (Syntax.Ref ((("unknown_file", (1, 38), (1, 40)), "a"),
+                    Syntax.Shared,
+                    (("unknown_file", (1, 41), (1, 44)),
+                     (Syntax.BaseTy Syntax.U32))
+                    )))
+                ))
+             ]
+            ]
+          ))
 invalid global environment:
  [(Syntax.FnDef
      ("shorten_lifetime", [],
@@ -41,14 +104,14 @@ invalid global environment:
                (Syntax.Move
                   (("unknown_file", (6, 13), (6, 14)), ("b", [Syntax.Deref]))))
               ))),
-          (("unknown_file", (7, 8), (7, 26)),
-           (Syntax.Borrow ((("unknown_file", (7, 8), (7, 26)), "min"),
+          (("unknown_file", (7, 8), (7, 11)),
+           (Syntax.Borrow ((("unknown_file", (7, 8), (7, 11)), "p1"),
               Syntax.Shared,
-              (("unknown_file", (7, 25), (7, 26)), ("a", [Syntax.Deref]))))),
-          (("unknown_file", (9, 8), (9, 26)),
-           (Syntax.Borrow ((("unknown_file", (9, 8), (9, 26)), "min"),
+              (("unknown_file", (7, 10), (7, 11)), ("a", [Syntax.Deref]))))),
+          (("unknown_file", (9, 8), (9, 11)),
+           (Syntax.Borrow ((("unknown_file", (9, 8), (9, 11)), "p2"),
               Syntax.Shared,
-              (("unknown_file", (9, 25), (9, 26)), ("b", [Syntax.Deref])))))
+              (("unknown_file", (9, 10), (9, 11)), ("b", [Syntax.Deref])))))
           )))));
    (Syntax.FnDef
       ("main", [], [], [], [],

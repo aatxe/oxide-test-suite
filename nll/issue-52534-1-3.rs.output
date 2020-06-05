@@ -1,6 +1,6 @@
-error: (Syntax.CannotPromoteLocalProvToAbstract (
-          (("unknown_file", (4, 4), (4, 9)), "p1"),
-          (("unknown_file", (1, 27), (1, 29)), "a")))
+error: (Syntax.UnboundLoanInProv (
+          (Syntax.Shared, (("unknown_file", (4, 5), (4, 9)), ("tmp0", []))),
+          (("unknown_file", (4, 4), (4, 9)), "p1")))
 invalid global environment:
  [(Syntax.FnDef
      ("baz", [], [(("unknown_file", (1, 7), (1, 9)), "a")], [],
@@ -20,22 +20,16 @@ invalid global environment:
               )))
           ))),
       [],
-      (("unknown_file", (2, 4), (2, 20)),
-       (Syntax.Let ("y",
-          (("unknown_file", (2, 11), (2, 14)), (Syntax.BaseTy Syntax.U32)),
-          (("unknown_file", (2, 17), (2, 19)), (Syntax.Prim (Syntax.Num 22))),
-          (("unknown_file", (3, 4), (3, 28)),
+      (("unknown_file", (2, 4), (2, 15)),
+       (Syntax.Let ("y", (("unknown_file", (2, 4), (2, 7)), Syntax.Infer),
+          (("unknown_file", (2, 12), (2, 14)), (Syntax.Prim (Syntax.Num 22))),
+          (("unknown_file", (3, 4), (3, 18)),
            (Syntax.Let ("tmp0",
-              (("unknown_file", (3, 14), (3, 22)),
-               (Syntax.Ref ((("unknown_file", (3, 15), (3, 18)), "t0"),
+              (("unknown_file", (3, 4), (3, 7)), Syntax.Infer),
+              (("unknown_file", (3, 15), (3, 17)),
+               (Syntax.Borrow ((("unknown_file", (3, 15), (3, 17)), "p2"),
                   Syntax.Shared,
-                  (("unknown_file", (3, 19), (3, 22)),
-                   (Syntax.BaseTy Syntax.U32))
-                  ))),
-              (("unknown_file", (3, 25), (3, 27)),
-               (Syntax.Borrow ((("unknown_file", (3, 25), (3, 27)), "p2"),
-                  Syntax.Shared,
-                  (("unknown_file", (3, 26), (3, 27)), ("y", []))))),
+                  (("unknown_file", (3, 16), (3, 17)), ("y", []))))),
               (("unknown_file", (4, 4), (4, 9)),
                (Syntax.Borrow ((("unknown_file", (4, 4), (4, 9)), "p1"),
                   Syntax.Shared,

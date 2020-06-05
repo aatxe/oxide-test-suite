@@ -1,5 +1,5 @@
-error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (7, 21), (7, 23)), "b"),
-          (("unknown_file", (8, 10), (8, 12)), "a")))
+error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (8, 10), (8, 12)), "a"),
+          (("unknown_file", (7, 21), (7, 23)), "b")))
 invalid global environment:
  [(Syntax.TupStructDef (false, "Bar", [], [], []));
    (Syntax.RecStructDef

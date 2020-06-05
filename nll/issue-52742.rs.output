@@ -1,6 +1,6 @@
 error: (Syntax.AbsProvsNotSubtype (
-          (("unknown_file", (12, 49), (12, 51)), "c"),
-          (("unknown_file", (12, 37), (12, 39)), "b")))
+          (("unknown_file", (12, 37), (12, 39)), "b"),
+          (("unknown_file", (12, 49), (12, 51)), "c")))
 invalid global environment:
  [(Syntax.RecStructDef
      (false, "Foo",

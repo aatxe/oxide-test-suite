@@ -1,6 +1,6 @@
-error: (Syntax.CannotPromoteLocalProvToAbstract (
-          (("unknown_file", (5, 4), (5, 6)), "p1"),
-          (("unknown_file", (3, 43), (3, 45)), "a")))
+error: (Syntax.UnboundLoanInProv (
+          (Syntax.Shared, (("unknown_file", (5, 5), (5, 6)), ("y", []))),
+          (("unknown_file", (5, 4), (5, 6)), "p1")))
 invalid global environment:
  [(Syntax.TupStructDef (false, "Test", [], [], []));
    (Syntax.FnDef
@@ -24,10 +24,9 @@ invalid global environment:
            Syntax.Shared,
            (("unknown_file", (3, 46), (3, 49)), (Syntax.BaseTy Syntax.U32))))),
        [],
-       (("unknown_file", (4, 4), (4, 20)),
-        (Syntax.Let ("y",
-           (("unknown_file", (4, 11), (4, 14)), (Syntax.BaseTy Syntax.U32)),
-           (("unknown_file", (4, 17), (4, 19)), (Syntax.Prim (Syntax.Num 22))),
+       (("unknown_file", (4, 4), (4, 15)),
+        (Syntax.Let ("y", (("unknown_file", (4, 4), (4, 7)), Syntax.Infer),
+           (("unknown_file", (4, 12), (4, 14)), (Syntax.Prim (Syntax.Num 22))),
            (("unknown_file", (5, 4), (5, 6)),
             (Syntax.Borrow ((("unknown_file", (5, 4), (5, 6)), "p1"),
                Syntax.Shared, (("unknown_file", (5, 5), (5, 6)), ("y", [])))))

@@ -3,5 +3,5 @@
 // compile-flags: -Z borrowck=mir -Zpolonius
 
 fn foo<'a, 'b>(p: &'b &'a mut usize) -> &'b usize where 'a: 'b {
-    #[lft = "b"] &**p
+    #[lft = "c"] &**p
 }

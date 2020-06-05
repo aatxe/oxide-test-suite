@@ -1,4 +1,4 @@
-error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (9, 4), (9, 18)), "b"),
+error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (8, 43), (8, 45)), "b"),
           (("unknown_file", (8, 19), (8, 21)), "a")))
 invalid global environment:
  [(Syntax.FnDef
@@ -23,10 +23,10 @@ invalid global environment:
        (Syntax.Ref ((("unknown_file", (8, 43), (8, 45)), "b"), Syntax.Shared,
           (("unknown_file", (8, 46), (8, 49)), (Syntax.BaseTy Syntax.U32))))),
       [],
-      (("unknown_file", (9, 4), (9, 18)),
-       (Syntax.Borrow ((("unknown_file", (9, 4), (9, 18)), "b"),
+      (("unknown_file", (9, 4), (9, 7)),
+       (Syntax.Borrow ((("unknown_file", (9, 4), (9, 7)), "p1"),
           Syntax.Shared,
-          (("unknown_file", (9, 17), (9, 18)), ("x", [Syntax.Deref])))))));
+          (("unknown_file", (9, 6), (9, 7)), ("x", [Syntax.Deref])))))));
    (Syntax.FnDef
       ("main", [], [], [], [],
        (("unknown_file", (13, 0), (13, 12)), (Syntax.BaseTy Syntax.Unit)),

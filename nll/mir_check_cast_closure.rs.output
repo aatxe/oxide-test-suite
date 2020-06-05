@@ -1,5 +1,5 @@
-error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (6, 62), (6, 64)), "b"),
-          (("unknown_file", (6, 36), (6, 38)), "a")))
+error: (Syntax.AbsProvsNotSubtype ((("unknown_file", (6, 36), (6, 38)), "a"),
+          (("unknown_file", (6, 62), (6, 64)), "b")))
 invalid global environment:
  [(Syntax.FnDef
      ("bar", [],

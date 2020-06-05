@@ -4,9 +4,9 @@ where
     'b: 'min,
 {
     if *a < *b {
-        #[lft = "min"] &*a
+        &*a
     } else {
-        #[lft = "min"] &*b
+        &*b
     }
 }
 
