@@ -1,40 +1,40 @@
 error: (Syntax.CannotPromoteLocalProvToAbstract (
-          (("unknown_file", (4, 14), (4, 16)), "f"),
-          (("unknown_file", (4, 27), (4, 29)), "a")))
+          (("unknown_file", (4, 15), (4, 17)), "f"),
+          (("unknown_file", (4, 28), (4, 30)), "a")))
 invalid global environment:
  [(Syntax.FnDef
      ("test", [], [(("unknown_file", (3, 8), (3, 10)), "a")], [], [],
       (("unknown_file", (3, 0), (6, 1)), (Syntax.BaseTy Syntax.Unit)), 
       [],
-      (("unknown_file", (4, 4), (4, 37)),
+      (("unknown_file", (4, 4), (4, 38)),
        (Syntax.Let ("f",
-          (("unknown_file", (4, 10), (4, 20)),
+          (("unknown_file", (4, 11), (4, 21)),
            (Syntax.Fun ([], [], [],
-              [(("unknown_file", (4, 13), (4, 19)),
-                (Syntax.Ref ((("unknown_file", (4, 14), (4, 16)), "f"),
+              [(("unknown_file", (4, 14), (4, 20)),
+                (Syntax.Ref ((("unknown_file", (4, 15), (4, 17)), "f"),
                    Syntax.Shared,
-                   (("unknown_file", (4, 17), (4, 19)),
+                   (("unknown_file", (4, 18), (4, 20)),
                     (Syntax.BaseTy Syntax.Unit))
                    )))
                 ],
               Syntax.Unboxed,
-              (("unknown_file", (4, 10), (4, 20)),
+              (("unknown_file", (4, 11), (4, 21)),
                (Syntax.BaseTy Syntax.Unit)),
               []))),
-          (("unknown_file", (4, 23), (4, 36)),
+          (("unknown_file", (4, 24), (4, 37)),
            (Syntax.Fun ([], [],
               [("x",
-                (("unknown_file", (4, 26), (4, 32)),
-                 (Syntax.Ref ((("unknown_file", (4, 27), (4, 29)), "a"),
+                (("unknown_file", (4, 27), (4, 33)),
+                 (Syntax.Ref ((("unknown_file", (4, 28), (4, 30)), "a"),
                     Syntax.Shared,
-                    (("unknown_file", (4, 30), (4, 32)),
+                    (("unknown_file", (4, 31), (4, 33)),
                      (Syntax.BaseTy Syntax.Unit))
                     ))))
                 ],
               None,
-              (("unknown_file", (4, 34), (4, 36)), (Syntax.Prim Syntax.Unit))
+              (("unknown_file", (4, 35), (4, 37)), (Syntax.Prim Syntax.Unit))
               ))),
-          (("unknown_file", (4, 36), (4, 37)), (Syntax.Prim Syntax.Unit)))))));
+          (("unknown_file", (4, 37), (4, 38)), (Syntax.Prim Syntax.Unit)))))));
    (Syntax.FnDef
       ("main", [], [], [], [],
        (("unknown_file", (8, 0), (10, 1)), (Syntax.BaseTy Syntax.Unit)), 
