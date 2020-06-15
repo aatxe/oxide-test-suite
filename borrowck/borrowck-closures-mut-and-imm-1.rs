@@ -15,13 +15,13 @@ fn a() {
     let mut x: isize = 3;
     // Rust doesn't have writeable types for closures, so we use function types
     let c1: fn() -> () = {
-        let tmp0: &'a mut isize = &mut x;
+        let tmp0 = &mut x;
         || {
             *tmp0 = 4
         }
     };
     let c2: fn() -> isize = {
-        let tmp0: &'b isize = &x;
+        let tmp0 = &x;
         || {
             *tmp0 * 5
         }

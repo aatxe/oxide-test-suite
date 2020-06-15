@@ -1,7 +1,7 @@
 error: (Syntax.UnboundLoanInProv (
           (Syntax.Shared,
            (("unknown_file", (10, 24), (10, 27)), ("tmp", [(Syntax.Index 0)]))),
-          (("unknown_file", (10, 12), (10, 14)), "x")))
+          (("unknown_file", (10, 23), (10, 29)), "p1")))
 invalid global environment:
  [(Syntax.FnDef
      ("id", [], [], ["T"],
@@ -19,19 +19,17 @@ invalid global environment:
            Syntax.Shared,
            (("unknown_file", (8, 20), (8, 25)), (Syntax.BaseTy Syntax.U32))))),
        [],
-       (("unknown_file", (9, 4), (9, 37)),
-        (Syntax.Let ("tmp",
-           (("unknown_file", (9, 13), (9, 16)),
-            (Syntax.Struct ("Foo", [], [], None))),
-           (("unknown_file", (9, 19), (9, 36)),
+       (("unknown_file", (9, 4), (9, 32)),
+        (Syntax.Let ("tmp", (("unknown_file", (9, 4), (9, 7)), Syntax.Infer),
+           (("unknown_file", (9, 14), (9, 31)),
             (Syntax.App (
-               (("unknown_file", (9, 19), (9, 28)), (Syntax.Fn "id")), 
+               (("unknown_file", (9, 14), (9, 23)), (Syntax.Fn "id")), 
                [], [],
-               [(("unknown_file", (9, 24), (9, 27)),
+               [(("unknown_file", (9, 19), (9, 22)),
                  (Syntax.Struct ("Foo", [], [], None)))],
-               [(("unknown_file", (9, 29), (9, 35)),
+               [(("unknown_file", (9, 24), (9, 30)),
                  (Syntax.TupStruct ("Foo", [], [],
-                    [(("unknown_file", (9, 33), (9, 34)),
+                    [(("unknown_file", (9, 28), (9, 29)),
                       (Syntax.Prim (Syntax.Num 3)))]
                     )))
                  ]

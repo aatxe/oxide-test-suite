@@ -7,7 +7,8 @@ struct SS<'a> {
 
 fn copy_borrowed_ptr<'a>(p: &'a mut SS<'a>) -> SS<'a> {
     let tmp0 = #[lft = "t0"] &mut *(*p).pointer;
-    SS::<'t0> { pointer: tmp0 }
+    let res: SS<'a> = SS::<'t0> { pointer: tmp0 };
+    res
 }
 
 fn main() {
