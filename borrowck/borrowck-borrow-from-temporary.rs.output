@@ -1,7 +1,7 @@
 error: (Syntax.UnboundLoanInProv (
           (Syntax.Shared,
-           (("unknown_file", (10, 24), (10, 27)), ("tmp", [(Syntax.Index 0)]))),
-          (("unknown_file", (10, 23), (10, 29)), "p1")))
+           (("unknown_file", (10, 13), (10, 16)), ("tmp", [(Syntax.Index 0)]))),
+          (("unknown_file", (10, 12), (10, 18)), "p1")))
 invalid global environment:
  [(Syntax.FnDef
      ("id", [], [], ["T"],
@@ -34,18 +34,13 @@ invalid global environment:
                     )))
                  ]
                ))),
-           (("unknown_file", (10, 4), (10, 30)),
+           (("unknown_file", (10, 4), (10, 19)),
             (Syntax.Let ("x",
-               (("unknown_file", (10, 11), (10, 20)),
-                (Syntax.Ref ((("unknown_file", (10, 12), (10, 14)), "x"),
+               (("unknown_file", (10, 4), (10, 7)), Syntax.Infer),
+               (("unknown_file", (10, 12), (10, 18)),
+                (Syntax.Borrow ((("unknown_file", (10, 12), (10, 18)), "p1"),
                    Syntax.Shared,
-                   (("unknown_file", (10, 15), (10, 20)),
-                    (Syntax.BaseTy Syntax.U32))
-                   ))),
-               (("unknown_file", (10, 23), (10, 29)),
-                (Syntax.Borrow ((("unknown_file", (10, 23), (10, 29)), "p1"),
-                   Syntax.Shared,
-                   (("unknown_file", (10, 24), (10, 27)),
+                   (("unknown_file", (10, 13), (10, 16)),
                     ("tmp", [(Syntax.Index 0)]))
                    ))),
                (("unknown_file", (11, 4), (11, 5)),
