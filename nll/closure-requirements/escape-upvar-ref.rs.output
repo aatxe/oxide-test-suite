@@ -1,5 +1,5 @@
 error: (Syntax.UnboundLoanInProv (
-          (("unknown_file", (24, 20), (24, 21)), ("y", [])),
+          (Syntax.Shared, (("unknown_file", (24, 20), (24, 21)), ("y", []))),
           (("unknown_file", (19, 16), (19, 31)), "p")))
 invalid global environment:
  [(Syntax.FnDef
