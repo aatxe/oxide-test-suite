@@ -1,9 +1,8 @@
 error: (Syntax.SafetyErr (
           (Syntax.Unique,
            (("unknown_file", (9, 5), (9, 6)), ("s", [Syntax.Deref]))),
-          (Syntax.Shared,
-           (("unknown_file", (7, 34), (7, 35)),
-            ("s", [Syntax.Deref; (Syntax.Index 0)])))
+          (Syntax.Unique,
+           (("unknown_file", (7, 34), (7, 35)), ("s", [Syntax.Deref])))
           ))
 invalid global environment:
  [(Syntax.FnDef
