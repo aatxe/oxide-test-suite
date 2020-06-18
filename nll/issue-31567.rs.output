@@ -2,9 +2,7 @@ error: (Syntax.SafetyErr (
           (Syntax.Unique, (("unknown_file", (16, 34), (16, 35)), ("v", []))),
           (Syntax.Shared,
            (("unknown_file", (14, 20), (14, 21)),
-            ("v",
-             [(Syntax.Index 0); Syntax.Deref; (Syntax.Index 0);
-               (Syntax.Index 0)])))
+            ("v", [(Syntax.Index 0); Syntax.Deref])))
           ))
 invalid global environment:
  [(Syntax.TupStructDef

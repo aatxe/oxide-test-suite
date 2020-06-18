@@ -1,6 +1,6 @@
 error: (Syntax.UnboundLoanInProv (
           (Syntax.Shared, (("unknown_file", (8, 28), (8, 32)), ("tmp0", []))),
-          (("unknown_file", (9, 12), (9, 15)), "t1")))
+          (("unknown_file", (8, 15), (8, 32)), "t1")))
 invalid global environment:
  [(Syntax.FnDef
      ("gimme", [], [(("unknown_file", (1, 9), (1, 11)), "a")], [],

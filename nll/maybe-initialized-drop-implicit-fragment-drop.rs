@@ -20,5 +20,4 @@ fn main() {
     #[drop] foo.b;
     x = 1; //~ ERROR cannot assign to `x` because it is borrowed [E0506]
     // FIXME ^ Should not error in the future with implicit dtors, only manually implemented ones
-    // NOTE(Oxide): this desugaring in Oxide does _not_ error.
 }

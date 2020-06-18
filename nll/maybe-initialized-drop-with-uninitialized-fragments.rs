@@ -25,5 +25,4 @@ fn main() {
     #[drop] foo.b;
     x = 1; //~ ERROR cannot assign to `x` because it is borrowed [E0506]
     // FIXME ^ This currently errors and it should not.
-    // NOTE(Oxide): this desugaring in Oxide does _not_ error.
 }
