@@ -1,4 +1,4 @@
-error: (Syntax.PartiallyMovedExprPath (
+error: (Syntax.PartiallyMovedPath (
           (("unknown_file", (10, 19), (10, 28)),
            (Syntax.Tup
               [(("unknown_file", (10, 20), (10, 22)),

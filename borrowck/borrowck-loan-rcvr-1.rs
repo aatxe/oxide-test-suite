@@ -16,7 +16,7 @@ fn a() {
     // But in this case we do not honor the loan:
     let tmp1: &'b Point = &p;
     blockm::<'b>(tmp1, || { //~ ERROR cannot borrow `p` as mutable
-        p.x = 10;
+        (*tmp1).x = 10;
     })
 }
 

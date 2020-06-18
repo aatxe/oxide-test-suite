@@ -1,8 +1,21 @@
-error: (Syntax.SafetyErr (
-          (Syntax.Unique,
-           (("unknown_file", (19, 8), (19, 9)), ("p", [(Syntax.Field "x")]))),
-          (Syntax.Shared, (("unknown_file", (17, 27), (17, 28)), ("p", [])))
-          ))
+error: (Syntax.PermissionErr (
+          (("unknown_file", (17, 14), (17, 23)),
+           (Syntax.Ref ((("unknown_file", (17, 15), (17, 17)), "b"),
+              Syntax.Shared,
+              (("unknown_file", (17, 18), (17, 23)),
+               (Syntax.Struct ("Point", [], [],
+                  (Some (("<inferred>", (-1, -1), (-1, -1)),
+                         (Syntax.Rec
+                            [("x",
+                              (("unknown_file", (1, 18), (1, 23)),
+                               (Syntax.BaseTy Syntax.U32)));
+                              ("y",
+                               (("unknown_file", (1, 28), (1, 33)),
+                                (Syntax.BaseTy Syntax.U32)))
+                              ])))
+                  )))
+              ))),
+          [Syntax.Deref; (Syntax.Field "x")], Syntax.Unique))
 invalid global environment:
  [(Syntax.RecStructDef
      (false, "Point", [], [],
@@ -116,14 +129,15 @@ invalid global environment:
                               (Syntax.Fun ([], [], [], None,
                                  (("", (0, 0), (0, 0)),
                                   (Syntax.Seq (
-                                     (("unknown_file", (19, 8), (19, 16)),
+                                     (("unknown_file", (19, 8), (19, 22)),
                                       (Syntax.Assign (
-                                         (("unknown_file", (19, 8), (19, 9)),
-                                          ("p", [(Syntax.Field "x")])),
-                                         (("unknown_file", (19, 14), (19, 16)),
+                                         (("unknown_file", (19, 10), (19, 14)),
+                                          ("tmp1",
+                                           [Syntax.Deref; (Syntax.Field "x")])),
+                                         (("unknown_file", (19, 20), (19, 22)),
                                           (Syntax.Prim (Syntax.Num 10)))
                                          ))),
-                                     (("unknown_file", (19, 16), (19, 17)),
+                                     (("unknown_file", (19, 22), (19, 23)),
                                       (Syntax.Prim Syntax.Unit))
                                      )))
                                  )))
