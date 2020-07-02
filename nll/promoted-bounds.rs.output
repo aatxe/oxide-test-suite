@@ -8,9 +8,7 @@ error: (Syntax.VarEnvMismatch (("unknown_file", (6, 4), (10, 5)),
                ));
              (Syntax.Prov ((("unknown_file", (7, 8), (7, 11)), "p1"),
                 [(Syntax.Shared,
-                  (("unknown_file", (9, 10), (9, 11)), ("b", [Syntax.Deref])));
-                  (Syntax.Shared,
-                   (("unknown_file", (7, 10), (7, 11)), ("a", [Syntax.Deref])))
+                  (("unknown_file", (7, 10), (7, 11)), ("a", [Syntax.Deref])))
                   ]
                 ));
              (Syntax.Id ("b",
@@ -33,9 +31,7 @@ error: (Syntax.VarEnvMismatch (("unknown_file", (6, 4), (10, 5)),
             ],
           [[(Syntax.Prov ((("unknown_file", (9, 8), (9, 11)), "p2"),
                [(Syntax.Shared,
-                 (("unknown_file", (7, 10), (7, 11)), ("a", [Syntax.Deref])));
-                 (Syntax.Shared,
-                  (("unknown_file", (9, 10), (9, 11)), ("b", [Syntax.Deref])))
+                 (("unknown_file", (9, 10), (9, 11)), ("b", [Syntax.Deref])))
                  ]
                ));
              (Syntax.Prov ((("unknown_file", (7, 8), (7, 11)), "p1"),
